@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "title": "Andrés Franco — Liderança, transformação digital e impacto",
+    "titleTemplate": "Andrés Franco",
+    "description": "Executivo internacional e líder em transformação digital, inteligência artificial e automação inteligente. Vice President & Head of Latin America na SS&C Blue Prism, coach de liderança, palestrante e cofundador da Sereniti Foundation.",
+    "ogAlt": "Andrés Franco — Liderança que transforma organizações, pessoas e comunidades",
+    "skipToContent": "Ir para o conteúdo principal"
+  },
+
+  "nav": {
+    "profile": "Perfil",
+    "transformation": "Transformação",
+    "leadership": "Liderança",
+    "speaker": "Speaker",
+    "impact": "Impacto",
+    "media": "Media",
+    "journey": "Trajetória",
+    "contact": "Contato",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "menuLabel": "Navegação principal",
+    "languageLabel": "Selecionar idioma",
+    "backToTop": "Voltar ao topo"
+  },
+
+  "hero": {
+    "role": "Vice President & Head of Latin America · SS&C Blue Prism",
+    "name": "Andrés Franco",
+    "statement": "Liderança que transforma organizações, pessoas e comunidades.",
+    "support": "Executivo internacional, líder em transformação digital, coach e palestrante com mais de três décadas construindo negócios, desenvolvendo líderes e gerando impacto na América Latina.",
+    "ctaPrimary": "Conheça minha trajetória",
+    "ctaSecondary": "Convide-me para participar",
+    "descriptors": {
+      "digital": "Transformação Digital",
+      "leadership": "Liderança",
+      "technology": "Tecnologia",
+      "impact": "Impacto Social"
+    },
+    "scroll": "Role a página"
+  },
+
+  "intro": {
+    "eyebrow": "Perfil",
+    "headline": "Mais de 30 anos construindo transformação.",
+    "body1": "Uma carreira internacional construída na intersecção entre tecnologia, estratégia de negócios e desenvolvimento humano. Da expansão de operações regionais à formação de líderes, o eixo sempre foi o mesmo: as organizações se transformam quando se transformam as pessoas que as tornam possíveis.",
+    "body2": "Esse trabalho se expressa hoje em quatro frentes — a transformação digital de grandes empresas, o desenvolvimento de líderes, a conversa pública sobre tecnologia e sociedade e o impacto social na América Latina — que respondem a uma mesma ideia de liderança.",
+    "stats": {
+      "experience": {
+        "value": "30+",
+        "label": "Anos de experiência internacional"
+      },
+      "coaching": {
+        "value": "15+",
+        "label": "Anos como coach certificado em liderança"
+      },
+      "region": {
+        "value": "LATAM",
+        "label": "Liderança regional"
+      },
+      "recognition": {
+        "value": "2023",
+        "label": "Reconhecimento do Congresso dos EUA"
+      }
+    }
+  },
+
+  "transformation": {
+    "eyebrow": "01 — Liderança executiva",
+    "headline": "Transformação Digital",
+    "lead": "Como Vice President e Head da América Latina na SS&C Blue Prism, Andrés lidera a estratégia regional em automação inteligente, inteligência artificial e agentic AI, acompanhando grandes organizações na transformação de suas operações.",
+    "body": "Seu trabalho conecta a agenda tecnológica à agenda de negócios: identificar onde a automação cria valor real, construir as equipes que a executam e sustentar a mudança dentro da cultura de cada organização.",
+    "statement": "A tecnologia transforma processos. A liderança transforma organizações.",
+    "capabilitiesLabel": "Áreas de atuação",
+    "capabilities": {
+      "ai": "Inteligência Artificial",
+      "intelligentAutomation": "Automação Inteligente",
+      "agenticAi": "Agentic AI",
+      "digitalTransformation": "Transformação Digital",
+      "businessStrategy": "Estratégia de Negócios",
+      "enterpriseAutomation": "Automação Empresarial",
+      "operationalTransformation": "Transformação Operacional"
+    },
+    "cta": "Conheça minha experiência"
+  },
+
+  "leadership": {
+    "eyebrow": "02 — Liderança e coaching",
+    "headline": "Desenvolvendo líderes que desenvolvem organizações.",
+    "lead": "Com mais de quinze anos como coach certificado nas metodologias de liderança John Maxwell, Andrés acompanha executivos e equipes em processos de desenvolvimento que combinam rigor estratégico e crescimento pessoal.",
+    "body": "A abordagem é a de um executivo em exercício, não a de um observador externo: os mesmos referenciais que aplica à frente de operações regionais são os que utiliza ao trabalhar com diretores, equipes comerciais e organizações em transformação.",
+    "pillarsLabel": "Eixos de trabalho",
+    "pillars": {
+      "leadershipDevelopment": {
+        "title": "Desenvolvimento de Liderança",
+        "body": "Programas estruturados para formar líderes capazes de sustentar o crescimento de suas organizações."
+      },
+      "executiveCoaching": {
+        "title": "Coaching Executivo",
+        "body": "Acompanhamento individual de diretores em decisões de alto impacto e transições de papel."
+      },
+      "teamDevelopment": {
+        "title": "Desenvolvimento de Equipes",
+        "body": "Construção de equipes alinhadas, com critérios claros de desempenho e confiança."
+      },
+      "organizationalTransformation": {
+        "title": "Transformação Organizacional",
+        "body": "Mudança cultural e operacional desenhada para se sustentar além do projeto que a inicia."
+      },
+      "strategicThinking": {
+        "title": "Pensamento Estratégico",
+        "body": "Referenciais de decisão para ler o mercado, priorizar e alocar recursos com critério."
+      },
+      "personalGrowth": {
+        "title": "Crescimento Pessoal",
+        "body": "O trabalho interno que sustenta a capacidade de liderar outros de forma consistente."
+      }
+    },
+    "cta": "Leadership & Coaching"
+  },
+
+  "speaker": {
+    "eyebrow": "03 — Speaker",
+    "headline": "Ideias que mobilizam pessoas e organizações.",
+    "lead": "Andrés participa como palestrante e painelista em encontros executivos, fóruns de indústria e programas corporativos em toda a América Latina, diante de audiências que reúnem desde equipes técnicas até comitês de direção.",
+    "body": "Suas intervenções traduzem temas complexos — inteligência artificial, automação, economia, liderança — em decisões concretas para quem precisa tomá-las.",
+    "topicsLabel": "Temas",
+    "topics": {
+      "technology": "Tecnologia",
+      "ai": "Inteligência Artificial",
+      "digitalTransformation": "Transformação Digital",
+      "economy": "Economia",
+      "leadership": "Liderança",
+      "politics": "Política",
+      "socialDevelopment": "Desenvolvimento Social"
+    },
+    "cta": "Convidar Andrés"
+  },
+
+  "impact": {
+    "eyebrow": "04 — Impacto social",
+    "headline": "Liderança com propósito.",
+    "lead": "Andrés é cofundador da Sereniti Foundation, uma organização sem fins lucrativos sediada nos Estados Unidos dedicada a fortalecer o desenvolvimento de comunidades latino-americanas.",
+    "body": "A fundação conecta doadores a organizações locais e concentra seu trabalho na educação de jovens, nas alianças estratégicas e nos programas de bem-estar, com um critério de transparência e sustentabilidade em cada projeto. É a continuidade natural de um compromisso com o serviço comunitário mantido ao longo de toda a sua carreira.",
+    "pillars": {
+      "education": "Educação",
+      "partnerships": "Alianças estratégicas",
+      "wellness": "Bem-estar",
+      "projects": "Projetos sustentáveis"
+    },
+    "cta": "Conheça a Sereniti Foundation"
+  },
+
+  "recognition": {
+    "eyebrow": "Reconhecimento",
+    "title": "Certificate of Special Congressional Recognition",
+    "organization": "Congresso dos Estados Unidos",
+    "year": "2023",
+    "body": "Concedido a Andrés Franco e Jennifer Heegaard em reconhecimento à sua contribuição para a comunidade hispânica e a iniciativas de impacto social, educação e desenvolvimento comunitário."
+  },
+
+  "pulso": {
+    "eyebrow": "Media · Programa próprio",
+    "title": "El Pulso del Poder",
+    "subtitle": "Política, economia e sociedade a partir de uma conversa aberta sobre as forças que transformam o nosso tempo.",
+    "body": "Um espaço de análise e conversa produzido por Andrés Franco, onde o debate público é tratado com a mesma disciplina com que se analisa uma organização: dados, contexto e consequências.",
+    "topicsLabel": "No programa",
+    "topics": {
+      "politics": "Política",
+      "economy": "Economia",
+      "society": "Sociedade",
+      "leadership": "Liderança",
+      "international": "Assuntos internacionais"
+    },
+    "cta": "Ver programa",
+    "playLabel": "Reproduzir episódio",
+    "episodesLabel": "Episódios"
+  },
+
+  "media": {
+    "eyebrow": "Insights & Media",
+    "headline": "Conversas, encontros e publicações.",
+    "lead": "Um registro em curso da atividade de Andrés: encontros executivos, programas de indústria, conteúdos e projetos de impacto.",
+    "filters": {
+      "all": "Tudo",
+      "event": "Encontros",
+      "video": "Vídeo",
+      "article": "Artigos",
+      "interview": "Entrevistas",
+      "impact": "Impacto"
+    },
+    "empty": "Não há conteúdos nesta categoria no momento.",
+    "view": "Ver",
+    "items": {
+      "workhqBootcamp": {
+        "title": "WorkHQ Bootcamp — Experiencing Agentic Workflows",
+        "excerpt": "Programa intensivo de formação sobre fluxos de trabalho agênticos e automação empresarial com equipes e parceiros da região.",
+        "meta": "América Latina"
+      },
+      "roadshowLatam": {
+        "title": "SS&C Blue Prism Roadshow",
+        "excerpt": "Encontro executivo com clientes e parceiros regionais sobre o futuro da automação, da inteligência artificial e da inovação.",
+        "meta": "América Latina"
+      },
+      "executiveBreakfast": {
+        "title": "Encontro executivo com clientes e parceiros",
+        "excerpt": "Sessão de trabalho em formato reduzido com líderes de negócios e tecnologia sobre agendas de transformação operacional.",
+        "meta": "América Latina"
+      },
+      "pulsoDelPoder": {
+        "title": "El Pulso del Poder",
+        "excerpt": "Programa de análise sobre política, economia e sociedade produzido por Andrés Franco.",
+        "meta": "Programa"
+      },
+      "serenitiImpact": {
+        "title": "Sereniti Foundation",
+        "excerpt": "Organização sem fins lucrativos dedicada ao desenvolvimento de comunidades latino-americanas por meio da educação, das alianças e do bem-estar.",
+        "meta": "Cofundador"
+      },
+      "congressionalRecognition": {
+        "title": "Certificate of Special Congressional Recognition",
+        "excerpt": "Reconhecimento do Congresso dos Estados Unidos pela contribuição à comunidade hispânica e a iniciativas de impacto social.",
+        "meta": "Estados Unidos"
+      }
+    }
+  },
+
+  "journey": {
+    "eyebrow": "Trajetória",
+    "headline": "Uma trajetória construída através de pessoas, mercados e transformação.",
+    "lead": "Cada etapa acrescenta uma dimensão distinta à mesma ideia de liderança: a escala corporativa, o desenvolvimento de pessoas, a conversa pública e o compromisso com a comunidade.",
+    "currentLabel": "Atualmente",
+    "items": {
+      "blueprism": {
+        "title": "SS&C Blue Prism",
+        "role": "Vice President & Head of Latin America",
+        "body": "Liderança da estratégia e das operações para a América Latina em automação inteligente, inteligência artificial e agentic AI, acompanhando a transformação de grandes organizações."
+      },
+      "sereniti": {
+        "title": "Sereniti Foundation",
+        "role": "Cofundador",
+        "body": "Organização sem fins lucrativos sediada nos Estados Unidos dedicada ao desenvolvimento de comunidades latino-americanas por meio da educação, das alianças estratégicas e do bem-estar."
+      },
+      "congress": {
+        "title": "Certificate of Special Congressional Recognition",
+        "role": "Congresso dos Estados Unidos",
+        "body": "Reconhecimento concedido junto a Jennifer Heegaard pela contribuição à comunidade hispânica e a iniciativas de impacto social e educação."
+      },
+      "pulso": {
+        "title": "El Pulso del Poder",
+        "role": "Programa de análise e conversa",
+        "body": "Espaço próprio dedicado à política, à economia e à sociedade, e às forças que definem o debate público contemporâneo."
+      },
+      "maxwell": {
+        "title": "Metodologias de liderança John Maxwell",
+        "role": "Coach certificado",
+        "body": "Formação e prática continuada em desenvolvimento de líderes, coaching executivo e desenvolvimento de equipes, aplicada em contextos corporativos e pessoais."
+      },
+      "cisco": {
+        "title": "Cisco",
+        "role": "Liderança em tecnologia global",
+        "body": "Experiência de liderança em uma das companhias de tecnologia mais relevantes do mundo, com foco no desenvolvimento de mercados da América Latina."
+      },
+      "international": {
+        "title": "Carreira internacional de negócios",
+        "role": "Mais de 30 anos",
+        "body": "Desenvolvimento de estratégias de mercado, condução de equipes, expansão de operações e construção de negócios em toda a América Latina."
+      }
+    }
+  },
+
+  "contact": {
+    "eyebrow": "Contato",
+    "headline": "Vamos construir algo que gere impacto.",
+    "lead": "Palestras, programas de liderança, iniciativas de transformação digital ou projetos de impacto social. Conte-me no que você está trabalhando.",
+    "form": {
+      "name": "Nome",
+      "company": "Empresa",
+      "email": "E-mail",
+      "inquiry": "Tipo de consulta",
+      "message": "Mensagem",
+      "messagePlaceholder": "Conte-me brevemente o contexto, as datas e o objetivo.",
+      "submit": "Enviar mensagem",
+      "sending": "Enviando…",
+      "success": "Obrigado por escrever. Sua mensagem foi recebida e Andrés responderá em breve.",
+      "error": "Não foi possível enviar a mensagem. Escreva diretamente pelo LinkedIn e resolvemos.",
+      "required": "Campo obrigatório",
+      "invalidEmail": "Informe um e-mail válido",
+      "selectPlaceholder": "Selecione uma opção"
+    },
+    "inquiryTypes": {
+      "speaking": "Speaking Engagement",
+      "coaching": "Leadership & Coaching",
+      "business": "Business & Technology",
+      "media": "Media & Interviews",
+      "impact": "Impacto Social"
+    },
+    "followLabel": "Acompanhe"
+  },
+
+  "footer": {
+    "role": "Vice President & Head of Latin America · SS&C Blue Prism",
+    "navLabel": "Seções",
+    "socialLabel": "Perfis",
+    "disclaimer": "Site pessoal de Andrés Franco. A SS&C Blue Prism é a organização na qual ele exerce seu cargo executivo atual; este site não constitui comunicação oficial dessa companhia nem de nenhuma das organizações mencionadas.",
+    "rights": "Todos os direitos reservados."
+  },
+
+  "images": {
+    "portraitPrimary": "Retrato profissional de Andrés Franco",
+    "portraitEditorial": "Retrato editorial em preto e branco de Andrés Franco",
+    "portraitFormal": "Retrato corporativo de Andrés Franco",
+    "eventBootcampRoom": "Andrés Franco com os participantes de um programa de formação executiva",
+    "eventBootcampWide": "Participantes do WorkHQ Bootcamp sobre fluxos de trabalho agênticos",
+    "eventRoadshow": "Encontro executivo com clientes e parceiros na América Latina",
+    "eventExecutiveBreakfast": "Sessão de trabalho com líderes de negócios e tecnologia"
+  }
+}

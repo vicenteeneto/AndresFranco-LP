@@ -1,0 +1,393 @@
+@import "tailwindcss";
+
+/* Self-hosted typefaces — no external font requests at runtime. */
+@import "@fontsource-variable/inter/index.css";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DESIGN TOKENS
+   A restrained editorial palette. Depth comes from typography, spacing and
+   photography — not from effects.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* Surfaces */
+  --color-paper: #f6f4f0; /* warm white — primary page ground */
+  --color-paper-deep: #ece8e1; /* quiet band, used sparingly */
+  --color-white: #ffffff;
+
+  /* Ink */
+  --color-ink: #14161a; /* deep charcoal — headlines */
+  --color-ink-soft: #3c4149; /* body copy */
+  --color-ink-mute: #7c7f86; /* labels, meta */
+
+  /* Dark ground */
+  --color-navy: #0b1523; /* very dark navy */
+  --color-navy-soft: #16243a;
+  --color-navy-line: rgba(255, 255, 255, 0.12);
+
+  /* Accent */
+  --color-accent: #2c5f8e; /* sophisticated medium blue */
+  --color-accent-hi: #4a81b4;
+
+  /* Rules */
+  --color-rule: rgba(20, 22, 26, 0.14);
+  --color-rule-soft: rgba(20, 22, 26, 0.08);
+  --color-rule-dark: rgba(255, 255, 255, 0.14);
+
+  /* Type */
+  --font-display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype",
+    Palatino, Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Editorial measures */
+  --spacing-gutter: 1.5rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+* {
+  min-width: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink-soft);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  overflow-x: clip;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+img {
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY PRIMITIVES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.018em;
+  line-height: 0.98;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+
+/* Hero-scale headline */
+@utility t-hero {
+  font-size: clamp(2.55rem, 5.9vw, 5.05rem);
+  line-height: 0.99;
+  letter-spacing: -0.024em;
+}
+
+/* Major section headline */
+@utility t-h2 {
+  font-size: clamp(2.15rem, 5.1vw, 4.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.022em;
+}
+
+/* Sub-headline / pull statement */
+@utility t-h3 {
+  font-size: clamp(1.5rem, 2.8vw, 2.35rem);
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+}
+
+@utility t-h4 {
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* Small caps label — the connective tissue of the whole site */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--color-ink-mute);
+}
+
+@utility lead {
+  font-size: clamp(1.0625rem, 1.35vw, 1.3125rem);
+  line-height: 1.62;
+  letter-spacing: -0.008em;
+  color: var(--color-ink-soft);
+  text-wrap: pretty;
+}
+
+@utility body-copy {
+  font-size: 1.0125rem;
+  line-height: 1.72;
+  letter-spacing: -0.005em;
+  color: var(--color-ink-soft);
+  text-wrap: pretty;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@utility shell {
+  width: 100%;
+  max-width: 88rem;
+  margin-inline: auto;
+  padding-inline: 1.375rem;
+}
+
+@media (min-width: 768px) {
+  .shell {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .shell {
+    padding-inline: 4rem;
+  }
+}
+
+@utility section-y {
+  padding-block: clamp(5rem, 11vh, 9.5rem);
+}
+
+@utility hairline {
+  border-top: 1px solid var(--color-rule-soft);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOTION — subtle, and fully disabled for reduced-motion users
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal="image"] {
+  opacity: 0;
+  transform: none;
+  clip-path: inset(0 0 12% 0);
+  transition:
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    clip-path 1.35s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-visible,
+[data-reveal="image"].is-visible {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 0 0);
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal="image"] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENT PRIMITIVES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Text link with a rule that draws itself on hover */
+@utility link-rule {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  padding-block: 0.55rem;
+  transition: color 0.35s ease;
+}
+
+.link-rule::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.28;
+  transform-origin: left;
+  transition:
+    opacity 0.4s ease,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-rule:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.link-rule .arrow {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-rule:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Solid button */
+@utility btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 1.05rem 1.9rem;
+  border: 1px solid var(--color-ink);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.btn-solid:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+@utility btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: transparent;
+  color: var(--color-ink);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 1.05rem 1.9rem;
+  border: 1px solid var(--color-rule);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Dark-ground variants */
+.on-dark .btn-solid {
+  background-color: var(--color-paper);
+  color: var(--color-navy);
+  border-color: var(--color-paper);
+}
+
+.on-dark .btn-solid:hover {
+  background-color: var(--color-accent-hi);
+  border-color: var(--color-accent-hi);
+  color: #fff;
+}
+
+.on-dark .btn-outline {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: var(--color-rule-dark);
+}
+
+.on-dark .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.96);
+  color: var(--color-navy);
+  border-color: transparent;
+}
+
+.on-dark .link-rule {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.on-dark .display,
+.on-dark .t-hero,
+.on-dark .t-h2,
+.on-dark .t-h3,
+.on-dark .t-h4 {
+  color: #fff;
+}
+
+.on-dark .eyebrow {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.on-dark .lead,
+.on-dark .body-copy {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Photography frame — a quiet, precise container */
+@utility frame {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-paper-deep);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Duotone-free, restrained warm treatment for group/event photography */
+@utility photo-editorial {
+  filter: saturate(0.86) contrast(1.04);
+}
