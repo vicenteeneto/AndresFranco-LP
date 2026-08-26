@@ -75,16 +75,21 @@ export default function SiteHeader() {
             <a
               href={`#${SECTIONS.hero}`}
               onClick={close}
-              className="group flex items-baseline gap-2.5 whitespace-nowrap"
+              className="group flex shrink-0 items-baseline gap-2.5 whitespace-nowrap"
             >
               <span className="display text-[1.2rem] leading-none md:text-[1.35rem]">
                 Andrés Franco
               </span>
+              {/*
+                The tagline only appears once there is room for it alongside a
+                seven-item nav and a three-language switcher — below 2xl the
+                nav needs that width more than the tagline does.
+              */}
               <span
                 aria-hidden="true"
-                className="hidden h-[13px] w-px bg-rule lg:block"
+                className="hidden h-[13px] w-px bg-rule 2xl:block"
               />
-              <span className="eyebrow hidden text-[0.5625rem] lg:block">
+              <span className="eyebrow hidden text-[0.5625rem] 2xl:block">
                 Leadership · Transformation
               </span>
             </a>
@@ -92,7 +97,7 @@ export default function SiteHeader() {
             {/* Desktop navigation */}
             <nav
               aria-label={t("menuLabel")}
-              className="hidden items-center gap-7 xl:flex"
+              className="hidden items-center gap-5 xl:flex 2xl:gap-7"
             >
               {NAV_ITEMS.map((item) => (
                 <a
@@ -116,7 +121,7 @@ export default function SiteHeader() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-5 md:gap-7">
+            <div className="flex shrink-0 items-center gap-4 md:gap-5 2xl:gap-7">
               <LanguageSwitcher />
               <a
                 href={`#${SECTIONS.contact}`}
