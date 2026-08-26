@@ -6,7 +6,7 @@
  */
 
 /** Canonical production URL. Update before going live. */
-export const SITE_URL = "https://andresfranco.com";
+export const SITE_URL = "https://andres-franco-lp.vercel.app";
 
 export const PERSON = {
   name: "Andrés Franco",
