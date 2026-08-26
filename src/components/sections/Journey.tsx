@@ -21,7 +21,7 @@ export default function Journey() {
               </p>
               <h2
                 id="journey-heading"
-                className="display mt-6 text-[clamp(1.9rem,3.5vw,2.85rem)] leading-[1.06] tracking-[-0.02em]"
+                className="display mt-6 text-[clamp(1.75rem,3.2vw,2.6rem)] leading-[1.12] tracking-[-0.016em]"
                 data-reveal
                 style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
               >
@@ -79,7 +79,7 @@ export default function Journey() {
                   )}
                 </div>
 
-                <h3 className="display mt-3 text-[clamp(1.25rem,2.1vw,1.7rem)] leading-[1.15]">
+                <h3 className="display mt-3 text-[clamp(1.2rem,2vw,1.6rem)] leading-[1.24]">
                   {t(`items.${m.id}.title`)}
                 </h3>
                 <p className="mt-2 text-[0.8125rem] font-medium tracking-[0.06em] text-ink-mute">

@@ -65,7 +65,7 @@ export default function Intro() {
             >
               <dt className="sr-only">{t(`stats.${key}.label`)}</dt>
               <dd>
-                <span className="display block text-[clamp(2.6rem,4.6vw,3.9rem)] leading-[0.9] tracking-[-0.03em]">
+                <span className="display block text-[clamp(2.4rem,4.2vw,3.5rem)] leading-[1] tracking-[-0.022em]">
                   {t(`stats.${key}.value`)}
                 </span>
                 <span className="mt-4 block max-w-[19ch] text-[0.8125rem] leading-[1.5] text-ink-mute md:mt-5">

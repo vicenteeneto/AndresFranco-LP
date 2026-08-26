@@ -182,7 +182,7 @@ export default function SiteHeader() {
                     <span className="eyebrow w-6 text-[0.5625rem]">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="display text-[1.85rem] leading-none">
+                    <span className="display text-[1.75rem] leading-[1.15]">
                       {t(item.key)}
                     </span>
                   </a>

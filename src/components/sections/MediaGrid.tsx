@@ -136,7 +136,7 @@ function Card({
           <span className="eyebrow text-[0.5625rem]">
             {t(`filters.${item.category}`)}
           </span>
-          <h3 className="display text-[clamp(1.4rem,2.4vw,1.9rem)] leading-[1.1] text-ink">
+          <h3 className="display text-[clamp(1.3rem,2.2vw,1.75rem)] leading-[1.2] text-ink">
             {t(`items.${item.id}.title`)}
           </h3>
         </div>
@@ -160,7 +160,7 @@ function Card({
 
       {photo && (
         <h3
-          className={`display mt-3 leading-[1.15] ${
+          className={`display mt-3 leading-[1.22] ${
             wide
               ? "text-[clamp(1.4rem,2.4vw,1.95rem)]"
               : "text-[clamp(1.2rem,1.8vw,1.45rem)]"

@@ -23,7 +23,7 @@ export default function Pulso() {
             </p>
             <h2
               id="pulso-heading"
-              className="display mt-6 text-[clamp(2.4rem,5vw,4.05rem)] leading-[0.98] tracking-[-0.028em]"
+              className="display mt-6 text-[clamp(2.15rem,4.5vw,3.6rem)] leading-[1.06] tracking-[-0.02em]"
               data-reveal
               style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
             >
@@ -92,7 +92,7 @@ export default function Pulso() {
                 <span className="flex h-full flex-col justify-between p-7 md:p-10">
                   <span className="eyebrow">{t("eyebrow")}</span>
                   <span>
-                    <span className="display block text-[clamp(1.7rem,3.3vw,2.7rem)] leading-[1.05] text-white">
+                    <span className="display block text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.14] text-white">
                       {t("title")}
                     </span>
                     <span className="mt-4 flex items-center gap-3 text-[0.6875rem] font-medium tracking-[0.13em] text-white/60 uppercase">

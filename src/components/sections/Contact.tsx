@@ -112,7 +112,7 @@ export default function Contact() {
             </p>
             <h2
               id="contact-heading"
-              className="display mt-6 text-[clamp(2.2rem,4.6vw,3.7rem)] leading-[1] tracking-[-0.026em]"
+              className="display mt-6 text-[clamp(2rem,4.1vw,3.3rem)] leading-[1.08] tracking-[-0.018em]"
               data-reveal
               style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
             >

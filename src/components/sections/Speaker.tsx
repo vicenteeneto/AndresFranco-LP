@@ -78,7 +78,7 @@ export default function Speaker() {
                   { "--reveal-delay": `${i * 50}ms` } as React.CSSProperties
                 }
               >
-                <span className="display text-[clamp(1.35rem,2.6vw,2.1rem)] leading-[1.15]">
+                <span className="display text-[clamp(1.3rem,2.4vw,1.95rem)] leading-[1.25]">
                   {t(`topics.${key}`)}
                 </span>
                 <span className="eyebrow shrink-0 text-[0.5625rem] tabular-nums opacity-60">

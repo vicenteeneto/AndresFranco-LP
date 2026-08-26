@@ -22,7 +22,7 @@ export default function Impact() {
         <div className="mt-8 grid grid-cols-12 gap-y-10 lg:gap-x-14">
           <h2
             id="impact-heading"
-            className="display col-span-12 text-[clamp(2.6rem,6.4vw,5.4rem)] leading-[0.98] tracking-[-0.028em] lg:col-span-6"
+            className="display col-span-12 text-[clamp(2.3rem,5.6vw,4.6rem)] leading-[1.06] tracking-[-0.02em] lg:col-span-6"
             data-reveal
           >
             {t("headline")}
@@ -71,7 +71,7 @@ export default function Impact() {
               data-reveal
               style={{ "--reveal-delay": `${i * 80}ms` } as React.CSSProperties}
             >
-              <span className="display text-[clamp(1.15rem,1.9vw,1.5rem)] leading-[1.2]">
+              <span className="display text-[clamp(1.1rem,1.8vw,1.45rem)] leading-[1.28]">
                 {t(`pillars.${key}`)}
               </span>
             </li>

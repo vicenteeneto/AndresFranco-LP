@@ -26,7 +26,7 @@ export default function Recognition() {
 
               <h2
                 id="recognition-heading"
-                className="display mt-7 max-w-[20ch] text-[clamp(1.5rem,3vw,2.35rem)] leading-[1.12]"
+                className="display mt-7 max-w-[20ch] text-[clamp(1.45rem,2.8vw,2.2rem)] leading-[1.2]"
               >
                 {t("title")}
               </h2>
