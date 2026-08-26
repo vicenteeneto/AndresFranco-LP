@@ -109,7 +109,7 @@ export default function Pulso() {
             {rest.length > 0 && (
               <div className="mt-8">
                 <p className="eyebrow mb-4">{t("episodesLabel")}</p>
-                <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <ul className="grid grid-cols-3 gap-3 sm:gap-4">
                   {rest.slice(0, 3).map((ep) => (
                     <li key={ep.videoId}>
                       <LiteYouTube
@@ -117,12 +117,8 @@ export default function Pulso() {
                         title={ep.title ?? t("title")}
                         playLabel={t("playLabel")}
                         className="aspect-video w-full"
+                        compact
                       />
-                      {ep.title && (
-                        <p className="mt-3 text-[0.8125rem] leading-[1.45] text-white/65">
-                          {ep.title}
-                        </p>
-                      )}
                     </li>
                   ))}
                 </ul>

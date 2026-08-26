@@ -53,6 +53,11 @@ export const MEDIA_ITEMS: MediaItem[] = [
     href: "https://www.youtube.com/@ELPULSODELPODERTV",
   },
   {
+    id: "entrevistaMarian",
+    category: "interview",
+    href: "https://www.youtube.com/watch?v=wbrnP3hNeQA",
+  },
+  {
     id: "serenitiImpact",
     category: "impact",
     href: "https://sereniti.org/",
@@ -84,13 +89,36 @@ export type Episode = {
 export const PULSO = {
   channelUrl: "https://www.youtube.com/@ELPULSODELPODERTV",
   /**
-   * Add episodes by pasting the YouTube video ID (the part after `watch?v=`).
-   * The first entry becomes the featured player; the rest form the episode rail.
-   * Leave the array empty and the section falls back to the programme panel.
+   * Episodes shown in the programme section.
    *
-   *   { videoId: "dQw4w9WgXcQ", title: "…", date: "2026-05-12" }
+   * The first entry becomes the featured player; the next three form the rail
+   * below it. Newest first — replace the top entry when a new episode airs.
+   * Empty array falls back to the programme panel with no player.
+   *
+   * `videoId` is the part after `watch?v=`. `title` is the real YouTube title,
+   * used for the play button's accessible label and the player frame — it is
+   * not printed on the page: the thumbnail already carries it, and the raw
+   * titles would fight the rest of the site typographically.
    */
-  episodes: [] as Episode[],
+  episodes: [
+    {
+      videoId: "RRdGxgWCy2s",
+      title: "¿Quién es realmente Cepeda? ¿Proyecto democrático o riesgo político?",
+    },
+    {
+      videoId: "Z8M6kIHpfdY",
+      title: "Orden de captura masiva: recompensas millonarias por exFARC",
+    },
+    {
+      videoId: "lvd37OG2Ch0",
+      title: "Lo que no te cuentan: la estrategia real detrás de Irán",
+    },
+    {
+      videoId: "iSH3McGudj8",
+      title:
+        "La verdadera historia del negocio de los aviones: ¿se cae la compra en Suecia?",
+    },
+  ] as Episode[],
 };
 
 export const PULSO_TOPICS = [
