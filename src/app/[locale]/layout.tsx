@@ -20,9 +20,9 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-/** "/" for the default locale, "/pt" for the others. */
+/** Every locale is addressable under its own prefix: "/es", "/pt". */
 function pathFor(locale: Locale) {
-  return locale === defaultLocale ? "/" : `/${locale}`;
+  return `/${locale}`;
 }
 
 export async function generateMetadata(props: {

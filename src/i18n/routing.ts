@@ -36,6 +36,12 @@ export const localeTags: Record<Locale, string> = {
 export const routing = defineRouting({
   locales,
   defaultLocale,
-  // Spanish is served from "/", Portuguese from "/pt".
-  localePrefix: "as-needed",
+  // Every language gets an explicit prefix: "/es" and "/pt".
+  // "/" redirects to the default locale.
+  //
+  // Why not "as-needed" (which would serve Spanish from "/")? That mode makes
+  // the proxy rewrite "/" to "/es" internally, and the rewrite does not
+  // resolve on Vercel's router — every route answered with a platform 404.
+  // Explicit prefixes keep each locale a real, directly addressable route.
+  localePrefix: "always",
 });

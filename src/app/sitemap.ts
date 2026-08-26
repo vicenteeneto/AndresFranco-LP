@@ -3,8 +3,7 @@ import { SITE_URL } from "@/content/site";
 import { locales, localeTags, defaultLocale } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const path = (locale: string) =>
-    locale === defaultLocale ? SITE_URL : `${SITE_URL}/${locale}`;
+  const path = (locale: string) => `${SITE_URL}/${locale}`;
 
   const languages = Object.fromEntries(
     locales.map((l) => [localeTags[l], path(l)]),
