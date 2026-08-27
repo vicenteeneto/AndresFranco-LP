@@ -67,7 +67,7 @@ export default function SiteHeader() {
       >
         <div className="shell">
           <div
-            className={`flex items-center justify-between transition-[height] duration-500 ${
+            className={`flex items-center justify-between gap-8 transition-[height] duration-500 ${
               scrolled ? "h-[68px]" : "h-[84px] md:h-[96px]"
             }`}
           >
@@ -81,17 +81,12 @@ export default function SiteHeader() {
                 Andrés Franco
               </span>
               {/*
-                The tagline only appears once there is room for it alongside a
-                seven-item nav and a three-language switcher — below 2xl the
-                nav needs that width more than the tagline does.
+                No tagline here. The header row is capped by the shell, so it
+                never gets wider than 1280px however wide the screen is: a
+                tagline alongside a seven-item nav, a three-language switcher
+                and the contact button leaves the three groups almost touching.
+                The role is stated in the hero, a few lines below.
               */}
-              <span
-                aria-hidden="true"
-                className="hidden h-[13px] w-px bg-rule 2xl:block"
-              />
-              <span className="eyebrow hidden text-[0.5625rem] 2xl:block">
-                Leadership · Transformation
-              </span>
             </a>
 
             {/* Desktop navigation */}
