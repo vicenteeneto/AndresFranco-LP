@@ -9,9 +9,9 @@ const DESCRIPTORS = ["digital", "leadership", "technology", "impact"] as const;
 /**
  * The photograph is the hero — not an image dropped beside it.
  *
- * On desktop it covers the whole viewport and the headline sits inside the
- * room's own negative space, with a gradient reading the page ground back over
- * the left so the type keeps its contrast without a slab of colour on top.
+ * On desktop it holds the right half of the viewport, its left edge dissolving
+ * into the page, and the headline lives in the paper beside it — never over
+ * Andrés himself.
  *
  * On mobile that composition cannot hold, so the frame recomposes rather than
  * stacking: the photograph becomes a tall band cropped closer to Andrés, fading
@@ -27,9 +27,18 @@ export default function Hero() {
       id={SECTIONS.hero}
       className="relative isolate flex min-h-[100svh] flex-col"
     >
-      {/* Photograph */}
+      {/*
+        Photograph.
+
+        On desktop it holds the right half of the viewport rather than the whole
+        of it. Covering the full width looks generous but puts Andrés in the
+        middle of the screen — exactly where the headline has to go — and
+        object-position cannot fix that: when the frame is wider than the
+        photograph's own ratio there is no horizontal overflow left to shift.
+        Giving the image its own half moves him right by construction.
+      */}
       <div
-        className="absolute inset-x-0 top-0 h-[56svh] sm:h-[60svh] lg:inset-0 lg:h-full"
+        className="absolute inset-x-0 top-0 h-[56svh] sm:h-[60svh] lg:inset-y-0 lg:right-0 lg:left-[48%] lg:h-auto"
         data-reveal="image"
       >
         <Image
@@ -38,8 +47,8 @@ export default function Hero() {
           fill
           priority
           quality={90}
-          sizes="100vw"
-          className="object-cover object-[64%_26%] lg:object-[72%_42%]"
+          sizes="(max-width: 1024px) 100vw, 52vw"
+          className="object-cover object-[64%_26%] lg:object-[52%_38%]"
         />
         {/* Mobile: the photograph dissolves into the page */}
         <div
@@ -54,7 +63,7 @@ export default function Hero() {
       <div className="relative flex flex-1 items-end pt-[50svh] sm:pt-[54svh] lg:items-center lg:pt-[104px]">
         <div className="shell w-full">
           <div className="grid grid-cols-12">
-            <div className="col-span-12 py-12 lg:col-span-7 lg:py-0 xl:col-span-6">
+            <div className="col-span-12 py-12 lg:col-span-6 lg:py-0">
               <p className="meta text-blue" data-reveal>
                 {t("role")}
               </p>
@@ -120,7 +129,7 @@ export default function Hero() {
                 {t(`descriptors.${d}`)}
               </span>
             ))}
-            <span className="ml-auto hidden items-center gap-3 text-blue md:flex">
+            <span className="ml-auto hidden items-center gap-3 text-blue xl:flex">
               <span className="meta text-blue">{t("scroll")}</span>
               <ArrowDown className="h-4 w-2 opacity-70" />
             </span>
