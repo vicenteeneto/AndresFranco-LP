@@ -18,8 +18,8 @@ export default function LanguageSwitcher({
   const base =
     tone === "dark"
       ? "text-white/45 hover:text-white"
-      : "text-ink-mute hover:text-ink";
-  const on = tone === "dark" ? "text-white" : "text-ink";
+      : "text-ink-mute hover:text-blue-deep";
+  const on = tone === "dark" ? "text-white" : "text-navy";
 
   return (
     <div
@@ -33,7 +33,7 @@ export default function LanguageSwitcher({
             <span
               aria-hidden="true"
               className={`text-[0.6rem] ${
-                tone === "dark" ? "text-white/30" : "text-ink-mute/60"
+                tone === "dark" ? "text-white/30" : "text-warm-gray"
               }`}
             >
               /
@@ -45,7 +45,7 @@ export default function LanguageSwitcher({
             hrefLang={locale}
             aria-current={locale === active ? "true" : undefined}
             title={localeNames[locale]}
-            className={`text-[0.6875rem] font-medium tracking-[0.14em] transition-colors duration-300 hover:opacity-100 ${
+            className={`text-[0.6875rem] font-semibold tracking-[0.16em] transition-colors duration-300 hover:opacity-100 ${
               locale === active ? on : `${base} hover:${on}`
             }`}
           >

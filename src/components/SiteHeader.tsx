@@ -61,7 +61,7 @@ export default function SiteHeader() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ${
           scrolled || open
-            ? "border-b border-rule-soft bg-paper/92 backdrop-blur-[10px]"
+            ? "border-b border-rule bg-paper/92 backdrop-blur-[12px]"
             : "border-b border-transparent bg-transparent"
         }`}
       >
@@ -104,16 +104,16 @@ export default function SiteHeader() {
                   key={item.id}
                   href={`#${item.id}`}
                   aria-current={active === item.id ? "true" : undefined}
-                  className={`relative text-[0.6875rem] font-medium tracking-[0.13em] uppercase transition-colors duration-300 ${
+                  className={`relative text-[0.6875rem] font-semibold tracking-[0.14em] uppercase transition-colors duration-300 ${
                     active === item.id
-                      ? "text-ink"
-                      : "text-ink-mute hover:text-ink"
+                      ? "text-navy"
+                      : "text-ink-mute hover:text-blue-deep"
                   }`}
                 >
                   {t(item.key)}
                   <span
                     aria-hidden="true"
-                    className={`absolute -bottom-1.5 left-0 h-px w-full origin-left bg-accent transition-transform duration-500 ${
+                    className={`absolute -bottom-1.5 left-0 h-px w-full origin-left bg-blue transition-transform duration-500 ${
                       active === item.id ? "scale-x-100" : "scale-x-0"
                     }`}
                   />
@@ -125,7 +125,7 @@ export default function SiteHeader() {
               <LanguageSwitcher />
               <a
                 href={`#${SECTIONS.contact}`}
-                className="hidden border border-ink/85 px-5 py-2.5 text-[0.6875rem] font-medium tracking-[0.13em] text-ink uppercase transition-colors duration-400 hover:bg-ink hover:text-paper md:inline-flex"
+                className="hidden border border-warm-gray px-5 py-2.5 text-[0.6875rem] font-semibold tracking-[0.14em] text-navy uppercase transition-colors duration-400 hover:border-navy hover:bg-navy hover:text-paper md:inline-flex"
               >
                 {t("contact")}
               </a>
@@ -143,13 +143,13 @@ export default function SiteHeader() {
                 </span>
                 <span
                   aria-hidden="true"
-                  className={`absolute h-px w-[22px] bg-ink transition-transform duration-400 ${
+                  className={`absolute h-px w-[22px] bg-navy transition-transform duration-400 ${
                     open ? "rotate-45" : "-translate-y-[4px]"
                   }`}
                 />
                 <span
                   aria-hidden="true"
-                  className={`absolute h-px w-[22px] bg-ink transition-transform duration-400 ${
+                  className={`absolute h-px w-[22px] bg-navy transition-transform duration-400 ${
                     open ? "-rotate-45" : "translate-y-[4px]"
                   }`}
                 />
@@ -184,7 +184,7 @@ export default function SiteHeader() {
                       transitionTimingFunction: "cubic-bezier(.16,1,.3,1)",
                     }}
                   >
-                    <span className="eyebrow w-6 text-[0.5625rem]">
+                    <span className="eyebrow w-7 text-[0.5625rem] tabular-nums">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="display text-[1.75rem] leading-[1.15]">

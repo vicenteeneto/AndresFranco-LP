@@ -1,104 +1,130 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-import Photo from "../ui/Photo";
 import { ArrowRight, ArrowDown } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
+import { PHOTOS } from "@/content/images";
 
 const DESCRIPTORS = ["digital", "leadership", "technology", "impact"] as const;
 
+/**
+ * The photograph is the hero — not an image dropped beside it.
+ *
+ * On desktop it covers the whole viewport and the headline sits inside the
+ * room's own negative space, with a gradient reading the page ground back over
+ * the left so the type keeps its contrast without a slab of colour on top.
+ *
+ * On mobile that composition cannot hold, so the frame recomposes rather than
+ * stacking: the photograph becomes a tall band cropped closer to Andrés, fading
+ * into the page, with the headline below it.
+ */
 export default function Hero() {
   const t = useTranslations("hero");
+  const tImg = useTranslations("images");
+  const photo = PHOTOS.heroPortrait;
 
   return (
     <section
       id={SECTIONS.hero}
-      className="relative flex min-h-[94svh] flex-col pt-[104px] md:pt-[128px] lg:min-h-screen"
+      className="relative isolate flex min-h-[100svh] flex-col"
     >
-      <div className="shell flex flex-1 items-center">
-        <div className="grid w-full grid-cols-12 items-start gap-y-11 lg:gap-x-10 xl:gap-x-14">
-          {/* A — masthead */}
-          <div className="col-span-12 lg:col-span-7 lg:col-start-1 lg:row-start-1">
-            <p
-              className="eyebrow text-[0.625rem] md:text-[0.6875rem]"
-              data-reveal
-            >
-              {t("role")}
-            </p>
+      {/* Photograph */}
+      <div
+        className="absolute inset-x-0 top-0 h-[56svh] sm:h-[60svh] lg:inset-0 lg:h-full"
+        data-reveal="image"
+      >
+        <Image
+          src={photo.src}
+          alt={tImg("heroPortrait")}
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className="object-cover object-[64%_26%] lg:object-[72%_42%]"
+        />
+        {/* Mobile: the photograph dissolves into the page */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-paper lg:hidden"
+        />
+        {/* Desktop: the page ground reads back across the negative space */}
+        <div aria-hidden="true" className="scrim-hero hidden lg:block" />
+      </div>
 
-            <h1 className="mt-7 md:mt-9">
-              <span className="block text-[0.75rem] font-medium tracking-[0.3em] text-ink uppercase md:text-[0.8125rem] md:tracking-[0.34em]">
-                {t("name")}
-              </span>
-              <span
-                className="display t-hero mt-5 block md:mt-6"
+      {/* Masthead */}
+      <div className="relative flex flex-1 items-end pt-[50svh] sm:pt-[54svh] lg:items-center lg:pt-[104px]">
+        <div className="shell w-full">
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 py-12 lg:col-span-7 lg:py-0 xl:col-span-6">
+              <p className="meta text-blue" data-reveal>
+                {t("role")}
+              </p>
+
+              <h1 className="mt-8 md:mt-10">
+                <span className="block text-[0.75rem] font-semibold tracking-[0.34em] text-ink uppercase md:text-[0.8125rem] md:tracking-[0.38em]">
+                  {t("name")}
+                </span>
+                <span
+                  className="display t-hero mt-6 block md:mt-7"
+                  data-reveal
+                  style={{ "--reveal-delay": "80ms" } as React.CSSProperties}
+                >
+                  {t("statement")}
+                </span>
+              </h1>
+
+              <p
+                className="lead mt-9 max-w-[44ch]"
                 data-reveal
-                style={{ "--reveal-delay": "80ms" } as React.CSSProperties}
+                style={{ "--reveal-delay": "170ms" } as React.CSSProperties}
               >
-                {t("statement")}
-              </span>
-            </h1>
-          </div>
+                {t("support")}
+              </p>
 
-          {/* B — portrait */}
-          <div className="col-span-12 sm:col-span-10 sm:col-start-2 lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1 lg:self-end lg:pb-2">
-            <Photo
-              id="portraitPrimary"
-              className="aspect-[4/5] w-full lg:aspect-[4/5.15]"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 76vw, 38vw"
-              priority
-              position="52% 20%"
-            />
-          </div>
-
-          {/* C — support copy and calls to action */}
-          <div className="col-span-12 lg:col-span-6 lg:col-start-1 lg:row-start-2 lg:pt-2">
-            <p
-              className="lead max-w-[46ch]"
-              data-reveal
-              style={{ "--reveal-delay": "160ms" } as React.CSSProperties}
-            >
-              {t("support")}
-            </p>
-
-            <div
-              className="mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4"
-              data-reveal
-              style={{ "--reveal-delay": "240ms" } as React.CSSProperties}
-            >
-              <a href={`#${SECTIONS.journey}`} className="btn-solid">
-                {t("ctaPrimary")}
-                <ArrowRight />
-              </a>
-              <a
-                href={`#${SECTIONS.contact}`}
-                data-inquiry="speaking"
-                className="btn-outline"
+              <div
+                className="mt-11 flex flex-col gap-3 sm:flex-row sm:gap-4"
+                data-reveal
+                style={{ "--reveal-delay": "250ms" } as React.CSSProperties}
               >
-                {t("ctaSecondary")}
-              </a>
+                <a href={`#${SECTIONS.journey}`} className="btn-solid">
+                  {t("ctaPrimary")}
+                  <ArrowRight />
+                </a>
+                <a
+                  href={`#${SECTIONS.contact}`}
+                  data-inquiry="speaking"
+                  className="btn-outline"
+                >
+                  {t("ctaSecondary")}
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Descriptor rail */}
-      <div className="shell pt-14 pb-8 md:pt-20 md:pb-10">
-        <div className="hairline flex flex-wrap items-center gap-x-8 gap-y-3 pt-5 md:gap-x-12">
-          {DESCRIPTORS.map((d, i) => (
-            <span
-              key={d}
-              className="eyebrow text-[0.5875rem] md:text-[0.625rem]"
-              data-reveal
-              style={
-                { "--reveal-delay": `${300 + i * 70}ms` } as React.CSSProperties
-              }
-            >
-              {t(`descriptors.${d}`)}
+      <div className="relative">
+        <div className="shell pb-9 md:pb-11">
+          <div className="hairline flex flex-wrap items-center gap-x-8 gap-y-3 pt-5 md:gap-x-14">
+            {DESCRIPTORS.map((d, i) => (
+              <span
+                key={d}
+                className="meta"
+                data-reveal
+                style={
+                  {
+                    "--reveal-delay": `${330 + i * 70}ms`,
+                  } as React.CSSProperties
+                }
+              >
+                {t(`descriptors.${d}`)}
+              </span>
+            ))}
+            <span className="ml-auto hidden items-center gap-3 text-blue md:flex">
+              <span className="meta text-blue">{t("scroll")}</span>
+              <ArrowDown className="h-4 w-2 opacity-70" />
             </span>
-          ))}
-          <span className="ml-auto hidden items-center gap-3 text-ink-mute md:flex">
-            <span className="eyebrow text-[0.5625rem]">{t("scroll")}</span>
-            <ArrowDown className="h-4 w-2 opacity-50" />
-          </span>
+          </div>
         </div>
       </div>
     </section>

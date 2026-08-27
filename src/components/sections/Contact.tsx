@@ -22,8 +22,8 @@ export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
 
   /**
-   * Any link on the page carrying `data-inquiry="speaking"` (hero, speaker
-   * section, leadership section…) preselects the matching category here.
+   * Any link carrying `data-inquiry="speaking"` — in the hero, the speaker
+   * section, the coaching section — preselects the matching category here.
    */
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
@@ -43,12 +43,11 @@ export default function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
     const endpoint = contactEndpoint();
-
     const inquiryLabel = inquiry ? t(`inquiryTypes.${inquiry}`) : "—";
 
     if (!endpoint) {
-      // No form provider configured yet — compose an email instead so the
-      // form is never a dead end.
+      // No provider configured yet — compose an email so the form is never a
+      // dead end.
       if (CONTACT_EMAIL) {
         const subject = `${inquiryLabel} — ${data.get("name")}`;
         const body = [
@@ -93,41 +92,41 @@ export default function Contact() {
     }
   }
 
-  const fieldBase =
-    "w-full border-0 border-b border-white/18 bg-transparent py-3 text-[0.9375rem] text-white placeholder:text-white/30 transition-colors duration-300 focus:border-accent-hi focus:outline-none";
-  const labelBase =
-    "block text-[0.625rem] font-medium tracking-[0.15em] text-white/45 uppercase";
+  const field =
+    "w-full border-0 border-b border-white/16 bg-transparent py-3.5 text-[0.9375rem] text-white placeholder:text-white/28 transition-colors duration-300 focus:border-blue focus:outline-none";
+  const label =
+    "block text-[0.625rem] font-semibold tracking-[0.2em] text-blue uppercase";
 
   return (
     <section
       id={SECTIONS.contact}
-      className="on-dark scroll-mt-20 bg-ink py-24 md:py-32"
+      className="on-dark section-y scroll-mt-24 bg-ink"
       aria-labelledby="contact-heading"
     >
       <div className="shell">
-        <div className="grid grid-cols-12 gap-y-14 lg:gap-x-14">
+        <div className="grid grid-cols-12 gap-y-16 lg:gap-x-16">
           <div className="col-span-12 lg:col-span-5">
-            <p className="eyebrow" data-reveal>
-              {t("eyebrow")}
-            </p>
+            <div className="rule-top pt-5" data-reveal>
+              <p className="eyebrow">{t("eyebrow")}</p>
+            </div>
             <h2
               id="contact-heading"
-              className="display mt-6 text-[clamp(2rem,4.1vw,3.3rem)] leading-[1.08] tracking-[-0.018em]"
+              className="display mt-9 text-[clamp(2.2rem,4.4vw,3.6rem)] leading-[1.04] tracking-[-0.022em]"
               data-reveal
               style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
             >
               {t("headline")}
             </h2>
             <p
-              className="lead mt-7 max-w-[40ch]"
+              className="lead mt-8 max-w-[38ch]"
               data-reveal
               style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
             >
               {t("lead")}
             </p>
 
-            <div className="mt-11" data-reveal>
-              <p className="eyebrow mb-4">{t("followLabel")}</p>
+            <div className="mt-12" data-reveal>
+              <p className="meta mb-5">{t("followLabel")}</p>
               <ul className="flex items-center gap-3">
                 {SOCIAL_LINKS.filter((s) => s.href).map((s) => (
                   <li key={s.id}>
@@ -136,7 +135,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={s.label}
-                      className="flex h-11 w-11 items-center justify-center border border-white/15 text-white/70 transition-colors duration-400 hover:border-white/60 hover:text-white"
+                      className="flex h-12 w-12 items-center justify-center border border-white/14 text-white/65 transition-colors duration-400 hover:border-blue hover:text-white"
                     >
                       <SocialIcon id={s.id} className="h-[18px] w-[18px]" />
                     </a>
@@ -150,9 +149,8 @@ export default function Contact() {
           <div className="col-span-12 lg:col-span-6 lg:col-start-7">
             <form
               onSubmit={onSubmit}
-              className="grid grid-cols-1 gap-x-8 gap-y-7 sm:grid-cols-2"
+              className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2"
               data-reveal
-              noValidate={false}
             >
               {/* Honeypot */}
               <input
@@ -164,7 +162,7 @@ export default function Contact() {
               />
 
               <div>
-                <label htmlFor="cf-name" className={labelBase}>
+                <label htmlFor="cf-name" className={label}>
                   {t("form.name")}
                 </label>
                 <input
@@ -173,12 +171,12 @@ export default function Contact() {
                   type="text"
                   required
                   autoComplete="name"
-                  className={fieldBase}
+                  className={field}
                 />
               </div>
 
               <div>
-                <label htmlFor="cf-company" className={labelBase}>
+                <label htmlFor="cf-company" className={label}>
                   {t("form.company")}
                 </label>
                 <input
@@ -186,12 +184,12 @@ export default function Contact() {
                   name="company"
                   type="text"
                   autoComplete="organization"
-                  className={fieldBase}
+                  className={field}
                 />
               </div>
 
               <div>
-                <label htmlFor="cf-email" className={labelBase}>
+                <label htmlFor="cf-email" className={label}>
                   {t("form.email")}
                 </label>
                 <input
@@ -200,12 +198,12 @@ export default function Contact() {
                   type="email"
                   required
                   autoComplete="email"
-                  className={fieldBase}
+                  className={field}
                 />
               </div>
 
               <div>
-                <label htmlFor="cf-inquiry" className={labelBase}>
+                <label htmlFor="cf-inquiry" className={label}>
                   {t("form.inquiry")}
                 </label>
                 <div className="relative">
@@ -215,7 +213,7 @@ export default function Contact() {
                     required
                     value={inquiry}
                     onChange={(e) => setInquiry(e.target.value as InquiryType)}
-                    className={`${fieldBase} appearance-none pr-8`}
+                    className={`${field} appearance-none pr-8`}
                   >
                     <option value="" disabled className="bg-ink text-white">
                       {t("form.selectPlaceholder")}
@@ -233,7 +231,7 @@ export default function Contact() {
                   <svg
                     aria-hidden="true"
                     viewBox="0 0 11 7"
-                    className="pointer-events-none absolute top-1/2 right-1 h-[7px] w-[11px] -translate-y-1/2 text-white/45"
+                    className="pointer-events-none absolute top-1/2 right-1 h-[7px] w-[11px] -translate-y-1/2 text-blue"
                   >
                     <path
                       d="M1 1l4.5 4.5L10 1"
@@ -245,7 +243,7 @@ export default function Contact() {
               </div>
 
               <div className="sm:col-span-2">
-                <label htmlFor="cf-message" className={labelBase}>
+                <label htmlFor="cf-message" className={label}>
                   {t("form.message")}
                 </label>
                 <textarea
@@ -254,7 +252,7 @@ export default function Contact() {
                   required
                   rows={4}
                   placeholder={t("form.messagePlaceholder")}
-                  className={`${fieldBase} resize-y`}
+                  className={`${field} resize-y`}
                 />
               </div>
 
@@ -271,7 +269,7 @@ export default function Contact() {
                 <p
                   role="status"
                   aria-live="polite"
-                  className={`mt-5 text-[0.875rem] leading-[1.6] ${
+                  className={`mt-6 text-[0.875rem] leading-[1.6] ${
                     status === "error" ? "text-[#e8a49a]" : "text-white/70"
                   }`}
                 >

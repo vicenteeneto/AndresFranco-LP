@@ -34,7 +34,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
   {
     id: "workhqBootcamp",
     category: "event",
-    photo: "eventBootcampWide",
+    photo: "eventBootcamp",
     feature: true,
   },
   {
@@ -45,7 +45,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
   {
     id: "executiveBreakfast",
     category: "event",
-    photo: "eventExecutiveBreakfast",
+    photo: "eventCommunity",
   },
   {
     id: "pulsoDelPoder",

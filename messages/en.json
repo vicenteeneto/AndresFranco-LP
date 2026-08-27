@@ -6,7 +6,6 @@
     "ogAlt": "Andrés Franco — Leadership that transforms organizations, people and communities",
     "skipToContent": "Skip to main content"
   },
-
   "nav": {
     "profile": "Profile",
     "transformation": "Transformation",
@@ -22,7 +21,6 @@
     "languageLabel": "Select language",
     "backToTop": "Back to top"
   },
-
   "hero": {
     "role": "Vice President & Head of Latin America · SS&C Blue Prism",
     "name": "Andrés Franco",
@@ -38,7 +36,6 @@
     },
     "scroll": "Scroll"
   },
-
   "intro": {
     "eyebrow": "Profile",
     "headline": "More than 30 years building transformation.",
@@ -63,7 +60,6 @@
       }
     }
   },
-
   "transformation": {
     "eyebrow": "01 — Executive leadership",
     "headline": "Digital Transformation",
@@ -82,7 +78,6 @@
     },
     "cta": "See my experience"
   },
-
   "leadership": {
     "eyebrow": "02 — Leadership and coaching",
     "headline": "Developing leaders who develop organizations.",
@@ -117,7 +112,6 @@
     },
     "cta": "Leadership & Coaching"
   },
-
   "speaker": {
     "eyebrow": "03 — Speaker",
     "headline": "Ideas that move people and organizations.",
@@ -135,7 +129,6 @@
     },
     "cta": "Invite Andrés"
   },
-
   "impact": {
     "eyebrow": "04 — Social impact",
     "headline": "Leadership with purpose.",
@@ -149,7 +142,6 @@
     },
     "cta": "Visit Sereniti Foundation"
   },
-
   "recognition": {
     "eyebrow": "Recognition",
     "title": "Certificate of Special Congressional Recognition",
@@ -157,7 +149,6 @@
     "year": "2023",
     "body": "Awarded to Andrés Franco and Jennifer Heegaard in recognition of their contribution to the Hispanic community and to initiatives in social impact, education and community development."
   },
-
   "pulso": {
     "eyebrow": "Media · Own programme",
     "title": "El Pulso del Poder",
@@ -175,7 +166,6 @@
     "playLabel": "Play episode",
     "episodesLabel": "Episodes"
   },
-
   "media": {
     "eyebrow": "Insights & Media",
     "headline": "Conversations, gatherings and publications.",
@@ -228,7 +218,6 @@
       }
     }
   },
-
   "journey": {
     "eyebrow": "Journey",
     "headline": "A career built through people, markets and transformation.",
@@ -272,7 +261,6 @@
       }
     }
   },
-
   "contact": {
     "eyebrow": "Contact",
     "headline": "Let's build something with impact.",
@@ -301,7 +289,6 @@
     },
     "followLabel": "Follow"
   },
-
   "footer": {
     "role": "Vice President & Head of Latin America · SS&C Blue Prism",
     "navLabel": "Sections",
@@ -309,14 +296,13 @@
     "disclaimer": "Personal site of Andrés Franco. SS&C Blue Prism is the organization where he holds his current executive role; this site is not an official communication of that company or of any of the organizations mentioned.",
     "rights": "All rights reserved."
   },
-
   "images": {
-    "portraitPrimary": "Professional portrait of Andrés Franco",
-    "portraitEditorial": "Black and white editorial portrait of Andrés Franco",
+    "heroPortrait": "Professional portrait of Andrés Franco",
+    "portraitBw": "Black and white editorial portrait of Andrés Franco",
     "portraitFormal": "Corporate portrait of Andrés Franco",
-    "eventBootcampRoom": "Andrés Franco with the participants of an executive training programme",
-    "eventBootcampWide": "Participants of the WorkHQ Bootcamp on agentic workflows",
+    "eventAudience": "Andrés Franco with the participants of a professional gathering",
+    "eventBootcamp": "Participants of the WorkHQ Bootcamp on agentic workflows",
     "eventRoadshow": "Executive gathering with clients and partners in Latin America",
-    "eventExecutiveBreakfast": "Working session with business and technology leaders"
+    "eventCommunity": "A gathering of the professional community in a relaxed setting"
   }
 }

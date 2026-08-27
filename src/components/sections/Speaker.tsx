@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Photo from "../ui/Photo";
+import SectionOpen from "../ui/SectionOpen";
 import { ArrowRight } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import { SPEAKING_TOPICS } from "@/content/speaking";
@@ -10,18 +11,16 @@ export default function Speaker() {
   return (
     <section
       id={SECTIONS.speaker}
-      className="section-y scroll-mt-20 bg-paper-deep"
+      className="section-y scroll-mt-24 bg-paper-warm"
       aria-labelledby="speaker-heading"
     >
       <div className="shell">
-        <div className="grid grid-cols-12 items-end gap-y-8 lg:gap-x-14">
+        <div className="grid grid-cols-12 items-end gap-y-10 lg:gap-x-16">
           <div className="col-span-12 lg:col-span-7">
-            <p className="eyebrow" data-reveal>
-              {t("eyebrow")}
-            </p>
+            <SectionOpen label={t("eyebrow")} />
             <h2
               id="speaker-heading"
-              className="display t-h2 mt-6 max-w-[16ch]"
+              className="display t-h2 mt-9 max-w-[15ch]"
               data-reveal
               style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
             >
@@ -38,50 +37,49 @@ export default function Speaker() {
             </p>
           </div>
         </div>
+      </div>
 
-        {/* Editorial photography pair */}
-        <div className="mt-14 grid grid-cols-12 gap-y-6 md:mt-20 md:gap-x-6 lg:gap-x-8">
-          <div className="col-span-12 lg:col-span-7">
-            <Photo
-              id="eventBootcampRoom"
-              className="aspect-[4/3] w-full"
-              sizes="(max-width: 1024px) 100vw, 56vw"
-              editorial
-            />
-          </div>
-          <div className="col-span-12 sm:col-span-8 sm:col-start-5 lg:col-span-4 lg:col-start-9 lg:self-end lg:pb-14">
-            <Photo
-              id="eventRoadshow"
-              className="aspect-[4/3] w-full"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 62vw, 32vw"
-              editorial
-              revealDelay={140}
-            />
-            <p className="body-copy mt-6 text-ink-mute" data-reveal>
-              {t("body")}
-            </p>
-          </div>
-        </div>
+      {/*
+        One photograph, as wide as the page allows. A room this size says more
+        about reach than three thumbnails ever could — so it gets the whole
+        width and a cinematic crop, and keeps its scale on mobile by getting
+        taller instead of smaller.
+      */}
+      <div className="mt-16 md:mt-24">
+        <Photo
+          id="eventAudience"
+          className="aspect-[5/4] w-full sm:aspect-[16/9] lg:aspect-[21/9]"
+          sizes="100vw"
+          editorial
+        />
+      </div>
+
+      <div className="shell">
+        <p className="body-copy mt-14 max-w-[58ch] md:mt-20" data-reveal>
+          {t("body")}
+        </p>
 
         {/* Topics */}
         <div className="mt-16 md:mt-24">
-          <p className="eyebrow mb-7" data-reveal>
+          <p className="meta mb-9" data-reveal>
             {t("topicsLabel")}
           </p>
-          <ul className="border-t border-rule">
+          <ul className="grid grid-cols-1 gap-x-16 md:grid-cols-2">
             {SPEAKING_TOPICS.map((key, i) => (
               <li
                 key={key}
-                className="group flex items-baseline justify-between gap-6 border-b border-rule-soft py-4 md:py-5"
+                className={`flex items-baseline justify-between gap-6 border-t border-rule py-5 md:py-6 ${
+                  i >= SPEAKING_TOPICS.length - 2 ? "border-b" : ""
+                }`}
                 data-reveal
                 style={
-                  { "--reveal-delay": `${i * 50}ms` } as React.CSSProperties
+                  { "--reveal-delay": `${(i % 4) * 60}ms` } as React.CSSProperties
                 }
               >
-                <span className="display text-[clamp(1.3rem,2.4vw,1.95rem)] leading-[1.25]">
+                <span className="display text-[clamp(1.3rem,2.3vw,1.9rem)] leading-[1.25]">
                   {t(`topics.${key}`)}
                 </span>
-                <span className="eyebrow shrink-0 text-[0.5625rem] tabular-nums opacity-60">
+                <span className="eyebrow shrink-0 text-[0.5625rem] tabular-nums">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </li>
@@ -91,7 +89,7 @@ export default function Speaker() {
           <a
             href={`#${SECTIONS.contact}`}
             data-inquiry="speaking"
-            className="btn-solid mt-11"
+            className="btn-solid mt-14"
             data-reveal
           >
             {t("cta")}

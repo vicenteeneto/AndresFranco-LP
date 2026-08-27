@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import LiteYouTube from "../ui/LiteYouTube";
+import SectionOpen from "../ui/SectionOpen";
 import { ArrowUpRight, PlayMark } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import { PULSO, PULSO_TOPICS } from "@/content/media";
@@ -11,46 +12,44 @@ export default function Pulso() {
   return (
     <section
       id={SECTIONS.pulso}
-      className="on-dark scroll-mt-20 bg-navy py-24 md:py-32"
+      className="on-dark section-y scroll-mt-24 bg-navy"
       aria-labelledby="pulso-heading"
     >
       <div className="shell">
-        <div className="grid grid-cols-12 gap-y-12 lg:gap-x-14">
+        <div className="grid grid-cols-12 gap-y-14 lg:gap-x-16">
           {/* Programme identity */}
-          <div className="col-span-12 lg:col-span-5">
-            <p className="eyebrow" data-reveal>
-              {t("eyebrow")}
-            </p>
+          <div className="col-span-12 lg:col-span-4">
+            <SectionOpen label={t("eyebrow")} />
             <h2
               id="pulso-heading"
-              className="display mt-6 text-[clamp(2.15rem,4.5vw,3.6rem)] leading-[1.06] tracking-[-0.02em]"
+              className="display mt-9 text-[clamp(2.1rem,4vw,3.2rem)] leading-[1.06] tracking-[-0.022em]"
               data-reveal
               style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
             >
               {t("title")}
             </h2>
             <p
-              className="lead mt-7 max-w-[42ch]"
+              className="lead mt-8 max-w-[38ch]"
               data-reveal
               style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
             >
               {t("subtitle")}
             </p>
             <p
-              className="body-copy mt-6 max-w-[46ch] text-white/55"
+              className="body-copy mt-6 max-w-[42ch] text-white/55"
               data-reveal
               style={{ "--reveal-delay": "170ms" } as React.CSSProperties}
             >
               {t("body")}
             </p>
 
-            <div className="mt-9" data-reveal>
-              <p className="eyebrow mb-4">{t("topicsLabel")}</p>
-              <ul className="flex flex-wrap gap-x-2.5 gap-y-2.5">
+            <div className="mt-10" data-reveal>
+              <p className="meta mb-5">{t("topicsLabel")}</p>
+              <ul>
                 {PULSO_TOPICS.map((key) => (
                   <li
                     key={key}
-                    className="border border-navy-line px-3.5 py-2 text-[0.6875rem] font-medium tracking-[0.1em] text-white/70 uppercase"
+                    className="border-t border-white/12 py-3 text-[0.9375rem] text-white/72 last:border-b"
                   >
                     {t(`topics.${key}`)}
                   </li>
@@ -63,7 +62,7 @@ export default function Pulso() {
                 href={PULSO.channelUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline mt-9"
+                className="btn-outline mt-10"
                 data-reveal
               >
                 {t("cta")}
@@ -72,8 +71,8 @@ export default function Pulso() {
             )}
           </div>
 
-          {/* Player / title card */}
-          <div className="col-span-12 lg:col-span-6 lg:col-start-7">
+          {/* The programme itself, running off the right edge of the page */}
+          <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:bleed-r">
             {featured ? (
               <LiteYouTube
                 videoId={featured.videoId}
@@ -86,17 +85,17 @@ export default function Pulso() {
                 href={PULSO.channelUrl || undefined}
                 target={PULSO.channelUrl ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="group block aspect-video w-full border border-navy-line bg-navy-soft/45 transition-colors duration-500 hover:bg-navy-soft/80"
+                className="group block aspect-video w-full border border-white/12 bg-navy-soft/45 transition-colors duration-500 hover:bg-navy-soft/80"
                 data-reveal
               >
-                <span className="flex h-full flex-col justify-between p-7 md:p-10">
+                <span className="flex h-full flex-col justify-between p-8 md:p-12">
                   <span className="eyebrow">{t("eyebrow")}</span>
                   <span>
                     <span className="display block text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.14] text-white">
                       {t("title")}
                     </span>
-                    <span className="mt-4 flex items-center gap-3 text-[0.6875rem] font-medium tracking-[0.13em] text-white/60 uppercase">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-navy-line transition-colors duration-500 group-hover:border-white/60">
+                    <span className="mt-5 flex items-center gap-3.5 text-[0.6875rem] font-semibold tracking-[0.14em] text-white/60 uppercase">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors duration-500 group-hover:border-white/60">
                         <PlayMark className="h-3 w-3 translate-x-[1px]" />
                       </span>
                       {t("cta")}
@@ -107,8 +106,8 @@ export default function Pulso() {
             )}
 
             {rest.length > 0 && (
-              <div className="mt-8">
-                <p className="eyebrow mb-4">{t("episodesLabel")}</p>
+              <div className="mt-6">
+                <p className="meta mb-4">{t("episodesLabel")}</p>
                 <ul className="grid grid-cols-3 gap-3 sm:gap-4">
                   {rest.slice(0, 3).map((ep) => (
                     <li key={ep.videoId}>
