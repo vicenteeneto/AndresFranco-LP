@@ -89,7 +89,7 @@ export default function LiteYouTube({
       />
       <span className="absolute inset-0 flex items-center justify-center">
         <span
-          className={`flex items-center justify-center rounded-full bg-blue pl-1 text-white shadow-[0_2px_28px_rgba(0,107,255,.45)] transition-transform duration-500 group-hover:scale-105 ${
+          className={`flex items-center justify-center rounded-full bg-gold pl-1 text-white shadow-[0_2px_28px_rgba(0,107,255,.45)] transition-transform duration-500 group-hover:scale-105 ${
             compact ? "h-10 w-10" : "h-16 w-16 md:h-[4.5rem] md:w-[4.5rem]"
           }`}
         >

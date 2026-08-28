@@ -21,7 +21,7 @@ export const SECTIONS = {
 /**
  * The header menu, in page order.
  *
- * Contacto is not in this list — it is the blue button beside it, and two
+ * Contacto is not in this list — it is the gold button beside it, and two
  * links to the same anchor is one more than the page needs.
  */
 export const NAV_ITEMS = [

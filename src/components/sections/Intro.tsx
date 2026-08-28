@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import SectionOpen from "../ui/SectionOpen";
+import Curated from "../ui/Curated";
 import { SECTIONS } from "@/content/sections";
 
 /**
@@ -12,6 +13,7 @@ import { SECTIONS } from "@/content/sections";
  */
 export default function Intro() {
   const t = useTranslations("intro");
+  const tc = useTranslations("common");
 
   return (
     <section
@@ -33,32 +35,43 @@ export default function Intro() {
             </h2>
           </div>
 
-          <div className="col-span-12 lg:col-span-6 lg:col-start-7">
-            <p
-              className="lead"
-              data-reveal
-              style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
-            >
-              {t("body1")}
-            </p>
-            <p
-              className="body-copy mt-6 text-fg-3"
-              data-reveal
-              style={{ "--reveal-delay": "170ms" } as React.CSSProperties}
-            >
-              {t("body2")}
-            </p>
-          </div>
+          {/*
+            On a phone the opening paragraph carries the section and the
+            second one waits behind a link. This is also where the hero's
+            supporting paragraph now lands on small screens, so the two
+            together would be three paragraphs before the first image.
+          */}
+          <Curated
+            keep={1}
+            moreLabel={tc("moreProfile")}
+            lessLabel={tc("lessProfile")}
+            className="col-span-12 lg:col-span-6 lg:col-start-7"
+          >
+            <div>
+              <p
+                className="lead"
+                data-reveal
+                style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
+              >
+                {t("body1")}
+              </p>
+              <p
+                className="body-copy mt-6 text-fg-3"
+                data-reveal
+                style={{ "--reveal-delay": "170ms" } as React.CSSProperties}
+              >
+                {t("body2")}
+              </p>
+            </div>
+          </Curated>
         </div>
 
         {/* The line the whole page turns on, given its own space */}
         <blockquote
-          className="mt-16 border-l-2 border-blue pl-6 md:mt-24 md:pl-9"
+          className="mt-16 border-l-2 border-gold pl-6 md:mt-24 md:pl-9"
           data-reveal
         >
-          <p className="display t-statement max-w-[24ch]">
-            {t("statement")}
-          </p>
+          <p className="display t-statement max-w-[24ch]">{t("statement")}</p>
         </blockquote>
       </div>
     </section>

@@ -133,3 +133,18 @@ export function SocialIcon({
     </svg>
   );
 }
+
+export function Chevron({ className = "" }: IconProps) {
+  return (
+    <svg
+      className={className}
+      width="11"
+      height="7"
+      viewBox="0 0 11 7"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path d="M1 1l4.5 4.5L10 1" stroke="currentColor" strokeWidth="1.3" />
+    </svg>
+  );
+}

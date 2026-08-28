@@ -7,39 +7,49 @@
 @import "@fontsource-variable/inter/index.css";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   DESIGN TOKENS — DARK EXECUTIVE TECHNOLOGY
+   DESIGN TOKENS — EXECUTIVE DARK · PETROL · MUTED GOLD
 
-   One dark ground in three depths, one electric blue, two text greys.
+   A near-black ground with a green cast, deep petrol for anything raised out
+   of it, and a single muted gold as the only accent.
 
-   Depth never comes from black: #050A14 is the page, #09111F the bands that
-   need to separate from it, #0B1525 the cards that sit on top. Each step is
+   Depth never comes from black: #08110F is the page, #0D1714 the bands that
+   need to separate from it, #101C18 the cards that sit on top. Each step is
    small on purpose — the page should read as one continuous surface with
    things raised out of it, not as a stack of differently coloured sections.
 
-   The blue is a system, not a decoration: section numbers, labels, rules
-   under headings, links, the primary button, the accent in the wordmark.
-   Nothing else on the page is coloured except the photographs.
+   The gold is a system, not a decoration: section numbers, labels, rules,
+   figures, links, the primary button, the surname in the wordmark. It is
+   bronze rather than yellow and never glows — restraint is what keeps it
+   reading as executive rather than as luxury packaging. Petrol carries the
+   grounds, the cards and the quiet fills; sage is the second link colour
+   where gold on gold would be too much.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 @theme {
   /* Grounds */
-  --color-bg: #050a14; /* the page */
-  --color-bg-2: #09111f; /* raised bands */
-  --color-card: #0b1525; /* cards and panels */
+  --color-bg: #08110f; /* the page */
+  --color-bg-2: #0d1714; /* raised bands */
+  --color-card: #101c18; /* cards and panels */
 
-  /* Blue system */
-  --color-blue: #006bff;
-  --color-blue-2: #3a8dff;
-  --color-blue-dim: rgba(0, 107, 255, 0.14);
+  /* Petrol */
+  --color-petrol: #16362f;
+  --color-petrol-light: #315b50;
+  --color-sage: #7fa89a;
+
+  /* Gold system */
+  --color-gold: #c4a86a;
+  --color-gold-2: #a58d58;
+  --color-gold-hover: #d1ba7b;
+  --color-gold-dim: rgba(196, 168, 106, 0.12);
 
   /* Text */
-  --color-fg: #f3f6fa;
-  --color-fg-2: #9aa7b5;
-  --color-fg-3: #63707e;
+  --color-fg: #f2f0ea;
+  --color-fg-2: #a9b3ae;
+  --color-fg-3: #8b9791;
 
   /* Lines */
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-2: rgba(255, 255, 255, 0.14);
+  --color-line: rgba(196, 168, 106, 0.14);
+  --color-line-2: rgba(196, 168, 106, 0.32);
 
   /* Type */
   --font-display: "Archivo Variable", "Archivo", ui-sans-serif, system-ui,
@@ -90,10 +100,10 @@ body {
 /*
  * The technical grid.
  *
- * Fixed, behind everything, and almost invisible: a 96px lattice at 3.5%
- * white, with a wide radial wash so the corners fall away and the middle of
- * the page never looks like graph paper. It is meant to be felt at the edges
- * of vision, not read.
+ * Fixed, behind everything, and almost invisible: a 96px lattice drawn in
+ * gold one way and petrol the other, with a wide radial wash so the corners
+ * fall away and the middle of the page never looks like graph paper. It is
+ * meant to be felt at the edges of vision, not read.
  */
 body::before {
   content: "";
@@ -108,8 +118,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    linear-gradient(to right, rgba(196, 168, 106, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(49, 91, 80, 0.1) 1px, transparent 1px);
   background-size: 96px 96px;
   mask-image: radial-gradient(
     ellipse 90% 70% at 50% 30%,
@@ -120,12 +130,12 @@ body::before {
 }
 
 ::selection {
-  background-color: var(--color-blue);
-  color: #fff;
+  background-color: var(--color-petrol-light);
+  color: var(--color-fg);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-blue-2);
+  outline: 2px solid var(--color-gold);
   outline-offset: 3px;
   border-radius: 1px;
 }
@@ -152,17 +162,31 @@ img {
   text-wrap: balance;
 }
 
-/* The name in the hero. Enormous, tight, and slightly more condensed than
-   everything else so it reads as a mark rather than as a heading. */
+/*
+ * The name in the hero. Enormous, tight, and slightly more condensed than
+ * everything else so it reads as a mark rather than as a heading.
+ *
+ * Two sizes, not one curve: on a phone the name sits beside the portrait and
+ * has to fill its column, which needs a much steeper rate against the
+ * viewport than the desktop composition — where the same curve would run the
+ * name off the screen.
+ */
 @utility t-name {
   font-family: var(--font-display);
   font-weight: 800;
   font-stretch: 86%;
-  font-size: clamp(3.25rem, 9vw, 8rem);
-  line-height: 0.96;
+  font-size: clamp(3.5rem, 15.5vw, 4.75rem);
+  line-height: 0.94;
   letter-spacing: -0.035em;
   text-transform: uppercase;
   color: var(--color-fg);
+}
+
+@media (min-width: 1024px) {
+  .t-name {
+    font-size: clamp(4.5rem, 9vw, 8rem);
+    line-height: 0.96;
+  }
 }
 
 @utility t-h2 {
@@ -190,15 +214,15 @@ img {
   letter-spacing: -0.026em;
 }
 
-/* Section label. Always blue, usually paired with a number. */
-@utility label-blue {
+/* Section label. Always gold, usually paired with a number. */
+@utility label-gold {
   font-family: var(--font-sans);
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   line-height: 1;
-  color: var(--color-blue-2);
+  color: var(--color-gold);
 }
 
 /* Metadata — categories, dates, small interface labels. */
@@ -220,7 +244,7 @@ img {
   font-size: clamp(2.6rem, 4.6vw, 4rem);
   line-height: 1;
   letter-spacing: -0.04em;
-  color: var(--color-fg);
+  color: var(--color-gold);
   font-variant-numeric: tabular-nums;
 }
 
@@ -316,6 +340,12 @@ img {
   border: 1px solid var(--color-line);
 }
 
+/* A card that needs to read as a distinct surface, not just a panel. */
+@utility card-petrol {
+  background-color: color-mix(in srgb, var(--color-petrol) 55%, var(--color-card));
+  border: 1px solid var(--color-line);
+}
+
 /* Small technical chip. Used for capability and topic lists. */
 @utility tag {
   display: inline-flex;
@@ -337,36 +367,42 @@ img {
 }
 
 .tag:hover {
-  border-color: var(--color-blue);
-  color: var(--color-fg);
-  background-color: var(--color-blue-dim);
+  border-color: var(--color-gold);
+  color: var(--color-gold-hover);
+  background-color: var(--color-gold-dim);
 }
 
-/* Primary — electric blue */
-@utility btn-blue {
+/*
+ * Primary — muted gold with the page's own dark as its text.
+ *
+ * Gold is light enough that white on it would be illegible; using the ground
+ * colour instead is also what keeps the button reading as bronze rather than
+ * as a yellow highlight.
+ */
+@utility btn-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-  background-color: var(--color-blue);
-  color: #fff;
+  background-color: var(--color-gold);
+  color: var(--color-bg);
   font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 1.05rem 1.9rem;
-  border: 1px solid var(--color-blue);
+  border: 1px solid var(--color-gold);
   transition:
     background-color 0.35s ease,
     border-color 0.35s ease,
     box-shadow 0.35s ease;
 }
 
-.btn-blue:hover {
-  background-color: var(--color-blue-2);
-  border-color: var(--color-blue-2);
-  box-shadow: 0 0 0 4px var(--color-blue-dim);
+.btn-gold:hover {
+  background-color: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
+  box-shadow: 0 0 0 4px var(--color-gold-dim);
 }
 
 /* Secondary — hairline outline */
@@ -390,8 +426,8 @@ img {
 }
 
 .btn-ghost:hover {
-  border-color: var(--color-blue);
-  background-color: var(--color-blue-dim);
+  border-color: var(--color-gold);
+  background-color: var(--color-gold-dim);
 }
 
 /* Text link with a rule that fills on hover */
@@ -405,7 +441,7 @@ img {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-blue-2);
+  color: var(--color-gold);
   padding-block: 0.55rem;
   transition: color 0.3s ease;
 }
@@ -422,7 +458,7 @@ img {
 }
 
 .link-rule:hover {
-  color: var(--color-fg);
+  color: var(--color-gold-hover);
 }
 
 .link-rule:hover::after {
@@ -458,17 +494,19 @@ img {
 }
 
 @utility photo-editorial {
-  filter: saturate(0.8) contrast(1.04) brightness(0.92);
+  filter: saturate(0.72) contrast(1.05) brightness(0.9) sepia(0.06);
 }
 
 /*
  * The hero photograph does not sit in a box — it dissolves.
  *
- * A scrim would not do it: laying translucent navy over a brightly lit
+ * A scrim would not do it: laying translucent green over a brightly lit
  * portrait just greys the portrait out. Masking removes the pixels instead,
  * so the light on Andrés stays exactly as photographed and the frame itself
- * disappears into the page. Two masks intersect — one softening the inner
- * edge where the text is, one taking the bottom into the numbers band.
+ * disappears into the page.
+ *
+ * Desktop: two masks intersect — one softening the inner edge where the text
+ * is, one taking the bottom into the numbers band.
  */
 @utility hero-mask {
   --hero-fade:
@@ -492,18 +530,34 @@ img {
   mask-composite: intersect;
 }
 
-/* On a phone the photograph is a band above the name, so it only has to
-   dissolve downwards. */
+/*
+ * Phone: the portrait stands in its own column to the right of the name, so
+ * it dissolves on three sides — hardest on the left, where the last letters
+ * of ANDRÉS and FRANCO are allowed to run over it. That overlap is the point
+ * of the composition: it is what makes the two read as one image rather than
+ * as a name stacked above a photograph.
+ */
 @utility hero-mask-mobile {
-  --hero-fade-m: linear-gradient(
-    to bottom,
-    #000 30%,
-    rgba(0, 0, 0, 0.72) 58%,
-    rgba(0, 0, 0, 0.3) 82%,
-    transparent 100%
-  );
+  --hero-fade-m:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 14%,
+      rgba(0, 0, 0, 0.78) 30%,
+      #000 46%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55) 0%,
+      #000 16%,
+      #000 62%,
+      rgba(0, 0, 0, 0.4) 88%,
+      transparent 100%
+    );
   -webkit-mask-image: var(--hero-fade-m);
+  -webkit-mask-composite: source-in;
   mask-image: var(--hero-fade-m);
+  mask-composite: intersect;
 }
 
 /* Fades a photograph into the ground along one edge, so nothing sits in a
@@ -528,6 +582,57 @@ img {
     color-mix(in srgb, var(--color-bg) 55%, transparent) 22%,
     transparent 46%
   );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CURATED MOBILE
+
+   The desktop shows everything; the phone shows the first few items and a
+   button that reveals the rest. The cut is done in CSS rather than by
+   conditionally rendering, so the full list is always in the markup — search
+   engines, screen readers with the list expanded, and anyone who prints the
+   page get the whole thing either way.
+
+   `data-keep` says how many items survive the fold. It has to be spelled out
+   per value because nth-child cannot take a custom property.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  [data-curated][data-open="false"][data-keep="1"] > :first-child > :nth-child(n + 2),
+  [data-curated][data-open="false"][data-keep="2"] > :first-child > :nth-child(n + 3),
+  [data-curated][data-open="false"][data-keep="3"] > :first-child > :nth-child(n + 4),
+  [data-curated][data-open="false"][data-keep="4"] > :first-child > :nth-child(n + 5) {
+    display: none;
+  }
+}
+
+/* The toggle itself: a hairline-underlined label, never a heavy button. */
+@utility more-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  padding-block: 0.65rem;
+  border-bottom: 1px solid var(--color-line-2);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.more-toggle:hover {
+  color: var(--color-gold-hover);
+  border-color: var(--color-gold);
+}
+
+.more-toggle svg {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.more-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

@@ -33,9 +33,7 @@ export default function LanguageSwitcher({
             aria-current={locale === active ? "true" : undefined}
             title={localeNames[locale]}
             className={`text-[0.6875rem] font-semibold tracking-[0.16em] transition-colors duration-300 ${
-              locale === active
-                ? "text-fg"
-                : "text-fg-3 hover:text-blue-2"
+              locale === active ? "text-fg" : "text-fg-3 hover:text-gold-hover"
             }`}
           >
             {localeLabels[locale]}

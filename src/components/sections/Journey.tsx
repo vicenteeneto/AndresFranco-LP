@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import SectionOpen from "../ui/SectionOpen";
+import Curated from "../ui/Curated";
 import { SECTIONS } from "@/content/sections";
 import { JOURNEY } from "@/content/journey";
 
@@ -13,6 +14,7 @@ import { JOURNEY } from "@/content/journey";
  */
 export default function Journey() {
   const t = useTranslations("journey");
+  const tc = useTranslations("common");
 
   return (
     <section
@@ -34,7 +36,7 @@ export default function Journey() {
                 {t("headline")}
               </h2>
               <p
-                className="body-copy mt-7 max-w-[36ch] text-fg-3"
+                className="body-copy mt-7 hidden max-w-[36ch] text-fg-3 lg:block"
                 data-reveal
                 style={{ "--reveal-delay": "110ms" } as React.CSSProperties}
               >
@@ -43,41 +45,48 @@ export default function Journey() {
             </div>
           </div>
 
-          <ol className="col-span-12 lg:col-span-7 lg:col-start-6">
-            {JOURNEY.map((m, i) => (
-              <li
-                key={m.id}
-                className="border-t border-line py-7 last:border-b md:py-9"
-                data-reveal
-                style={
-                  { "--reveal-delay": `${(i % 3) * 60}ms` } as React.CSSProperties
-                }
-              >
-                {/*
+          <Curated
+            keep={4}
+            moreLabel={tc("more")}
+            lessLabel={tc("less")}
+            className="col-span-12 lg:col-span-7 lg:col-start-6"
+          >
+            <ol>
+              {JOURNEY.map((m, i) => (
+                <li
+                  key={m.id}
+                  className="border-t border-line py-7 last:border-b md:py-9"
+                  data-reveal
+                  style={
+                    {
+                      "--reveal-delay": `${(i % 3) * 60}ms`,
+                    } as React.CSSProperties
+                  }
+                >
+                  {/*
                   The period sits above the milestone rather than in a column
                   of its own. Only the current role carries a label — four
                   empty cells down the left of a rail read as a mistake, not
                   as a timeline.
                 */}
-                {(m.current || m.period) && (
-                  <p
-                    className={`meta mb-4 ${m.current ? "text-blue-2" : ""}`}
-                  >
-                    {m.current ? t("currentLabel") : m.period}
+                  {(m.current || m.period) && (
+                    <p className={`meta mb-4 ${m.current ? "text-gold" : ""}`}>
+                      {m.current ? t("currentLabel") : m.period}
+                    </p>
+                  )}
+                  <h3 className="display text-[1.2rem] leading-[1.24] md:text-[1.45rem]">
+                    {t(`items.${m.id}.title`)}
+                  </h3>
+                  <p className="mt-2 text-[0.75rem] font-semibold tracking-[0.12em] text-gold uppercase">
+                    {t(`items.${m.id}.role`)}
                   </p>
-                )}
-                <h3 className="display text-[1.2rem] leading-[1.24] md:text-[1.45rem]">
-                  {t(`items.${m.id}.title`)}
-                </h3>
-                <p className="mt-2 text-[0.75rem] font-semibold tracking-[0.12em] text-blue-2 uppercase">
-                  {t(`items.${m.id}.role`)}
-                </p>
-                <p className="body-copy mt-4 max-w-[56ch] text-fg-3">
-                  {t(`items.${m.id}.body`)}
-                </p>
-              </li>
-            ))}
-          </ol>
+                  <p className="body-copy mt-4 hidden max-w-[56ch] text-fg-3 lg:block">
+                    {t(`items.${m.id}.body`)}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </Curated>
         </div>
       </div>
     </section>

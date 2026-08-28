@@ -154,7 +154,7 @@ export default async function LocaleLayout({
   return (
     <html lang={localeTags[locale as Locale]} suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#050a14" />
+        <meta name="theme-color" content="#08110f" />
         <script
           type="application/ld+json"
           suppressHydrationWarning
@@ -165,7 +165,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <a
             href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-blue focus:px-4 focus:py-2 focus:text-white"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-gold focus:px-4 focus:py-2 focus:text-bg"
           >
             {t("skipToContent")}
           </a>

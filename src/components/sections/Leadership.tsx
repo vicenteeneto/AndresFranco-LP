@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Photo from "../ui/Photo";
 import SectionOpen from "../ui/SectionOpen";
+import Curated from "../ui/Curated";
 import { ArrowRight } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import { LEADERSHIP_PILLARS } from "@/content/speaking";
@@ -18,6 +19,7 @@ import { LEADERSHIP_PILLARS } from "@/content/speaking";
  */
 export default function Leadership() {
   const t = useTranslations("leadership");
+  const tc = useTranslations("common");
 
   return (
     <section
@@ -53,7 +55,7 @@ export default function Leadership() {
               {t("lead")}
             </p>
             <p
-              className="body-copy mt-6 text-fg-3"
+              className="body-copy mt-6 hidden text-fg-3 lg:block"
               data-reveal
               style={{ "--reveal-delay": "160ms" } as React.CSSProperties}
             >
@@ -64,31 +66,39 @@ export default function Leadership() {
               <p className="meta mb-5" data-reveal>
                 {t("pillarsLabel")}
               </p>
-              <ul>
-                {LEADERSHIP_PILLARS.map((key, i) => (
-                  <li
-                    key={key}
-                    className="flex items-baseline gap-5 border-t border-line py-3.5 last:border-b sm:gap-7"
-                    data-reveal
-                    style={
-                      { "--reveal-delay": `${i * 45}ms` } as React.CSSProperties
-                    }
-                  >
-                    <span className="label-blue shrink-0 tabular-nums">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="display text-[1.0625rem] leading-[1.35] md:text-[1.15rem]">
-                      {t(`pillars.${key}`)}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <Curated
+                keep={3}
+                moreLabel={tc("moreAreas")}
+                lessLabel={tc("lessAreas")}
+              >
+                <ul>
+                  {LEADERSHIP_PILLARS.map((key, i) => (
+                    <li
+                      key={key}
+                      className="flex items-baseline gap-5 border-t border-line py-3.5 last:border-b sm:gap-7"
+                      data-reveal
+                      style={
+                        {
+                          "--reveal-delay": `${i * 45}ms`,
+                        } as React.CSSProperties
+                      }
+                    >
+                      <span className="label-gold shrink-0 tabular-nums">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="display text-[1.0625rem] leading-[1.35] md:text-[1.15rem]">
+                        {t(`pillars.${key}`)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </Curated>
             </div>
 
             <a
               href={`#${SECTIONS.contact}`}
               data-inquiry="coaching"
-              className="btn-blue mt-10"
+              className="btn-gold mt-10"
               data-reveal
             >
               {t("cta")}

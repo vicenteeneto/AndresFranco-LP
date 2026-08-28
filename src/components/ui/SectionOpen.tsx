@@ -1,6 +1,6 @@
 /**
  * The opening motif every section shares: a hairline across the column, the
- * numbered label in blue beneath it, and a short blue tick sitting on the
+ * numbered label in gold beneath it, and a short gold tick sitting on the
  * rule at the left.
  *
  * It is the smallest thing holding the page together as one continuous
@@ -31,9 +31,9 @@ export default function SectionOpen({
     >
       <span
         aria-hidden="true"
-        className="absolute top-0 left-0 h-[3px] w-10 -translate-y-px bg-blue"
+        className="absolute top-0 left-0 h-[3px] w-10 -translate-y-px bg-gold"
       />
-      <p className="label-blue">
+      <p className="label-gold">
         {index && <span className="tabular-nums">{index} — </span>}
         {label}
       </p>

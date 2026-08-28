@@ -258,5 +258,15 @@
   "statement": {
     "line1": "Liderança, tecnologia e impacto não são caminhos separados.",
     "line2": "São parte de uma mesma transformação."
+  },
+  "common": {
+    "more": "Ver mais",
+    "less": "Ver menos",
+    "moreAreas": "Ver áreas de atuação",
+    "lessAreas": "Ver menos áreas",
+    "moreTopics": "Ver todos os temas",
+    "lessTopics": "Ver menos temas",
+    "moreProfile": "Continuar lendo",
+    "lessProfile": "Ver menos"
   }
 }

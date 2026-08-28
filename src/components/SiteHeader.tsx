@@ -82,9 +82,9 @@ export default function SiteHeader() {
             <a
               href={`#${SECTIONS.hero}`}
               onClick={close}
-              className="shrink-0 font-display text-[0.8125rem] font-bold tracking-[0.2em] whitespace-nowrap text-fg uppercase transition-colors duration-300 hover:text-blue-2"
+              className="shrink-0 font-display text-[0.8125rem] font-bold tracking-[0.2em] whitespace-nowrap text-fg uppercase transition-colors duration-300 hover:text-gold-hover"
             >
-              Andrés<span className="text-blue-2"> Franco</span>
+              Andrés<span className="text-gold"> Franco</span>
             </a>
 
             {/* Desktop navigation */}
@@ -101,15 +101,13 @@ export default function SiteHeader() {
                   href={`#${item.id}`}
                   aria-current={active === item.id ? "true" : undefined}
                   className={`relative text-[0.6875rem] font-semibold tracking-[0.13em] whitespace-nowrap uppercase transition-colors duration-300 ${
-                    active === item.id
-                      ? "text-fg"
-                      : "text-fg-3 hover:text-fg"
+                    active === item.id ? "text-fg" : "text-fg-3 hover:text-fg"
                   }`}
                 >
                   {t(item.key)}
                   <span
                     aria-hidden="true"
-                    className={`absolute -bottom-1.5 left-0 h-px w-full origin-left bg-blue transition-transform duration-400 ${
+                    className={`absolute -bottom-1.5 left-0 h-px w-full origin-left bg-gold transition-transform duration-400 ${
                       active === item.id ? "scale-x-100" : "scale-x-0"
                     }`}
                   />
@@ -121,7 +119,7 @@ export default function SiteHeader() {
               <LanguageSwitcher className="hidden sm:flex" />
               <a
                 href={`#${SECTIONS.contact}`}
-                className="hidden bg-blue px-5 py-2.5 text-[0.6875rem] font-semibold tracking-[0.12em] whitespace-nowrap text-white uppercase transition-colors duration-300 hover:bg-blue-2 md:inline-flex"
+                className="hidden bg-gold px-5 py-2.5 text-[0.6875rem] font-semibold tracking-[0.12em] whitespace-nowrap text-white uppercase transition-colors duration-300 hover:bg-gold-hover md:inline-flex"
               >
                 {t("cta")}
               </a>
@@ -165,30 +163,32 @@ export default function SiteHeader() {
         <div className="shell flex h-full flex-col justify-between pt-[96px] pb-10">
           <nav aria-label={t("menuLabel")} className="mt-4">
             <ul>
-              {NAV_ITEMS.map((item, i) => (
-                <li key={item.id} className="border-b border-line">
-                  <a
-                    href={`#${item.id}`}
-                    onClick={close}
-                    className="flex items-baseline gap-4 py-4"
-                    style={{
-                      transitionDelay: open ? `${70 + i * 40}ms` : "0ms",
-                      opacity: open ? 1 : 0,
-                      transform: open ? "none" : "translateY(10px)",
-                      transitionProperty: "opacity, transform",
-                      transitionDuration: "500ms",
-                      transitionTimingFunction: "cubic-bezier(.16,1,.3,1)",
-                    }}
-                  >
-                    <span className="label-blue w-7 tabular-nums">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="display text-[1.6rem] uppercase">
-                      {t(item.key)}
-                    </span>
-                  </a>
-                </li>
-              ))}
+              {[...NAV_ITEMS, { key: "contact", id: SECTIONS.contact }].map(
+                (item, i) => (
+                  <li key={item.id} className="border-b border-line">
+                    <a
+                      href={`#${item.id}`}
+                      onClick={close}
+                      className="flex items-baseline gap-4 py-4"
+                      style={{
+                        transitionDelay: open ? `${70 + i * 40}ms` : "0ms",
+                        opacity: open ? 1 : 0,
+                        transform: open ? "none" : "translateY(10px)",
+                        transitionProperty: "opacity, transform",
+                        transitionDuration: "500ms",
+                        transitionTimingFunction: "cubic-bezier(.16,1,.3,1)",
+                      }}
+                    >
+                      <span className="label-gold w-7 tabular-nums">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="display text-[1.6rem] uppercase">
+                        {t(item.key)}
+                      </span>
+                    </a>
+                  </li>
+                ),
+              )}
             </ul>
           </nav>
 
@@ -197,7 +197,7 @@ export default function SiteHeader() {
             <a
               href={`#${SECTIONS.contact}`}
               onClick={close}
-              className="btn-blue w-full"
+              className="btn-gold w-full"
             >
               {t("cta")}
             </a>

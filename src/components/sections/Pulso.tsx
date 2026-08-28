@@ -27,7 +27,7 @@ export default function Pulso() {
       aria-labelledby="pulso-heading"
     >
       <div className="shell">
-        <div className="card grid grid-cols-12 gap-y-10 p-7 md:p-10 lg:gap-x-14 lg:p-12">
+        <div className="card-petrol grid grid-cols-12 gap-y-10 p-7 md:p-10 lg:gap-x-14 lg:p-12">
           {/* Programme identity */}
           <div className="col-span-12 lg:col-span-4">
             <SectionOpen index="06" label={t("eyebrow")} />
@@ -47,7 +47,7 @@ export default function Pulso() {
               {t("subtitle")}
             </p>
 
-            <div className="mt-8" data-reveal>
+            <div className="mt-8 hidden lg:block" data-reveal>
               <p className="meta mb-4">{t("topicsLabel")}</p>
               <ul className="flex flex-wrap gap-2.5">
                 {PULSO_TOPICS.map((key) => (
@@ -83,8 +83,10 @@ export default function Pulso() {
               />
             )}
 
+            {/* One player on a phone. Three thumbnails at the top of a
+                small screen is a video wall, not a selection. */}
             {rest.length > 0 && (
-              <div className="mt-6">
+              <div className="mt-6 hidden lg:block">
                 <p className="meta mb-4">{t("episodesLabel")}</p>
                 <ul className="grid grid-cols-2 gap-4">
                   {rest.slice(0, 2).map((ep) => (

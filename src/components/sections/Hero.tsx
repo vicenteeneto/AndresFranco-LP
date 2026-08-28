@@ -11,13 +11,20 @@ const DESCRIPTORS = ["digital", "leadership", "technology", "impact"] as const;
  * The name is the mark.
  *
  * ANDRÉS FRANCO is set at the largest size on the page, in two lines, with the
- * surname in blue — everything else in the hero is small, technical and
- * ranged left underneath it. The photograph holds the right of the viewport
- * and dissolves into the ground rather than sitting in a frame.
+ * surname in gold — everything else in the hero is small, technical and
+ * ranged left underneath it.
  *
- * On a phone that composition cannot hold, so the frame recomposes: the
- * photograph becomes a band at the top fading downwards, and the name starts
- * where the photograph ends.
+ * Both compositions put the portrait to the right of the name; what changes is
+ * how much room it takes and how much text sits beside it.
+ *
+ * Desktop: the photograph holds 54% of the viewport and the full argument runs
+ * down the left — role, headline, supporting paragraph, three ways in.
+ *
+ * Phone: the photograph is a 44% column running most of the first fold, the
+ * name fills the rest, and the copy is cut to what earns the space — role, one
+ * headline, one button. The paragraph is not lost: it opens the profile
+ * section immediately below. A first fold that has to be read is a first fold
+ * that gets scrolled past.
  */
 export default function Hero() {
   const t = useTranslations("hero");
@@ -32,7 +39,7 @@ export default function Hero() {
     >
       {/* Photograph */}
       <div
-        className="absolute inset-x-0 top-0 h-[46svh] sm:h-[52svh] lg:inset-y-0 lg:right-0 lg:left-[46%] lg:h-auto"
+        className="absolute top-0 right-0 bottom-[44%] left-[52%] sm:bottom-[46%] lg:inset-y-0 lg:left-[46%]"
         data-reveal="image"
       >
         <Image
@@ -41,15 +48,15 @@ export default function Hero() {
           fill
           priority
           quality={90}
-          sizes="(max-width: 1024px) 100vw, 56vw"
-          className="hero-mask-mobile object-cover object-[64%_22%] brightness-[0.86] contrast-[1.04] saturate-[0.9] lg:hero-mask lg:object-[54%_36%]"
+          sizes="(max-width: 1024px) 60vw, 56vw"
+          className="hero-mask-mobile object-cover object-[44%_24%] brightness-[0.88] contrast-[1.04] saturate-[0.88] lg:hero-mask lg:object-[54%_36%]"
         />
       </div>
 
       {/*
-        The header is transparent over the hero, and its small grey menu items
-        sit right where the photograph is brightest. This darkens the top band
-        just enough to keep them legible without putting a visible bar there.
+        The header is transparent over the hero, and its small menu items sit
+        right where the photograph is brightest. This darkens the top band just
+        enough to keep them legible without putting a visible bar there.
       */}
       <div
         aria-hidden="true"
@@ -58,93 +65,105 @@ export default function Hero() {
 
       {/*
         Technical marks. A hairline where the photograph begins on desktop and
-        a blue tick on it — the smallest possible nod to a schematic, and the
+        a gold tick on it — the smallest possible nod to a schematic, and the
         thing that keeps the composition from reading as two halves.
       */}
       <div
         aria-hidden="true"
         className="absolute inset-y-0 left-[46%] hidden w-px bg-line lg:block"
       >
-        <span className="absolute top-1/2 -left-[3px] h-16 w-[7px] -translate-y-1/2 bg-blue" />
+        <span className="absolute top-1/2 -left-[3px] h-16 w-[7px] -translate-y-1/2 bg-gold" />
       </div>
 
       {/*
         The masthead grows to fill whatever is left between the header and the
         descriptor rail. Keeping the rail in flow rather than pinning it to the
         bottom is what guarantees the two can never collide on a short laptop
-        screen — which is exactly what happened when it was absolute.
+        screen.
       */}
-      <div className="relative flex flex-1 items-end pt-[42svh] pb-8 sm:pt-[47svh] lg:items-center lg:pt-0 lg:pb-0">
+      <div className="relative flex flex-1 items-center">
         <div className="shell w-full">
           <div className="grid grid-cols-12">
-          <div className="col-span-12 lg:col-span-7">
-            <p
-              className="label-blue"
-              data-reveal
-              style={{ "--reveal-delay": "40ms" } as React.CSSProperties}
-            >
-              {t("kicker")}
-            </p>
-
-            <h1
-              className="t-name mt-6 md:mt-7"
-              data-reveal
-              style={{ "--reveal-delay": "90ms" } as React.CSSProperties}
-            >
-              <span className="block">Andrés</span>
-              <span className="block text-blue-2">Franco</span>
-            </h1>
-
-            <div
-              className="mt-7 flex flex-col gap-1 border-l border-blue pl-5 md:mt-9"
-              data-reveal
-              style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
-            >
-              <p className="text-[0.8125rem] font-semibold tracking-[0.1em] text-fg uppercase">
-                {t("roleTitle")}
+            <div className="col-span-12 lg:col-span-7">
+              <p
+                className="label-gold hidden lg:block"
+                data-reveal
+                style={{ "--reveal-delay": "40ms" } as React.CSSProperties}
+              >
+                {t("kicker")}
               </p>
-              <p className="meta">{t("roleOrg")}</p>
-            </div>
 
-            <p
-              className="display t-h3 mt-8 max-w-[20ch] md:mt-10"
-              data-reveal
-              style={{ "--reveal-delay": "200ms" } as React.CSSProperties}
-            >
-              {t("statement")}
-            </p>
+              {/*
+                No width cap on the name: on a phone its last letters are meant
+                to cross onto the softest part of the portrait's mask.
+              */}
+              <h1
+                className="t-name lg:mt-7"
+                data-reveal
+                style={{ "--reveal-delay": "90ms" } as React.CSSProperties}
+              >
+                <span className="block">Andrés</span>
+                <span className="block text-gold">Franco</span>
+              </h1>
 
-            <p
-              className="body-copy mt-6 max-w-[52ch]"
-              data-reveal
-              style={{ "--reveal-delay": "250ms" } as React.CSSProperties}
-            >
-              {t("support")}
-            </p>
+              <div
+                className="mt-6 flex max-w-[54%] flex-col gap-1 border-l border-gold pl-4 sm:max-w-[52%] md:pl-5 lg:mt-9 lg:max-w-none"
+                data-reveal
+                style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
+              >
+                <p className="text-[0.75rem] leading-[1.35] font-semibold tracking-[0.09em] text-fg uppercase md:text-[0.8125rem] md:tracking-[0.1em]">
+                  {t("roleTitle")}
+                </p>
+                <p className="meta">{t("roleOrg")}</p>
+              </div>
 
-            <div
-              className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
-              data-reveal
-              style={{ "--reveal-delay": "300ms" } as React.CSSProperties}
-            >
-              <a href={`#${SECTIONS.journey}`} className="btn-blue">
-                {t("ctaPrimary")}
-                <ArrowRight />
-              </a>
-              <a href={`#${SECTIONS.contact}`} className="btn-ghost">
-                {t("ctaSecondary")}
-              </a>
-              {linkedin && (
+              {/* Below here the photograph has ended and the copy gets the
+                  full width back. */}
+              <p
+                className="display mt-8 max-w-[22ch] text-[1.5rem] leading-[1.16] tracking-[-0.02em] sm:text-[1.6rem] lg:mt-10 lg:max-w-[20ch] lg:text-[clamp(1.45rem,2.6vw,2.15rem)] lg:leading-[1.14]"
+                data-reveal
+                style={{ "--reveal-delay": "200ms" } as React.CSSProperties}
+              >
+                {t("statement")}
+              </p>
+
+              <p
+                className="body-copy mt-6 hidden max-w-[52ch] lg:block"
+                data-reveal
+                style={{ "--reveal-delay": "250ms" } as React.CSSProperties}
+              >
+                {t("support")}
+              </p>
+
+              <div
+                className="mt-8 flex flex-col gap-3 lg:mt-9 lg:flex-row lg:flex-wrap lg:items-center lg:gap-4"
+                data-reveal
+                style={{ "--reveal-delay": "300ms" } as React.CSSProperties}
+              >
                 <a
-                  href={linkedin.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-rule sm:ml-2"
+                  href={`#${SECTIONS.journey}`}
+                  className="btn-gold self-start"
                 >
-                  LinkedIn
-                  <ArrowUpRight />
+                  {t("ctaPrimary")}
+                  <ArrowRight />
                 </a>
-              )}
+                <a
+                  href={`#${SECTIONS.contact}`}
+                  className="btn-ghost hidden lg:inline-flex"
+                >
+                  {t("ctaSecondary")}
+                </a>
+                {linkedin && (
+                  <a
+                    href={linkedin.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-rule hidden lg:ml-2 lg:inline-flex"
+                  >
+                    LinkedIn
+                    <ArrowUpRight />
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -153,11 +172,16 @@ export default function Hero() {
 
       {/* Descriptor rail, on the hairline that closes the hero */}
       <div className="relative shell w-full pb-7 md:pb-9">
-        <div className="flex flex-wrap items-center gap-x-7 gap-y-2.5 border-t border-line pt-5 md:gap-x-12">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-5 md:gap-x-12">
           {DESCRIPTORS.map((d, i) => (
             <span
               key={d}
-              className="meta"
+              className={[
+                "meta",
+                // Two descriptors on a phone, four from sm up: the rail is a
+                // texture, and four of them wrap into a paragraph at 390px.
+                i > 1 ? "hidden sm:inline" : "",
+              ].join(" ")}
               data-reveal
               style={
                 { "--reveal-delay": `${360 + i * 60}ms` } as React.CSSProperties

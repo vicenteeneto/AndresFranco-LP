@@ -258,5 +258,15 @@
   "statement": {
     "line1": "Leadership, technology and impact are not separate paths.",
     "line2": "They are parts of the same transformation."
+  },
+  "common": {
+    "more": "See more",
+    "less": "See less",
+    "moreAreas": "See all areas of work",
+    "lessAreas": "See fewer areas",
+    "moreTopics": "See all topics",
+    "lessTopics": "See fewer topics",
+    "moreProfile": "Keep reading",
+    "lessProfile": "See less"
   }
 }

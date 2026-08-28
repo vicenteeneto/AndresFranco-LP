@@ -16,7 +16,7 @@ export default function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line bg-bg-2 pb-12">
+    <footer className="border-t border-line bg-[color-mix(in_srgb,var(--color-petrol)_34%,var(--color-bg))] pb-12">
       <div className="shell">
         <div className="flex flex-col gap-8 pt-12 lg:flex-row lg:items-end lg:justify-between">
           <div>
@@ -24,7 +24,7 @@ export default function SiteFooter() {
               href={`#${SECTIONS.hero}`}
               className="font-display text-[1.05rem] font-bold tracking-[0.16em] text-fg uppercase"
             >
-              Andrés<span className="text-blue-2"> Franco</span>
+              Andrés<span className="text-gold"> Franco</span>
             </a>
             <p className="mt-4 max-w-[34ch] text-[0.8125rem] leading-[1.6] text-fg-3">
               {t("role")}

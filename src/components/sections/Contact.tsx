@@ -96,14 +96,20 @@ export default function Contact() {
   }
 
   const field =
-    "w-full border-0 border-b border-line-2 bg-transparent py-3 text-[0.9375rem] text-fg placeholder:text-fg-3 transition-colors duration-300 focus:border-blue focus:outline-none";
+    "w-full border-0 border-b border-line-2 bg-transparent py-2.5 text-[0.9375rem] text-fg placeholder:text-fg-3 transition-colors duration-300 focus:border-gold focus:outline-none md:py-3";
   const label =
-    "block text-[0.625rem] font-semibold tracking-[0.2em] text-blue-2 uppercase";
+    "block text-[0.625rem] font-semibold tracking-[0.2em] text-gold uppercase";
 
   /** The doors out. Email only appears once an address is configured. */
   const channels = [
     ...(CONTACT_EMAIL
-      ? [{ id: "email" as const, label: "Email", href: `mailto:${CONTACT_EMAIL}` }]
+      ? [
+          {
+            id: "email" as const,
+            label: "Email",
+            href: `mailto:${CONTACT_EMAIL}`,
+          },
+        ]
       : []),
     ...SOCIAL_LINKS.filter((s) => s.href),
     {
@@ -132,7 +138,7 @@ export default function Contact() {
               {t("headline")}
             </h2>
             <p
-              className="lead mt-7 max-w-[38ch]"
+              className="lead mt-6 max-w-[38ch] lg:mt-7"
               data-reveal
               style={{ "--reveal-delay": "110ms" } as React.CSSProperties}
             >
@@ -148,20 +154,20 @@ export default function Contact() {
                     {...(c.id === "email"
                       ? {}
                       : { target: "_blank", rel: "noopener noreferrer" })}
-                    className="card group flex items-center justify-between gap-3 px-4 py-4 transition-colors duration-300 hover:border-blue hover:bg-blue-dim"
+                    className="card group flex items-center justify-between gap-3 px-4 py-4 transition-colors duration-300 hover:border-gold hover:bg-gold-dim"
                   >
                     <span className="flex min-w-0 items-center gap-3">
                       {c.id !== "sereniti" && c.id !== "email" && (
                         <SocialIcon
                           id={c.id}
-                          className="h-4 w-4 shrink-0 text-blue-2"
+                          className="h-4 w-4 shrink-0 text-gold"
                         />
                       )}
                       <span className="truncate text-[0.6875rem] font-semibold tracking-[0.12em] text-fg uppercase">
                         {c.label}
                       </span>
                     </span>
-                    <ArrowUpRight className="shrink-0 text-fg-3 transition-colors duration-300 group-hover:text-blue-2" />
+                    <ArrowUpRight className="shrink-0 text-fg-3 transition-colors duration-300 group-hover:text-gold-hover" />
                   </a>
                 </li>
               ))}
@@ -172,7 +178,7 @@ export default function Contact() {
           <div className="col-span-12 lg:col-span-6 lg:col-start-7">
             <form
               onSubmit={onSubmit}
-              className="card grid grid-cols-1 gap-x-8 gap-y-7 p-7 sm:grid-cols-2 md:p-10"
+              className="card grid grid-cols-1 gap-x-8 gap-y-5 p-6 sm:grid-cols-2 md:gap-y-7 md:p-10"
               data-reveal
             >
               {/* Honeypot */}
@@ -250,7 +256,7 @@ export default function Contact() {
                   <svg
                     aria-hidden="true"
                     viewBox="0 0 11 7"
-                    className="pointer-events-none absolute top-1/2 right-1 h-[7px] w-[11px] -translate-y-1/2 text-blue-2"
+                    className="pointer-events-none absolute top-1/2 right-1 h-[7px] w-[11px] -translate-y-1/2 text-gold"
                   >
                     <path
                       d="M1 1l4.5 4.5L10 1"
@@ -269,7 +275,7 @@ export default function Contact() {
                   id="cf-message"
                   name="message"
                   required
-                  rows={4}
+                  rows={3}
                   placeholder={t("form.messagePlaceholder")}
                   className={`${field} resize-y`}
                 />
@@ -279,7 +285,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="btn-blue w-full disabled:opacity-60 sm:w-auto"
+                  className="btn-gold w-full disabled:opacity-60 sm:w-auto"
                 >
                   {status === "sending" ? t("form.sending") : t("form.submit")}
                   <ArrowRight />

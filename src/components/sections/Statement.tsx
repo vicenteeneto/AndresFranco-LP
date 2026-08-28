@@ -18,7 +18,7 @@ export default function Statement() {
           <div className="col-span-12 lg:col-span-9 lg:col-start-3">
             <p
               aria-hidden="true"
-              className="mb-8 h-[3px] w-14 bg-blue"
+              className="mb-8 h-[3px] w-14 bg-gold"
               data-reveal
             />
             <p
@@ -26,8 +26,7 @@ export default function Statement() {
               data-reveal
               style={{ "--reveal-delay": "80ms" } as React.CSSProperties}
             >
-              {t("line1")}{" "}
-              <span className="text-fg-3">{t("line2")}</span>
+              {t("line1")} <span className="text-fg-3">{t("line2")}</span>
             </p>
           </div>
         </div>

@@ -55,7 +55,7 @@ export default function Impact() {
               {t("lead")}
             </p>
             <p
-              className="body-copy mt-5 text-fg-3"
+              className="body-copy mt-5 hidden text-fg-3 lg:block"
               data-reveal
               style={{ "--reveal-delay": "180ms" } as React.CSSProperties}
             >
@@ -88,8 +88,9 @@ export default function Impact() {
           </div>
         </div>
 
-        {/* Focus areas */}
-        <ul className="mt-16 grid grid-cols-2 md:mt-20 lg:grid-cols-4">
+        {/* Focus areas — desktop only: on a phone they sit between the
+            foundation and the recognition and dilute both. */}
+        <ul className="mt-16 hidden grid-cols-2 md:mt-20 lg:grid lg:grid-cols-4">
           {PILLARS.map((key, i) => (
             <li
               key={key}
@@ -101,7 +102,7 @@ export default function Impact() {
               data-reveal
               style={{ "--reveal-delay": `${i * 70}ms` } as React.CSSProperties}
             >
-              <span className="label-blue tabular-nums">
+              <span className="label-gold tabular-nums">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="display mt-4 block text-[1rem] leading-[1.3] md:text-[1.15rem]">
@@ -117,7 +118,7 @@ export default function Impact() {
           data-reveal
         >
           <div className="col-span-12 lg:col-span-3">
-            <p className="label-blue">{tr("eyebrow")}</p>
+            <p className="label-gold">{tr("eyebrow")}</p>
             <p className="figure-xl mt-5">{tr("year")}</p>
           </div>
           <div className="col-span-12 lg:col-span-8 lg:col-start-5">
@@ -125,7 +126,9 @@ export default function Impact() {
               {tr("title")}
             </h3>
             <p className="meta mt-4">{tr("organization")}</p>
-            <p className="body-copy mt-5 max-w-[58ch] text-fg-3">{tr("body")}</p>
+            <p className="body-copy mt-5 hidden max-w-[58ch] text-fg-3 lg:block">
+              {tr("body")}
+            </p>
           </div>
         </div>
       </div>

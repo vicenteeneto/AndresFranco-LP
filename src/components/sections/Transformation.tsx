@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Photo from "../ui/Photo";
 import SectionOpen from "../ui/SectionOpen";
+import Curated from "../ui/Curated";
 import { SECTIONS } from "@/content/sections";
 import { TRANSFORMATION_CAPABILITIES } from "@/content/speaking";
 
@@ -17,6 +18,7 @@ import { TRANSFORMATION_CAPABILITIES } from "@/content/speaking";
  */
 export default function Transformation() {
   const t = useTranslations("transformation");
+  const tc = useTranslations("common");
 
   return (
     <section
@@ -54,23 +56,29 @@ export default function Transformation() {
               {t("lead")}
             </p>
             <p
-              className="body-copy mt-6 text-fg-3"
+              className="body-copy mt-6 hidden text-fg-3 lg:block"
               data-reveal
               style={{ "--reveal-delay": "190ms" } as React.CSSProperties}
             >
               {t("body")}
             </p>
 
-            {/* Capability chips */}
+            {/* Capability chips — three on a phone, all six from lg up */}
             <div className="mt-9" data-reveal>
               <p className="meta mb-4">{t("capabilitiesLabel")}</p>
-              <ul className="flex flex-wrap gap-2.5">
-                {TRANSFORMATION_CAPABILITIES.map((key) => (
-                  <li key={key} className="tag">
-                    {t(`capabilities.${key}`)}
-                  </li>
-                ))}
-              </ul>
+              <Curated
+                keep={3}
+                moreLabel={tc("moreAreas")}
+                lessLabel={tc("lessAreas")}
+              >
+                <ul className="flex flex-wrap gap-2.5">
+                  {TRANSFORMATION_CAPABILITIES.map((key) => (
+                    <li key={key} className="tag">
+                      {t(`capabilities.${key}`)}
+                    </li>
+                  ))}
+                </ul>
+              </Curated>
             </div>
           </div>
         </div>

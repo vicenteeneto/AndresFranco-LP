@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Photo from "../ui/Photo";
 import SectionOpen from "../ui/SectionOpen";
+import Curated from "../ui/Curated";
 import { ArrowRight } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import { SPEAKING_TOPICS } from "@/content/speaking";
@@ -15,6 +16,7 @@ import { SPEAKING_TOPICS } from "@/content/speaking";
  */
 export default function Speaker() {
   const t = useTranslations("speaker");
+  const tc = useTranslations("common");
 
   return (
     <section
@@ -60,14 +62,14 @@ export default function Speaker() {
 
       {/* Topics, raised over the foot of the photograph */}
       <div className="relative shell -mt-10 md:-mt-20 lg:-mt-28">
-        <div className="card grid grid-cols-12 gap-y-9 p-7 md:p-10 lg:gap-x-14 lg:p-12">
+        <div className="card-petrol grid grid-cols-12 gap-y-9 p-7 md:p-10 lg:gap-x-14 lg:p-12">
           <div className="col-span-12 lg:col-span-4">
-            <p className="label-blue">{t("cardLabel")}</p>
+            <p className="label-gold">{t("cardLabel")}</p>
             <p className="body-copy mt-6 max-w-[34ch]">{t("body")}</p>
             <a
               href={`#${SECTIONS.contact}`}
               data-inquiry="speaking"
-              className="btn-blue mt-8"
+              className="btn-gold mt-8"
             >
               {t("cta")}
               <ArrowRight />
@@ -76,25 +78,31 @@ export default function Speaker() {
 
           <div className="col-span-12 lg:col-span-7 lg:col-start-6">
             <p className="meta mb-5">{t("topicsLabel")}</p>
-            <ul className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
-              {SPEAKING_TOPICS.map((key, i) => (
-                <li
-                  key={key}
-                  className={[
-                    "flex items-baseline gap-5 border-t border-line py-3.5",
-                    i === SPEAKING_TOPICS.length - 1 ? "border-b" : "",
-                    i === SPEAKING_TOPICS.length - 2 ? "sm:border-b" : "",
-                  ].join(" ")}
-                >
-                  <span className="label-blue shrink-0 tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="display text-[1.0625rem] leading-[1.35] md:text-[1.125rem]">
-                    {t(`topics.${key}`)}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <Curated
+              keep={4}
+              moreLabel={tc("moreTopics")}
+              lessLabel={tc("lessTopics")}
+            >
+              <ul className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+                {SPEAKING_TOPICS.map((key, i) => (
+                  <li
+                    key={key}
+                    className={[
+                      "flex items-baseline gap-5 border-t border-line py-3.5",
+                      i === SPEAKING_TOPICS.length - 1 ? "border-b" : "",
+                      i === SPEAKING_TOPICS.length - 2 ? "sm:border-b" : "",
+                    ].join(" ")}
+                  >
+                    <span className="label-gold shrink-0 tabular-nums">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="display text-[1.0625rem] leading-[1.35] md:text-[1.125rem]">
+                      {t(`topics.${key}`)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Curated>
           </div>
         </div>
       </div>

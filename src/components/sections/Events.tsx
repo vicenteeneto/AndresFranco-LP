@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import SectionOpen from "../ui/SectionOpen";
+import Curated from "../ui/Curated";
 import { ArrowUpRight } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import { SELECTED_CONTENT } from "@/content/media";
@@ -17,6 +18,7 @@ import { SELECTED_CONTENT } from "@/content/media";
  */
 export default function Events() {
   const t = useTranslations("events");
+  const tc = useTranslations("common");
 
   return (
     <section
@@ -44,43 +46,54 @@ export default function Events() {
           </div>
         </div>
 
-        <ul className="mt-12 md:mt-14">
-          {SELECTED_CONTENT.map((item, i) => (
-            <li
-              key={item.id}
-              className="grid grid-cols-12 gap-x-6 gap-y-3 border-t border-line py-7 last:border-b md:py-8"
-              data-reveal
-              style={{ "--reveal-delay": `${i * 70}ms` } as React.CSSProperties}
-            >
-              <div className="col-span-12 sm:col-span-3">
-                <span className="label-blue">{t(`kinds.${item.kind}`)}</span>
-              </div>
-              <div className="col-span-12 sm:col-span-6">
-                <h3 className="display text-[1.125rem] leading-[1.3] md:text-[1.3rem]">
-                  {t(`items.${item.id}.title`)}
-                </h3>
-                <p className="mt-3 max-w-[52ch] text-[0.9375rem] leading-[1.66] text-fg-3">
-                  {t(`items.${item.id}.excerpt`)}
-                </p>
-              </div>
-              <div className="col-span-12 sm:col-span-3 sm:text-right">
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-rule"
-                  >
-                    {t("view")}
-                    <ArrowUpRight />
-                  </a>
-                ) : (
-                  <span className="meta">{t(`items.${item.id}.context`)}</span>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
+        <Curated
+          keep={1}
+          moreLabel={tc("more")}
+          lessLabel={tc("less")}
+          className="mt-12 md:mt-14"
+        >
+          <ul>
+            {SELECTED_CONTENT.map((item, i) => (
+              <li
+                key={item.id}
+                className="grid grid-cols-12 gap-x-6 gap-y-3 border-t border-line py-7 last:border-b md:py-8"
+                data-reveal
+                style={
+                  { "--reveal-delay": `${i * 70}ms` } as React.CSSProperties
+                }
+              >
+                <div className="col-span-12 sm:col-span-3">
+                  <span className="label-gold">{t(`kinds.${item.kind}`)}</span>
+                </div>
+                <div className="col-span-12 sm:col-span-6">
+                  <h3 className="display text-[1.125rem] leading-[1.3] md:text-[1.3rem]">
+                    {t(`items.${item.id}.title`)}
+                  </h3>
+                  <p className="mt-3 max-w-[52ch] text-[0.9375rem] leading-[1.66] text-fg-3">
+                    {t(`items.${item.id}.excerpt`)}
+                  </p>
+                </div>
+                <div className="col-span-12 sm:col-span-3 sm:text-right">
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-rule"
+                    >
+                      {t("view")}
+                      <ArrowUpRight />
+                    </a>
+                  ) : (
+                    <span className="meta">
+                      {t(`items.${item.id}.context`)}
+                    </span>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </Curated>
       </div>
     </section>
   );
