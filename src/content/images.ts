@@ -6,6 +6,12 @@
  * Replacing a photo = drop the new file in /public/images under the same name
  * and update width/height here. Nothing else changes.
  *
+ * A note on `position`: it only does something when the frame's aspect ratio
+ * differs from the photograph's along that axis. A wide photo in a tall frame
+ * is cropped at the sides, so only the X value moves it; a wide frame on a
+ * squarer photo crops top and bottom, so only Y does. Both values are kept
+ * anyway — the frames change with the breakpoint, and so does which one bites.
+ *
  * Alt text is not stored here — it is translated, and lives in
  * messages/*.json under `images.<id>`.
  */
@@ -22,8 +28,9 @@ export type Photo = {
 
 export const PHOTOS = {
   /**
-   * Hero. Horizontal, with the room's negative space on the left — the
-   * headline sits in that space, so the crop must keep Andrés right of centre.
+   * Hero. Horizontal, Andrés against the window and the plant. The hero gives
+   * the photograph the right half of the viewport, so the crop keeps him
+   * centred in that half rather than in the page.
    */
   heroPortrait: {
     src: "/images/hero-portrait.jpg",
@@ -32,48 +39,64 @@ export const PHOTOS = {
     position: "72% 42%",
     positionMobile: "62% 32%",
   },
-  /** Black and white, vertical. Leadership & Coaching. */
+  /**
+   * Black and white, vertical. Leadership & Coaching — the frame is 4/5 and
+   * 3/4, so it sits almost uncropped.
+   */
   portraitBw: {
     src: "/images/portrait-bw.jpg",
-    width: 1024,
-    height: 796,
-    position: "52% 26%",
+    width: 1122,
+    height: 1402,
+    position: "50% 42%",
   },
-  /** Formal executive portrait. Recognition and institutional use. */
+  /**
+   * Formal executive portrait, square. Used in the profile section, where the
+   * frame is taller than the photo: the sides are trimmed, the full height
+   * stays.
+   */
   portraitFormal: {
     src: "/images/portrait-formal.jpg",
-    width: 720,
-    height: 720,
-    position: "50% 26%",
+    width: 1254,
+    height: 1254,
+    position: "52% 50%",
   },
-  /** Large audience, ballroom. Speaker — cinematic crop. */
+  /**
+   * The large room. Speaker — a 21/9 crop on desktop takes a third of the
+   * height, so the focal point sits low enough to keep every face in frame.
+   */
   eventAudience: {
     src: "/images/event-audience.jpg",
-    width: 1600,
-    height: 1200,
-    position: "50% 56%",
-    positionMobile: "52% 58%",
+    width: 1536,
+    height: 1024,
+    position: "50% 54%",
+    positionMobile: "50% 46%",
   },
-  /** WorkHQ Bootcamp. Digital Transformation. */
+  /** WorkHQ Bootcamp. Digital Transformation, wide off the left edge. */
   eventBootcamp: {
     src: "/images/event-bootcamp.jpg",
-    width: 1600,
-    height: 644,
+    width: 1672,
+    height: 941,
     position: "50% 44%",
   },
-  /** Corporate auditorium / roadshow. Executive leadership, Latin America. */
+  /** Corporate roadshow. The lead photograph of the selected content. */
   eventRoadshow: {
     src: "/images/event-roadshow.jpg",
-    width: 1280,
-    height: 960,
-    position: "50% 58%",
+    width: 1536,
+    height: 1024,
+    position: "50% 44%",
   },
-  /** Community gathering. Social impact — the warmest image on the site. */
+  /**
+   * The lunch table. Social impact — the warmest image on the site.
+   *
+   * The file is already trimmed at the foot: the original carried a fifth of
+   * empty table below the group, which in a column-width frame left the faces
+   * as a thin band across the top.
+   */
   eventCommunity: {
     src: "/images/event-community.jpg",
-    width: 1600,
-    height: 866,
-    position: "50% 46%",
+    width: 1704,
+    height: 782,
+    position: "50% 50%",
   },
 } as const satisfies Record<string, Photo>;
 

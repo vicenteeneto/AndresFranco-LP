@@ -29,7 +29,6 @@ export default function Leadership() {
               id="portraitBw"
               className="aspect-[4/5] w-full lg:aspect-[3/4]"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 44vw"
-              position="54% 24%"
             />
           </div>
 

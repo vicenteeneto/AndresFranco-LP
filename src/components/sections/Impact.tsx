@@ -64,11 +64,17 @@ export default function Impact() {
             </a>
           </div>
 
-          <div className="col-span-12 lg:col-span-6 lg:col-start-7 lg:bleed-r">
+          {/*
+            Seven columns rather than six: the photograph is a wide group
+            shot, and at column width a taller frame would have to cut people
+            off both ends to gain the height. Widening the block buys the
+            height instead.
+          */}
+          <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:bleed-r">
             <Photo
               id="eventCommunity"
-              className="aspect-[4/3] w-full lg:aspect-[5/4]"
-              sizes="(max-width: 1024px) 100vw, 56vw"
+              className="aspect-[16/9] w-full sm:aspect-[2/1] lg:aspect-[16/9]"
+              sizes="(max-width: 1024px) 100vw, 64vw"
               editorial
             />
           </div>

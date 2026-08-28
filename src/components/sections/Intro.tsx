@@ -56,7 +56,6 @@ export default function Intro() {
               id="portraitFormal"
               className="aspect-[4/5] w-full lg:aspect-[3/4]"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 66vw, 42vw"
-              position="50% 22%"
               revealDelay={80}
             />
           </div>
