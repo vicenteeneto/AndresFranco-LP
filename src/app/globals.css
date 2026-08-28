@@ -61,6 +61,14 @@ html {
   scroll-behavior: smooth;
   color-scheme: dark;
   background-color: var(--color-bg);
+  /*
+   * The full-bleed photographs are positioned from 100vw, which includes the
+   * scrollbar, while the content box does not — leaving a few pixels of
+   * horizontal scroll on any browser that reserves gutter for one. Clipping
+   * here removes it; the vertical axis is unaffected, since an element with
+   * one axis clipped and the other visible resolves the visible one to auto.
+   */
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
