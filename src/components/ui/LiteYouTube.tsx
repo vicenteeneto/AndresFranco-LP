@@ -27,7 +27,7 @@ export default function LiteYouTube({
   if (active) {
     return (
       <div
-        className={`frame relative overflow-hidden bg-navy-soft ${className}`}
+        className={`frame relative overflow-hidden bg-card ${className}`}
       >
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
@@ -45,7 +45,7 @@ export default function LiteYouTube({
       type="button"
       onClick={() => setActive(true)}
       aria-label={`${playLabel}: ${title}`}
-      className={`frame group relative block w-full overflow-hidden bg-navy-soft ${className}`}
+      className={`frame group relative block w-full overflow-hidden bg-card ${className}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -67,11 +67,11 @@ export default function LiteYouTube({
       />
       <span
         aria-hidden="true"
-        className="absolute inset-0 bg-navy/25 transition-colors duration-500 group-hover:bg-navy/10"
+        className="absolute inset-0 bg-bg/35 transition-colors duration-500 group-hover:bg-bg/15"
       />
       <span className="absolute inset-0 flex items-center justify-center">
         <span
-          className={`flex items-center justify-center rounded-full bg-paper/95 pl-1 text-navy shadow-[0_2px_24px_rgba(0,0,0,.28)] transition-transform duration-500 group-hover:scale-105 ${
+          className={`flex items-center justify-center rounded-full bg-blue pl-1 text-white shadow-[0_2px_28px_rgba(0,107,255,.45)] transition-transform duration-500 group-hover:scale-105 ${
             compact ? "h-10 w-10" : "h-16 w-16 md:h-[4.5rem] md:w-[4.5rem]"
           }`}
         >

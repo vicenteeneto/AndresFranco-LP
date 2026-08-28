@@ -10,27 +10,26 @@ export const SECTIONS = {
   profile: "perfil",
   transformation: "transformacion",
   leadership: "liderazgo",
+  journey: "trayectoria",
   speaker: "speaker",
+  events: "eventos",
   impact: "impacto",
   media: "media",
-  events: "eventos",
-  journey: "trayectoria",
   contact: "contacto",
 } as const;
 
 /**
- * The header menu.
+ * The header menu, in page order.
  *
- * Six links, in page order. Two sections are deliberately absent: the
- * wordmark already returns to the top, and the profile block sits directly
- * under the hero — nobody navigates to something they cannot help but read.
- * Contacto is the button beside the menu, not an item in it.
+ * Contacto is not in this list — it is the blue button beside it, and two
+ * links to the same anchor is one more than the page needs.
  */
 export const NAV_ITEMS = [
+  { key: "profile", id: SECTIONS.profile },
   { key: "transformation", id: SECTIONS.transformation },
   { key: "leadership", id: SECTIONS.leadership },
+  { key: "journey", id: SECTIONS.journey },
   { key: "speaker", id: SECTIONS.speaker },
   { key: "impact", id: SECTIONS.impact },
   { key: "media", id: SECTIONS.media },
-  { key: "journey", id: SECTIONS.journey },
 ] as const;

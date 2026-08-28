@@ -34,7 +34,7 @@ export default function Photo({
 
   return (
     <figure
-      className={`frame relative overflow-hidden bg-paper-warm ${className}`}
+      className={`frame relative overflow-hidden bg-card ${className}`}
       {...(reveal ? { "data-reveal": "image" } : {})}
       style={
         revealDelay

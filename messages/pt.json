@@ -18,11 +18,11 @@
     "closeMenu": "Fechar menu",
     "menuLabel": "Navegação principal",
     "languageLabel": "Selecionar idioma",
-    "backToTop": "Voltar ao topo"
+    "backToTop": "Voltar ao topo",
+    "profile": "Perfil",
+    "cta": "Vamos falar"
   },
   "hero": {
-    "role": "Vice President & Head of Latin America · SS&C Blue Prism",
-    "name": "Andrés Franco",
     "statement": "Liderança que transforma organizações, pessoas e comunidades.",
     "support": "Executivo internacional, líder em transformação digital, coach e palestrante com mais de três décadas construindo negócios, desenvolvendo líderes e gerando impacto na América Latina.",
     "ctaPrimary": "Conheça minha trajetória",
@@ -32,11 +32,13 @@
       "leadership": "Liderança",
       "technology": "Tecnologia",
       "impact": "Impacto Social"
-    }
+    },
+    "kicker": "Executivo internacional · América Latina",
+    "roleTitle": "Vice President & Head of Latin America",
+    "roleOrg": "SS&C Blue Prism"
   },
   "intro": {
     "eyebrow": "Perfil",
-    "authorityLabel": "Trajetória em números",
     "headline": "Mais de 30 anos construindo transformação.",
     "body1": "Uma carreira internacional construída na interseção entre tecnologia, estratégia de negócios e desenvolvimento humano. Da expansão de operações regionais à formação de líderes, o eixo sempre foi o mesmo: as organizações se transformam quando se transformam as pessoas que as tornam possíveis.",
     "body2": "Esse trabalho se expressa hoje em quatro frentes — a transformação digital de grandes empresas, o desenvolvimento de líderes, a conversa pública sobre tecnologia e sociedade e o impacto social na América Latina — que respondem a uma mesma ideia de liderança.",
@@ -57,14 +59,15 @@
         "value": "2023",
         "label": "Reconhecimento do Congresso dos EUA"
       }
-    }
+    },
+    "statement": "A tecnologia transforma processos. A liderança transforma organizações.",
+    "authorityLabel": "Trajetória em números"
   },
   "transformation": {
-    "eyebrow": "01 — Liderança executiva",
+    "eyebrow": "Liderança executiva",
     "headline": "Transformação Digital",
     "lead": "Como Vice President e Head da América Latina na SS&C Blue Prism, Andrés lidera a estratégia regional em automação inteligente, inteligência artificial e agentic AI, acompanhando grandes organizações na transformação de suas operações.",
     "body": "Seu trabalho conecta a agenda tecnológica à agenda de negócios: identificar onde a automação cria valor real, formar as equipes que a executam e sustentar a mudança dentro da cultura de cada organização.",
-    "statement": "A tecnologia transforma processos. A liderança transforma organizações.",
     "capabilitiesLabel": "Áreas de atuação",
     "capabilities": {
       "ai": "Inteligência Artificial",
@@ -73,10 +76,13 @@
       "digitalTransformation": "Transformação Digital",
       "enterpriseStrategy": "Estratégia Corporativa",
       "latinAmerica": "América Latina"
-    }
+    },
+    "subtitle": "SS&C Blue Prism",
+    "captionLabel": "Em campo",
+    "caption": "WorkHQ Bootcamp — formação sobre fluxos de trabalho agênticos com equipes e parceiros da região."
   },
   "leadership": {
-    "eyebrow": "02 — Liderança e coaching",
+    "eyebrow": "Liderança e coaching",
     "headline": "Desenvolvendo líderes que desenvolvem organizações.",
     "lead": "Com mais de quinze anos como coach certificado nas metodologias de liderança John Maxwell, Andrés acompanha executivos e equipes em processos de desenvolvimento que combinam rigor estratégico e crescimento pessoal.",
     "body": "A abordagem é a de um executivo em exercício, não a de um observador externo: os mesmos modelos que aplica à frente de operações regionais são os que utiliza ao trabalhar com diretores, equipes comerciais e organizações em transformação.",
@@ -92,7 +98,7 @@
     "cta": "Vamos falar de liderança"
   },
   "speaker": {
-    "eyebrow": "03 — Speaker",
+    "eyebrow": "Speaker",
     "headline": "Ideias que mobilizam pessoas e organizações.",
     "lead": "Andrés participa como palestrante e painelista em encontros executivos, fóruns de indústria e programas corporativos em toda a América Latina, diante de audiências que reúnem desde equipes técnicas até comitês de direção.",
     "body": "Suas intervenções traduzem temas complexos — inteligência artificial, automação, economia, liderança — em decisões concretas para quem precisa tomá-las.",
@@ -106,10 +112,11 @@
       "politics": "Política",
       "socialDevelopment": "Desenvolvimento Social"
     },
-    "cta": "Convidar Andrés"
+    "cta": "Convidar Andrés",
+    "cardLabel": "Palestras · Talks"
   },
   "impact": {
-    "eyebrow": "04 — Impacto social",
+    "eyebrow": "Impacto social",
     "headline": "Liderança com propósito.",
     "foundationName": "Sereniti Foundation",
     "lead": "Andrés é cofundador da Sereniti Foundation, uma organização sem fins lucrativos sediada nos Estados Unidos dedicada a fortalecer o desenvolvimento de comunidades latino-americanas.",
@@ -130,7 +137,7 @@
     "body": "Concedido a Andrés Franco e Jennifer Heegaard em reconhecimento à sua contribuição à comunidade hispânica e a iniciativas de impacto social, educação e desenvolvimento comunitário."
   },
   "pulso": {
-    "eyebrow": "05 — Programa próprio",
+    "eyebrow": "Programa próprio",
     "title": "El Pulso del Poder",
     "subtitle": "Política, economia e sociedade a partir de uma conversa aberta sobre as forças que transformam o nosso tempo, com a mesma disciplina com que se analisa uma organização: dados, contexto e consequências.",
     "topicsLabel": "No programa",
@@ -145,7 +152,7 @@
     "episodesLabel": "Episódios selecionados"
   },
   "events": {
-    "eyebrow": "06 — Seleção",
+    "eyebrow": "Seleção",
     "headline": "Eventos & Conversas",
     "lead": "Uma seleção de encontros e conversas recentes. Não é uma agenda: é uma amostra do tipo de espaço em que Andrés participa.",
     "view": "Ver",
@@ -156,20 +163,23 @@
     "items": {
       "roadshowLatam": {
         "title": "SS&C Blue Prism Roadshow",
-        "excerpt": "Encontro executivo com clientes e parceiros regionais sobre o futuro da automação, da inteligência artificial e da inovação."
+        "excerpt": "Encontro executivo com clientes e parceiros regionais sobre o futuro da automação, da inteligência artificial e da inovação.",
+        "context": "América Latina"
       },
       "workhqBootcamp": {
         "title": "WorkHQ Bootcamp — Experiencing Agentic Workflows",
-        "excerpt": "Programa intensivo de formação sobre fluxos de trabalho agênticos e automação empresarial com equipes e parceiros da região."
+        "excerpt": "Programa intensivo de formação sobre fluxos de trabalho agênticos e automação empresarial com equipes e parceiros da região.",
+        "context": "América Latina"
       },
       "entrevistaMarian": {
         "title": "Entrevista com Marian de la Fuente",
-        "excerpt": "Conversa sobre liderança, tecnologia e a agenda pública da América Latina."
+        "excerpt": "Conversa sobre liderança, tecnologia e a agenda pública da América Latina.",
+        "context": ""
       }
     }
   },
   "journey": {
-    "eyebrow": "07 — Trajetória",
+    "eyebrow": "Trajetória",
     "headline": "Uma trajetória construída através de pessoas, mercados e transformação.",
     "lead": "Cada etapa acrescenta uma dimensão distinta à mesma ideia de liderança: a escala corporativa, o desenvolvimento de pessoas e o compromisso com a comunidade.",
     "currentLabel": "Atualmente",
@@ -202,8 +212,8 @@
     }
   },
   "contact": {
-    "eyebrow": "08 — Contato",
-    "headline": "Vamos construir algo que gere impacto.",
+    "eyebrow": "Contato",
+    "headline": "Vamos conversar.",
     "lead": "Palestras, programas de liderança, iniciativas de transformação digital ou projetos de impacto social. Conte em que você está trabalhando.",
     "form": {
       "name": "Nome",
@@ -244,5 +254,9 @@
     "eventBootcamp": "Participantes do WorkHQ Bootcamp sobre fluxos de trabalho agênticos",
     "eventRoadshow": "Encontro executivo com clientes e parceiros na América Latina",
     "eventCommunity": "Encontro da comunidade profissional em um ambiente descontraído"
+  },
+  "statement": {
+    "line1": "Liderança, tecnologia e impacto não são caminhos separados.",
+    "line2": "São parte de uma mesma transformação."
   }
 }

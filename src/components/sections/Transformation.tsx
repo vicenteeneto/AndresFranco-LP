@@ -7,10 +7,13 @@ import { TRANSFORMATION_CAPABILITIES } from "@/content/speaking";
 /**
  * Digital transformation — the executive core of the page.
  *
- * One photograph, not two: the bootcamp image runs wide off the left edge,
- * with the areas of work in the margin beside it. The roadshow photograph now
- * carries the selected-content section instead of repeating the same note
- * eighty pixels later.
+ * Title, hairline, the organisation as a subtitle, the argument, then the
+ * capability chips: the most technical block on the site, and the one that
+ * has to read as a specification rather than as marketing.
+ *
+ * The photograph comes last and at controlled width. It is evidence, not the
+ * subject: letting it run full-bleed here would make the section about the
+ * event rather than about the work.
  */
 export default function Transformation() {
   const t = useTranslations("transformation");
@@ -18,90 +21,80 @@ export default function Transformation() {
   return (
     <section
       id={SECTIONS.transformation}
-      className="section-y scroll-mt-24"
+      className="section-y scroll-mt-20 border-t border-line"
       aria-labelledby="transformation-heading"
     >
       <div className="shell">
-        {/* Opening */}
-        <div className="grid grid-cols-12 gap-y-10 lg:gap-x-16">
+        <div className="grid grid-cols-12 gap-y-10 lg:gap-x-14">
           <div className="col-span-12 lg:col-span-5">
-            <SectionOpen label={t("eyebrow")} />
+            <SectionOpen index="01" label={t("eyebrow")} />
             <h2
               id="transformation-heading"
-              className="display t-h2 mt-9"
+              className="display t-h2 mt-8"
               data-reveal
               style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
             >
               {t("headline")}
             </h2>
+            <p
+              className="mt-6 border-t border-line pt-5 text-[0.8125rem] font-semibold tracking-[0.14em] text-fg-2 uppercase"
+              data-reveal
+              style={{ "--reveal-delay": "110ms" } as React.CSSProperties}
+            >
+              {t("subtitle")}
+            </p>
           </div>
-          <div className="col-span-12 lg:col-span-6 lg:col-start-7 lg:pt-16">
+
+          <div className="col-span-12 lg:col-span-6 lg:col-start-7">
             <p
               className="lead"
               data-reveal
-              style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
+              style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
             >
               {t("lead")}
             </p>
             <p
-              className="body-copy mt-7 text-ink-mute"
+              className="body-copy mt-6 text-fg-3"
               data-reveal
-              style={{ "--reveal-delay": "180ms" } as React.CSSProperties}
+              style={{ "--reveal-delay": "190ms" } as React.CSSProperties}
             >
               {t("body")}
             </p>
+
+            {/* Capability chips */}
+            <div className="mt-9" data-reveal>
+              <p className="meta mb-4">{t("capabilitiesLabel")}</p>
+              <ul className="flex flex-wrap gap-2.5">
+                {TRANSFORMATION_CAPABILITIES.map((key) => (
+                  <li key={key} className="tag">
+                    {t(`capabilities.${key}`)}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        {/*
-          The photograph runs off the left edge of the page and the areas of
-          work sit in the margin beside it — the asymmetry is what keeps this
-          from reading as a caption under a picture.
-        */}
-        <div className="mt-16 grid grid-cols-12 items-end gap-y-12 md:mt-24 lg:gap-x-12">
-          <div className="col-span-12 lg:col-span-7 lg:bleed-l">
+        {/* Evidence, at controlled width */}
+        <figure className="mt-14 grid grid-cols-12 gap-y-4 md:mt-20 lg:gap-x-14">
+          <div className="col-span-12 lg:col-span-8">
             <Photo
               id="eventBootcamp"
-              className="aspect-[16/10] w-full sm:aspect-[16/8] lg:aspect-[16/7.5]"
+              className="aspect-[16/9] w-full"
               sizes="(max-width: 1024px) 100vw, 62vw"
               editorial
             />
           </div>
-
-          <div className="col-span-12 lg:col-span-4 lg:col-start-9">
-            <p className="meta mb-7" data-reveal>
-              {t("capabilitiesLabel")}
+          <figcaption
+            className="col-span-12 self-end lg:col-span-3 lg:col-start-10"
+            data-reveal
+          >
+            <p className="meta">{t("captionLabel")}</p>
+            <p className="mt-3 text-[0.875rem] leading-[1.6] text-fg-3">
+              {t("caption")}
             </p>
-            <ul>
-              {TRANSFORMATION_CAPABILITIES.map((key, i) => (
-                <li
-                  key={key}
-                  className="flex items-baseline gap-5 border-b border-rule py-3.5 first:border-t first:border-rule sm:gap-7"
-                  data-reveal
-                  style={
-                    { "--reveal-delay": `${i * 55}ms` } as React.CSSProperties
-                  }
-                >
-                  <span className="eyebrow shrink-0 text-[0.5625rem] tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="display text-[1.0625rem] leading-[1.35] md:text-[1.125rem]">
-                    {t(`capabilities.${key}`)}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Statement */}
-        <div className="mt-20 grid grid-cols-12 md:mt-28">
-          <blockquote className="col-span-12 lg:col-span-7 lg:col-start-4">
-            <p className="display t-h3 max-w-[26ch]" data-reveal>
-              {t("statement")}
-            </p>
-          </blockquote>
-        </div>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

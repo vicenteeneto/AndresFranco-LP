@@ -18,11 +18,11 @@
     "closeMenu": "Close menu",
     "menuLabel": "Main navigation",
     "languageLabel": "Select language",
-    "backToTop": "Back to top"
+    "backToTop": "Back to top",
+    "profile": "Profile",
+    "cta": "Let's talk"
   },
   "hero": {
-    "role": "Vice President & Head of Latin America · SS&C Blue Prism",
-    "name": "Andrés Franco",
     "statement": "Leadership that transforms organisations, people and communities.",
     "support": "International executive, digital transformation leader, coach and speaker with more than three decades building businesses, developing leaders and creating impact across Latin America.",
     "ctaPrimary": "See my journey",
@@ -32,11 +32,13 @@
       "leadership": "Leadership",
       "technology": "Technology",
       "impact": "Social Impact"
-    }
+    },
+    "kicker": "International executive · Latin America",
+    "roleTitle": "Vice President & Head of Latin America",
+    "roleOrg": "SS&C Blue Prism"
   },
   "intro": {
     "eyebrow": "Profile",
-    "authorityLabel": "Career in figures",
     "headline": "More than 30 years building transformation.",
     "body1": "An international career built at the intersection of technology, business strategy and human development. From scaling regional operations to developing leaders, the through-line has always been the same: organisations transform when the people who make them possible transform.",
     "body2": "That work now runs on four fronts — the digital transformation of large enterprises, the development of leaders, the public conversation about technology and society, and social impact across Latin America — all answering to a single idea of leadership.",
@@ -57,14 +59,15 @@
         "value": "2023",
         "label": "United States Congress recognition"
       }
-    }
+    },
+    "statement": "Technology transforms processes. Leadership transforms organisations.",
+    "authorityLabel": "Career in figures"
   },
   "transformation": {
-    "eyebrow": "01 — Executive leadership",
+    "eyebrow": "Executive leadership",
     "headline": "Digital Transformation",
     "lead": "As Vice President and Head of Latin America at SS&C Blue Prism, Andrés leads the regional strategy in intelligent automation, artificial intelligence and agentic AI, working alongside large organisations as they transform their operations.",
     "body": "His work connects the technology agenda to the business agenda: identifying where automation creates real value, building the teams that deliver it, and sustaining the change inside each organisation's culture.",
-    "statement": "Technology transforms processes. Leadership transforms organisations.",
     "capabilitiesLabel": "Areas of work",
     "capabilities": {
       "ai": "Artificial Intelligence",
@@ -73,10 +76,13 @@
       "digitalTransformation": "Digital Transformation",
       "enterpriseStrategy": "Enterprise Strategy",
       "latinAmerica": "Latin America"
-    }
+    },
+    "subtitle": "SS&C Blue Prism",
+    "captionLabel": "In the field",
+    "caption": "WorkHQ Bootcamp — training on agentic workflows with teams and partners across the region."
   },
   "leadership": {
-    "eyebrow": "02 — Leadership and coaching",
+    "eyebrow": "Leadership and coaching",
     "headline": "Developing leaders who develop organisations.",
     "lead": "With more than fifteen years as a certified coach in John Maxwell leadership methodologies, Andrés works with executives and teams on development processes that combine strategic rigour with personal growth.",
     "body": "The approach is that of a serving executive, not an outside observer: the same frameworks he applies while running regional operations are the ones he uses with directors, commercial teams and organisations in transformation.",
@@ -92,7 +98,7 @@
     "cta": "Let's talk leadership"
   },
   "speaker": {
-    "eyebrow": "03 — Speaker",
+    "eyebrow": "Speaker",
     "headline": "Ideas that move people and organisations.",
     "lead": "Andrés speaks and sits on panels at executive gatherings, industry forums and corporate programmes across Latin America, in front of audiences that range from technical teams to boards.",
     "body": "His talks translate complex subjects — artificial intelligence, automation, economics, leadership — into concrete decisions for the people who have to make them.",
@@ -106,10 +112,11 @@
       "politics": "Politics",
       "socialDevelopment": "Social Development"
     },
-    "cta": "Invite Andrés"
+    "cta": "Invite Andrés",
+    "cardLabel": "Keynotes · Talks"
   },
   "impact": {
-    "eyebrow": "04 — Social impact",
+    "eyebrow": "Social impact",
     "headline": "Leadership with purpose.",
     "foundationName": "Sereniti Foundation",
     "lead": "Andrés is a co-founder of Sereniti Foundation, a United States-based non-profit dedicated to strengthening the development of Latin American communities.",
@@ -130,7 +137,7 @@
     "body": "Awarded to Andrés Franco and Jennifer Heegaard in recognition of their contribution to the Hispanic community and to initiatives in social impact, education and community development."
   },
   "pulso": {
-    "eyebrow": "05 — Own programme",
+    "eyebrow": "Own programme",
     "title": "El Pulso del Poder",
     "subtitle": "Politics, economics and society through an open conversation about the forces shaping our time, held to the same discipline as the analysis of an organisation: data, context and consequences.",
     "topicsLabel": "On the programme",
@@ -145,7 +152,7 @@
     "episodesLabel": "Selected episodes"
   },
   "events": {
-    "eyebrow": "06 — Selection",
+    "eyebrow": "Selection",
     "headline": "Events & Conversations",
     "lead": "A selection of recent gatherings and conversations. Not a calendar — a sample of the kind of rooms Andrés works in.",
     "view": "View",
@@ -156,20 +163,23 @@
     "items": {
       "roadshowLatam": {
         "title": "SS&C Blue Prism Roadshow",
-        "excerpt": "Executive gathering with regional clients and partners on the future of automation, artificial intelligence and innovation."
+        "excerpt": "Executive gathering with regional clients and partners on the future of automation, artificial intelligence and innovation.",
+        "context": "Latin America"
       },
       "workhqBootcamp": {
         "title": "WorkHQ Bootcamp — Experiencing Agentic Workflows",
-        "excerpt": "Intensive training programme on agentic workflows and enterprise automation with teams and partners across the region."
+        "excerpt": "Intensive training programme on agentic workflows and enterprise automation with teams and partners across the region.",
+        "context": "Latin America"
       },
       "entrevistaMarian": {
         "title": "Interview with Marian de la Fuente",
-        "excerpt": "A conversation about leadership, technology and the public agenda in Latin America."
+        "excerpt": "A conversation about leadership, technology and the public agenda in Latin America.",
+        "context": ""
       }
     }
   },
   "journey": {
-    "eyebrow": "07 — Journey",
+    "eyebrow": "Journey",
     "headline": "A career built through people, markets and transformation.",
     "lead": "Each stage adds a different dimension to the same idea of leadership: corporate scale, the development of people, and a commitment to community.",
     "currentLabel": "Current",
@@ -202,8 +212,8 @@
     }
   },
   "contact": {
-    "eyebrow": "08 — Contact",
-    "headline": "Let's build something that creates impact.",
+    "eyebrow": "Contact",
+    "headline": "Let's talk.",
     "lead": "Keynotes, leadership programmes, digital transformation initiatives or social impact projects. Tell me what you are working on.",
     "form": {
       "name": "Name",
@@ -244,5 +254,9 @@
     "eventBootcamp": "Participants of the WorkHQ Bootcamp on agentic workflows",
     "eventRoadshow": "Executive gathering with clients and partners in Latin America",
     "eventCommunity": "Professional community gathering in a relaxed setting"
+  },
+  "statement": {
+    "line1": "Leadership, technology and impact are not separate paths.",
+    "line2": "They are parts of the same transformation."
   }
 }

@@ -6,8 +6,10 @@ import { JOURNEY } from "@/content/journey";
 /**
  * The career, in five milestones.
  *
- * Depth without the CV: one line of role, one short paragraph, and the
- * heading holding its place in the margin while the years scroll past it.
+ * A linear rail, not cards: period on the left, organisation and role on the
+ * right, one hairline between each. Depth of career shown without
+ * reproducing a CV — and without five boxes competing with the cards that
+ * come later in the page.
  */
 export default function Journey() {
   const t = useTranslations("journey");
@@ -15,26 +17,26 @@ export default function Journey() {
   return (
     <section
       id={SECTIONS.journey}
-      className="section-y scroll-mt-24 bg-white"
+      className="section-y scroll-mt-20 border-t border-line"
       aria-labelledby="journey-heading"
     >
       <div className="shell">
-        <div className="grid grid-cols-12 gap-y-14 lg:gap-x-16">
+        <div className="grid grid-cols-12 gap-y-10 lg:gap-x-14">
           <div className="col-span-12 lg:col-span-4">
-            <div className="lg:sticky lg:top-36">
-              <SectionOpen label={t("eyebrow")} />
+            <div className="lg:sticky lg:top-28">
+              <SectionOpen index="03" label={t("eyebrow")} />
               <h2
                 id="journey-heading"
-                className="display mt-9 text-[clamp(1.9rem,3.4vw,2.8rem)] leading-[1.1] tracking-[-0.018em]"
+                className="display t-h3 mt-8 max-w-[18ch]"
                 data-reveal
                 style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
               >
                 {t("headline")}
               </h2>
               <p
-                className="body-copy mt-8 max-w-[36ch] text-ink-mute"
+                className="body-copy mt-7 max-w-[36ch] text-fg-3"
                 data-reveal
-                style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
+                style={{ "--reveal-delay": "110ms" } as React.CSSProperties}
               >
                 {t("lead")}
               </p>
@@ -45,31 +47,34 @@ export default function Journey() {
             {JOURNEY.map((m, i) => (
               <li
                 key={m.id}
-                className={`grid grid-cols-12 gap-x-6 gap-y-4 py-10 md:py-12 ${
-                  i === 0 ? "" : "border-t border-rule"
-                }`}
+                className="border-t border-line py-7 last:border-b md:py-9"
                 data-reveal
                 style={
-                  { "--reveal-delay": `${(i % 3) * 70}ms` } as React.CSSProperties
+                  { "--reveal-delay": `${(i % 3) * 60}ms` } as React.CSSProperties
                 }
               >
-                <div className="col-span-12 sm:col-span-3">
-                  <span className={`meta ${m.current ? "text-blue" : ""}`}>
-                    {m.current ? t("currentLabel") : (m.period ?? "")}
-                  </span>
-                </div>
-
-                <div className="col-span-12 sm:col-span-9">
-                  <h3 className="display text-[clamp(1.25rem,2.1vw,1.7rem)] leading-[1.24]">
-                    {t(`items.${m.id}.title`)}
-                  </h3>
-                  <p className="mt-2.5 text-[0.8125rem] font-medium tracking-[0.05em] text-blue-deep">
-                    {t(`items.${m.id}.role`)}
+                {/*
+                  The period sits above the milestone rather than in a column
+                  of its own. Only the current role carries a label — four
+                  empty cells down the left of a rail read as a mistake, not
+                  as a timeline.
+                */}
+                {(m.current || m.period) && (
+                  <p
+                    className={`meta mb-4 ${m.current ? "text-blue-2" : ""}`}
+                  >
+                    {m.current ? t("currentLabel") : m.period}
                   </p>
-                  <p className="body-copy mt-5 max-w-[54ch] text-ink-mute">
-                    {t(`items.${m.id}.body`)}
-                  </p>
-                </div>
+                )}
+                <h3 className="display text-[1.2rem] leading-[1.24] md:text-[1.45rem]">
+                  {t(`items.${m.id}.title`)}
+                </h3>
+                <p className="mt-2 text-[0.75rem] font-semibold tracking-[0.12em] text-blue-2 uppercase">
+                  {t(`items.${m.id}.role`)}
+                </p>
+                <p className="body-copy mt-4 max-w-[56ch] text-fg-3">
+                  {t(`items.${m.id}.body`)}
+                </p>
               </li>
             ))}
           </ol>

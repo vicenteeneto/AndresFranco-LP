@@ -3,6 +3,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { ArrowRight, ArrowUpRight, SocialIcon } from "../ui/icons";
+import SectionOpen from "../ui/SectionOpen";
 import { SECTIONS } from "@/content/sections";
 import {
   SOCIAL_LINKS,
@@ -24,8 +25,8 @@ export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
 
   /**
-   * Any link carrying `data-inquiry="speaking"` — in the hero, the speaker
-   * section, the coaching section — preselects the matching category here.
+   * Any link carrying `data-inquiry="speaking"` — in the speaker section, the
+   * coaching section — preselects the matching category here.
    */
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
@@ -95,74 +96,83 @@ export default function Contact() {
   }
 
   const field =
-    "w-full border-0 border-b border-white/16 bg-transparent py-3.5 text-[0.9375rem] text-white placeholder:text-white/28 transition-colors duration-300 focus:border-blue focus:outline-none";
+    "w-full border-0 border-b border-line-2 bg-transparent py-3 text-[0.9375rem] text-fg placeholder:text-fg-3 transition-colors duration-300 focus:border-blue focus:outline-none";
   const label =
-    "block text-[0.625rem] font-semibold tracking-[0.2em] text-blue uppercase";
+    "block text-[0.625rem] font-semibold tracking-[0.2em] text-blue-2 uppercase";
+
+  /** The doors out. Email only appears once an address is configured. */
+  const channels = [
+    ...(CONTACT_EMAIL
+      ? [{ id: "email" as const, label: "Email", href: `mailto:${CONTACT_EMAIL}` }]
+      : []),
+    ...SOCIAL_LINKS.filter((s) => s.href),
+    {
+      id: "sereniti" as const,
+      label: tImpact("foundationName"),
+      href: EXTERNAL.sereniti,
+    },
+  ];
 
   return (
     <section
       id={SECTIONS.contact}
-      className="on-dark section-y scroll-mt-24 bg-ink"
+      className="section-y scroll-mt-20 border-t border-line"
       aria-labelledby="contact-heading"
     >
       <div className="shell">
-        <div className="grid grid-cols-12 gap-y-16 lg:gap-x-16">
+        <div className="grid grid-cols-12 gap-y-12 lg:gap-x-14">
           <div className="col-span-12 lg:col-span-5">
-            <div className="rule-top pt-5" data-reveal>
-              <p className="eyebrow">{t("eyebrow")}</p>
-            </div>
+            <SectionOpen index="07" label={t("eyebrow")} />
             <h2
               id="contact-heading"
-              className="display mt-9 text-[clamp(2.2rem,4.4vw,3.6rem)] leading-[1.04] tracking-[-0.022em]"
+              className="display t-h2 mt-8 max-w-[12ch]"
               data-reveal
               style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
             >
               {t("headline")}
             </h2>
             <p
-              className="lead mt-8 max-w-[38ch]"
+              className="lead mt-7 max-w-[38ch]"
               data-reveal
-              style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
+              style={{ "--reveal-delay": "110ms" } as React.CSSProperties}
             >
               {t("lead")}
             </p>
 
-            <div className="mt-12" data-reveal>
-              <p className="meta mb-5">{t("followLabel")}</p>
-              <ul className="flex items-center gap-3">
-                {SOCIAL_LINKS.filter((s) => s.href).map((s) => (
-                  <li key={s.id}>
-                    <a
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={s.label}
-                      className="flex h-12 w-12 items-center justify-center border border-white/14 text-white/65 transition-colors duration-400 hover:border-blue hover:text-white"
-                    >
-                      <SocialIcon id={s.id} className="h-[18px] w-[18px]" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-
-              {/* The one external destination that is not a social profile */}
-              <a
-                href={EXTERNAL.sereniti}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-rule mt-8 text-white"
-              >
-                {tImpact("cta")}
-                <ArrowUpRight />
-              </a>
-            </div>
+            {/* Channels */}
+            <ul className="mt-10 grid grid-cols-2 gap-3" data-reveal>
+              {channels.map((c) => (
+                <li key={c.id}>
+                  <a
+                    href={c.href}
+                    {...(c.id === "email"
+                      ? {}
+                      : { target: "_blank", rel: "noopener noreferrer" })}
+                    className="card group flex items-center justify-between gap-3 px-4 py-4 transition-colors duration-300 hover:border-blue hover:bg-blue-dim"
+                  >
+                    <span className="flex min-w-0 items-center gap-3">
+                      {c.id !== "sereniti" && c.id !== "email" && (
+                        <SocialIcon
+                          id={c.id}
+                          className="h-4 w-4 shrink-0 text-blue-2"
+                        />
+                      )}
+                      <span className="truncate text-[0.6875rem] font-semibold tracking-[0.12em] text-fg uppercase">
+                        {c.label}
+                      </span>
+                    </span>
+                    <ArrowUpRight className="shrink-0 text-fg-3 transition-colors duration-300 group-hover:text-blue-2" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Form */}
           <div className="col-span-12 lg:col-span-6 lg:col-start-7">
             <form
               onSubmit={onSubmit}
-              className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2"
+              className="card grid grid-cols-1 gap-x-8 gap-y-7 p-7 sm:grid-cols-2 md:p-10"
               data-reveal
             >
               {/* Honeypot */}
@@ -228,15 +238,11 @@ export default function Contact() {
                     onChange={(e) => setInquiry(e.target.value as InquiryType)}
                     className={`${field} appearance-none pr-8`}
                   >
-                    <option value="" disabled className="bg-ink text-white">
+                    <option value="" disabled className="bg-card text-fg">
                       {t("form.selectPlaceholder")}
                     </option>
                     {INQUIRY_TYPES.map((key) => (
-                      <option
-                        key={key}
-                        value={key}
-                        className="bg-ink text-white"
-                      >
+                      <option key={key} value={key} className="bg-card text-fg">
                         {t(`inquiryTypes.${key}`)}
                       </option>
                     ))}
@@ -244,7 +250,7 @@ export default function Contact() {
                   <svg
                     aria-hidden="true"
                     viewBox="0 0 11 7"
-                    className="pointer-events-none absolute top-1/2 right-1 h-[7px] w-[11px] -translate-y-1/2 text-blue"
+                    className="pointer-events-none absolute top-1/2 right-1 h-[7px] w-[11px] -translate-y-1/2 text-blue-2"
                   >
                     <path
                       d="M1 1l4.5 4.5L10 1"
@@ -273,7 +279,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="btn-solid w-full disabled:opacity-60 sm:w-auto"
+                  className="btn-blue w-full disabled:opacity-60 sm:w-auto"
                 >
                   {status === "sending" ? t("form.sending") : t("form.submit")}
                   <ArrowRight />
@@ -282,8 +288,8 @@ export default function Contact() {
                 <p
                   role="status"
                   aria-live="polite"
-                  className={`mt-6 text-[0.875rem] leading-[1.6] ${
-                    status === "error" ? "text-[#e8a49a]" : "text-white/70"
+                  className={`mt-5 text-[0.875rem] leading-[1.6] ${
+                    status === "error" ? "text-[#ff9d8f]" : "text-fg-2"
                   }`}
                 >
                   {status === "sent"

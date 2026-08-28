@@ -5,6 +5,13 @@ import { useTranslations } from "next-intl";
 import { NAV_ITEMS, SECTIONS } from "@/content/sections";
 import LanguageSwitcher from "./ui/LanguageSwitcher";
 
+/**
+ * A thin technical bar rather than a masthead.
+ *
+ * It is transparent over the hero and takes a hairline and a blurred ground
+ * the moment the page moves — so the name at the top left never competes with
+ * the enormous name in the hero directly below it.
+ */
 export default function SiteHeader() {
   const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
@@ -59,39 +66,33 @@ export default function SiteHeader() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ${
+        className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-400 ${
           scrolled || open
-            ? "border-b border-rule bg-paper/92 backdrop-blur-[12px]"
+            ? "border-b border-line bg-bg/88 backdrop-blur-[14px]"
             : "border-b border-transparent bg-transparent"
         }`}
       >
         <div className="shell">
           <div
-            className={`flex items-center justify-between gap-8 transition-[height] duration-500 ${
-              scrolled ? "h-[68px]" : "h-[84px] md:h-[96px]"
+            className={`flex items-center justify-between gap-6 transition-[height] duration-400 ${
+              scrolled ? "h-[62px]" : "h-[74px] md:h-[82px]"
             }`}
           >
             {/* Wordmark */}
             <a
               href={`#${SECTIONS.hero}`}
               onClick={close}
-              className="group flex shrink-0 items-baseline gap-2.5 whitespace-nowrap"
+              className="shrink-0 font-display text-[0.8125rem] font-bold tracking-[0.2em] whitespace-nowrap text-fg uppercase transition-colors duration-300 hover:text-blue-2"
             >
-              <span className="display text-[1.2rem] leading-none md:text-[1.35rem]">
-                Andrés Franco
-              </span>
-              {/*
-                No tagline here. The header row is capped by the shell, so it
-                never gets wider than 1280px however wide the screen is: a
-                tagline alongside a seven-item nav, a three-language switcher
-                and the contact button leaves the three groups almost touching.
-                The role is stated in the hero, a few lines below.
-              */}
+              Andrés<span className="text-blue-2"> Franco</span>
             </a>
 
             {/* Desktop navigation */}
             <nav
               aria-label={t("menuLabel")}
+              /* Seven items, three languages and a button need 1280px to sit
+                 with real space between them; below that the overlay menu is
+                 the honest answer. */
               className="hidden items-center gap-5 xl:flex 2xl:gap-7"
             >
               {NAV_ITEMS.map((item) => (
@@ -99,16 +100,16 @@ export default function SiteHeader() {
                   key={item.id}
                   href={`#${item.id}`}
                   aria-current={active === item.id ? "true" : undefined}
-                  className={`relative text-[0.6875rem] font-semibold tracking-[0.14em] uppercase transition-colors duration-300 ${
+                  className={`relative text-[0.6875rem] font-semibold tracking-[0.13em] whitespace-nowrap uppercase transition-colors duration-300 ${
                     active === item.id
-                      ? "text-navy"
-                      : "text-ink-mute hover:text-blue-deep"
+                      ? "text-fg"
+                      : "text-fg-3 hover:text-fg"
                   }`}
                 >
                   {t(item.key)}
                   <span
                     aria-hidden="true"
-                    className={`absolute -bottom-1.5 left-0 h-px w-full origin-left bg-blue transition-transform duration-500 ${
+                    className={`absolute -bottom-1.5 left-0 h-px w-full origin-left bg-blue transition-transform duration-400 ${
                       active === item.id ? "scale-x-100" : "scale-x-0"
                     }`}
                   />
@@ -116,13 +117,13 @@ export default function SiteHeader() {
               ))}
             </nav>
 
-            <div className="flex shrink-0 items-center gap-4 md:gap-5 2xl:gap-7">
-              <LanguageSwitcher />
+            <div className="flex shrink-0 items-center gap-4 md:gap-6">
+              <LanguageSwitcher className="hidden sm:flex" />
               <a
                 href={`#${SECTIONS.contact}`}
-                className="hidden border border-warm-gray px-5 py-2.5 text-[0.6875rem] font-semibold tracking-[0.14em] text-navy uppercase transition-colors duration-400 hover:border-navy hover:bg-navy hover:text-paper md:inline-flex"
+                className="hidden bg-blue px-5 py-2.5 text-[0.6875rem] font-semibold tracking-[0.12em] whitespace-nowrap text-white uppercase transition-colors duration-300 hover:bg-blue-2 md:inline-flex"
               >
-                {t("contact")}
+                {t("cta")}
               </a>
 
               {/* Menu toggle */}
@@ -138,13 +139,13 @@ export default function SiteHeader() {
                 </span>
                 <span
                   aria-hidden="true"
-                  className={`absolute h-px w-[22px] bg-navy transition-transform duration-400 ${
+                  className={`absolute h-px w-[22px] bg-fg transition-transform duration-400 ${
                     open ? "rotate-45" : "-translate-y-[4px]"
                   }`}
                 />
                 <span
                   aria-hidden="true"
-                  className={`absolute h-px w-[22px] bg-navy transition-transform duration-400 ${
+                  className={`absolute h-px w-[22px] bg-fg transition-transform duration-400 ${
                     open ? "-rotate-45" : "translate-y-[4px]"
                   }`}
                 />
@@ -156,33 +157,33 @@ export default function SiteHeader() {
 
       {/* Overlay menu */}
       <div
-        className={`fixed inset-0 z-40 bg-paper transition-[opacity,visibility] duration-500 xl:hidden ${
+        className={`fixed inset-0 z-40 bg-bg transition-[opacity,visibility] duration-400 xl:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
         aria-hidden={!open}
       >
-        <div className="shell flex h-full flex-col justify-between pt-[104px] pb-12">
-          <nav aria-label={t("menuLabel")} className="mt-6">
+        <div className="shell flex h-full flex-col justify-between pt-[96px] pb-10">
+          <nav aria-label={t("menuLabel")} className="mt-4">
             <ul>
               {NAV_ITEMS.map((item, i) => (
-                <li key={item.id} className="border-b border-rule-soft">
+                <li key={item.id} className="border-b border-line">
                   <a
                     href={`#${item.id}`}
                     onClick={close}
                     className="flex items-baseline gap-4 py-4"
                     style={{
-                      transitionDelay: open ? `${90 + i * 45}ms` : "0ms",
+                      transitionDelay: open ? `${70 + i * 40}ms` : "0ms",
                       opacity: open ? 1 : 0,
                       transform: open ? "none" : "translateY(10px)",
                       transitionProperty: "opacity, transform",
-                      transitionDuration: "600ms",
+                      transitionDuration: "500ms",
                       transitionTimingFunction: "cubic-bezier(.16,1,.3,1)",
                     }}
                   >
-                    <span className="eyebrow w-7 text-[0.5625rem] tabular-nums">
+                    <span className="label-blue w-7 tabular-nums">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="display text-[1.75rem] leading-[1.15]">
+                    <span className="display text-[1.6rem] uppercase">
                       {t(item.key)}
                     </span>
                   </a>
@@ -191,13 +192,16 @@ export default function SiteHeader() {
             </ul>
           </nav>
 
-          <a
-            href={`#${SECTIONS.contact}`}
-            onClick={close}
-            className="btn-solid w-full"
-          >
-            {t("contact")}
-          </a>
+          <div className="flex flex-col gap-6">
+            <LanguageSwitcher />
+            <a
+              href={`#${SECTIONS.contact}`}
+              onClick={close}
+              className="btn-blue w-full"
+            >
+              {t("cta")}
+            </a>
+          </div>
         </div>
       </div>
     </>
