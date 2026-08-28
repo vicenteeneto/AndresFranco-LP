@@ -1,22 +1,24 @@
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./ui/LanguageSwitcher";
 import { SECTIONS } from "@/content/sections";
-import { PERSON } from "@/content/site";
+import { PERSON, SOCIAL_LINKS, EXTERNAL } from "@/content/site";
 
 /**
- * The footer stays deliberately thin. The contact section directly above it
- * already carries the call to action and the social profiles, and the header
- * carries the navigation — repeating either here would only dilute both.
+ * The footer stays deliberately thin: a name, the way out to the rest of the
+ * ecosystem, and the language switch. The contact section directly above it
+ * already carries the call to action, and the header carries the navigation —
+ * repeating either here would dilute both.
  */
 export default function SiteFooter() {
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
+  const tImpact = useTranslations("impact");
   const year = new Date().getFullYear();
 
   return (
     <footer className="on-dark bg-ink pb-14 text-white">
       <div className="shell">
-        <div className="flex flex-col gap-10 border-t border-white/10 pt-12 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-10 border-t border-white/10 pt-12 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <a
               href={`#${SECTIONS.hero}`}
@@ -28,6 +30,34 @@ export default function SiteFooter() {
               {t("role")}
             </p>
           </div>
+
+          {/* The doors out — this page is the entrance, not the destination */}
+          <nav aria-label={t("socialLabel")}>
+            <ul className="flex flex-wrap items-center gap-x-8 gap-y-3">
+              {SOCIAL_LINKS.filter((s) => s.href).map((s) => (
+                <li key={s.id}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="meta transition-colors duration-300 hover:text-white"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href={EXTERNAL.sereniti}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="meta transition-colors duration-300 hover:text-white"
+                >
+                  {tImpact("foundationName")}
+                </a>
+              </li>
+            </ul>
+          </nav>
 
           <div className="flex items-center gap-10">
             <LanguageSwitcher tone="dark" />

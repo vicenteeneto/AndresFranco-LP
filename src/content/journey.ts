@@ -1,14 +1,12 @@
-import type { PhotoId } from "./images";
-
 /**
  * Career milestones.
  *
- * Order = display order (most recent first).
- * Text (title, organisation subtitle, body) is translated and lives in
+ * Five entries, most recent first — the depth of a career shown without
+ * reproducing a CV. Text (title, role, body) is translated and lives in
  * messages/*.json under `journey.items.<id>`.
  *
- * To add a milestone: append an entry here and the matching translation block.
- * `period` is optional — omitted entries simply render without a date rail.
+ * To add a milestone: append an entry here and the matching translation
+ * block. Keep the list short; this is a landing page, not a résumé.
  */
 
 export type Milestone = {
@@ -17,14 +15,11 @@ export type Milestone = {
   period?: string;
   /** Renders with the accent marker. Use for the current role. */
   current?: boolean;
-  photo?: PhotoId;
 };
 
 export const JOURNEY: Milestone[] = [
-  { id: "blueprism", current: true, photo: "portraitFormal" },
+  { id: "blueprism", current: true },
   { id: "sereniti" },
-  { id: "congress", period: "2023" },
-  { id: "pulso" },
   { id: "maxwell" },
   { id: "cisco" },
   { id: "international" },

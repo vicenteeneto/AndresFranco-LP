@@ -7,8 +7,17 @@ import { EXTERNAL } from "@/content/site";
 
 const PILLARS = ["education", "partnerships", "wellness", "projects"] as const;
 
+/**
+ * Social impact — and, at its close, the congressional recognition.
+ *
+ * The recognition lives here rather than in a section of its own: it was
+ * given for this work, and a page that stops to applaud itself for a full
+ * screen reads as promotion. Two lines and a year, in the margin of the story
+ * that earned it.
+ */
 export default function Impact() {
   const t = useTranslations("impact");
+  const tr = useTranslations("recognition");
 
   return (
     <section
@@ -87,6 +96,29 @@ export default function Impact() {
             </li>
           ))}
         </ul>
+
+        {/* Recognition — stated, not celebrated */}
+        <div className="mt-20 grid grid-cols-12 gap-y-6 md:mt-28 lg:gap-x-16">
+          <div className="col-span-12 lg:col-span-3">
+            <div className="rule-top pt-6" data-reveal>
+              <p className="eyebrow">{tr("eyebrow")}</p>
+              <p className="display mt-6 text-[clamp(2rem,3.4vw,2.9rem)] leading-none tracking-[-0.03em] text-blue">
+                {tr("year")}
+              </p>
+            </div>
+          </div>
+          <div className="col-span-12 lg:col-span-8 lg:col-start-5">
+            <div className="rule-top pt-6" data-reveal>
+              <h3 className="display max-w-[24ch] text-[clamp(1.3rem,2.3vw,1.85rem)] leading-[1.22]">
+                {tr("title")}
+              </h3>
+              <p className="meta mt-4 text-blue">{tr("organization")}</p>
+              <p className="body-copy mt-6 max-w-[58ch] text-ink-mute">
+                {tr("body")}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

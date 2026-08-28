@@ -1,10 +1,17 @@
 import { useTranslations } from "next-intl";
 import Photo from "../ui/Photo";
 import SectionOpen from "../ui/SectionOpen";
-import { ArrowRight } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import { TRANSFORMATION_CAPABILITIES } from "@/content/speaking";
 
+/**
+ * Digital transformation — the executive core of the page.
+ *
+ * One photograph, not two: the bootcamp image runs wide off the left edge,
+ * with the areas of work in the margin beside it. The roadshow photograph now
+ * carries the selected-content section instead of repeating the same note
+ * eighty pixels later.
+ */
 export default function Transformation() {
   const t = useTranslations("transformation");
 
@@ -35,6 +42,13 @@ export default function Transformation() {
               style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
             >
               {t("lead")}
+            </p>
+            <p
+              className="body-copy mt-7 text-ink-mute"
+              data-reveal
+              style={{ "--reveal-delay": "180ms" } as React.CSSProperties}
+            >
+              {t("body")}
             </p>
           </div>
         </div>
@@ -87,34 +101,6 @@ export default function Transformation() {
               {t("statement")}
             </p>
           </blockquote>
-        </div>
-      </div>
-
-      {/* The regional stage, edge to edge */}
-      <div className="mt-16 md:mt-24">
-        <Photo
-          id="eventRoadshow"
-          className="aspect-[16/10] w-full sm:aspect-[2/1] lg:aspect-[21/8]"
-          sizes="100vw"
-          editorial
-        />
-      </div>
-
-      <div className="shell">
-        <div className="mt-14 grid grid-cols-12 gap-y-8 md:mt-20 lg:gap-x-16">
-          <div className="col-span-12 lg:col-span-6 lg:col-start-4">
-            <p className="body-copy" data-reveal>
-              {t("body")}
-            </p>
-            <a
-              href={`#${SECTIONS.journey}`}
-              className="link-rule mt-8"
-              data-reveal
-            >
-              {t("cta")}
-              <ArrowRight />
-            </a>
-          </div>
         </div>
       </div>
     </section>

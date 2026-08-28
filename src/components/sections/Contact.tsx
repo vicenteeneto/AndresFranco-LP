@@ -2,10 +2,11 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { ArrowRight, SocialIcon } from "../ui/icons";
+import { ArrowRight, ArrowUpRight, SocialIcon } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import {
   SOCIAL_LINKS,
+  EXTERNAL,
   CONTACT_FORM,
   CONTACT_EMAIL,
   contactEndpoint,
@@ -17,6 +18,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 
 export default function Contact() {
   const t = useTranslations("contact");
+  const tImpact = useTranslations("impact");
   const locale = useLocale();
   const [inquiry, setInquiry] = useState<InquiryType | "">("");
   const [status, setStatus] = useState<Status>("idle");
@@ -142,6 +144,17 @@ export default function Contact() {
                   </li>
                 ))}
               </ul>
+
+              {/* The one external destination that is not a social profile */}
+              <a
+                href={EXTERNAL.sereniti}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-rule mt-8 text-white"
+              >
+                {tImpact("cta")}
+                <ArrowUpRight />
+              </a>
             </div>
           </div>
 

@@ -5,6 +5,14 @@ import { ArrowRight } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import { LEADERSHIP_PILLARS } from "@/content/speaking";
 
+/**
+ * Leadership and coaching.
+ *
+ * The black and white portrait carries the section. The six areas of work are
+ * a typographic rail rather than six explained cards: on a landing page the
+ * list is there to show range, and the conversation itself belongs in the
+ * contact form.
+ */
 export default function Leadership() {
   const t = useTranslations("leadership");
 
@@ -16,10 +24,6 @@ export default function Leadership() {
     >
       <div className="shell">
         <div className="grid grid-cols-12 gap-y-14 lg:gap-x-16">
-          {/*
-            The portrait carries this section, so it takes the weight: a tall
-            editorial crop running off the left edge rather than a card.
-          */}
           <div className="col-span-12 sm:col-span-9 lg:col-span-5 lg:bleed-l">
             <Photo
               id="portraitBw"
@@ -53,43 +57,54 @@ export default function Leadership() {
             >
               {t("body")}
             </p>
+
+            {/* Areas of work — named, not explained */}
+            <div className="mt-12">
+              <p className="meta mb-6" data-reveal>
+                {t("pillarsLabel")}
+              </p>
+              <ul className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+                {LEADERSHIP_PILLARS.map((key, i) => (
+                  <li
+                    key={key}
+                    className={[
+                      "flex items-baseline gap-5 border-t border-rule py-4 sm:gap-6",
+                      // Closes the rail: the final row on mobile, the final
+                      // row of each column once it splits in two.
+                      i === LEADERSHIP_PILLARS.length - 1
+                        ? "border-b"
+                        : i === LEADERSHIP_PILLARS.length - 2
+                          ? "sm:border-b"
+                          : "",
+                    ].join(" ")}
+                    data-reveal
+                    style={
+                      {
+                        "--reveal-delay": `${(i % 2) * 70}ms`,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <span className="eyebrow shrink-0 text-[0.5625rem] tabular-nums">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="display text-[1.0625rem] leading-[1.35] md:text-[1.125rem]">
+                      {t(`pillars.${key}`)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <a
               href={`#${SECTIONS.contact}`}
               data-inquiry="coaching"
-              className="link-rule mt-10"
+              className="link-rule mt-11"
               data-reveal
             >
               {t("cta")}
               <ArrowRight />
             </a>
           </div>
-        </div>
-
-        {/* Themes */}
-        <div className="mt-24 md:mt-32">
-          <p className="meta mb-10" data-reveal>
-            {t("pillarsLabel")}
-          </p>
-          <ul className="grid grid-cols-1 gap-x-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-16">
-            {LEADERSHIP_PILLARS.map((key, i) => (
-              <li
-                key={key}
-                className="border-t border-rule py-8 md:py-10"
-                data-reveal
-                style={
-                  { "--reveal-delay": `${(i % 3) * 90}ms` } as React.CSSProperties
-                }
-              >
-                <span className="eyebrow text-[0.5625rem] tabular-nums">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="display t-h4 mt-5">{t(`pillars.${key}.title`)}</h3>
-                <p className="mt-4 max-w-[34ch] text-[0.9375rem] leading-[1.7] text-ink-mute">
-                  {t(`pillars.${key}.body`)}
-                </p>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

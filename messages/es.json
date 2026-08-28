@@ -7,7 +7,6 @@
     "skipToContent": "Ir al contenido principal"
   },
   "nav": {
-    "profile": "Perfil",
     "transformation": "Transformación",
     "leadership": "Liderazgo",
     "speaker": "Speaker",
@@ -27,17 +26,17 @@
     "statement": "Liderazgo que transforma organizaciones, personas y comunidades.",
     "support": "Ejecutivo internacional, líder en transformación digital, coach y speaker con más de tres décadas construyendo negocios, desarrollando líderes y generando impacto en América Latina.",
     "ctaPrimary": "Conoce mi trayectoria",
-    "ctaSecondary": "Invítame a participar",
+    "ctaSecondary": "Contacto",
     "descriptors": {
       "digital": "Transformación Digital",
       "leadership": "Liderazgo",
       "technology": "Tecnología",
       "impact": "Impacto Social"
-    },
-    "scroll": "Desplázate"
+    }
   },
   "intro": {
     "eyebrow": "Perfil",
+    "authorityLabel": "Trayectoria en cifras",
     "headline": "Más de 30 años construyendo transformación.",
     "body1": "Una carrera internacional construida en la intersección de la tecnología, la estrategia de negocio y el desarrollo humano. De la expansión de operaciones regionales a la formación de líderes, el eje ha sido siempre el mismo: las organizaciones se transforman cuando se transforman las personas que las hacen posibles.",
     "body2": "Ese trabajo se expresa hoy en cuatro frentes —la transformación digital de grandes empresas, el desarrollo de líderes, la conversación pública sobre tecnología y sociedad, y el impacto social en América Latina— que responden a una misma idea de liderazgo.",
@@ -48,7 +47,7 @@
       },
       "coaching": {
         "value": "15+",
-        "label": "Años como coach certificado en liderazgo"
+        "label": "Años en liderazgo y coaching"
       },
       "region": {
         "value": "LATAM",
@@ -72,11 +71,9 @@
       "intelligentAutomation": "Automatización Inteligente",
       "agenticAi": "Agentic AI",
       "digitalTransformation": "Transformación Digital",
-      "businessStrategy": "Estrategia de Negocio",
-      "enterpriseAutomation": "Automatización Empresarial",
-      "operationalTransformation": "Transformación Operativa"
-    },
-    "cta": "Conoce mi experiencia"
+      "enterpriseStrategy": "Estrategia Corporativa",
+      "latinAmerica": "América Latina"
+    }
   },
   "leadership": {
     "eyebrow": "02 — Liderazgo y coaching",
@@ -85,32 +82,14 @@
     "body": "El enfoque es el de un ejecutivo en funciones, no el de un observador externo: los mismos marcos que aplica al frente de operaciones regionales son los que utiliza al trabajar con directivos, equipos comerciales y organizaciones en transformación.",
     "pillarsLabel": "Ejes de trabajo",
     "pillars": {
-      "leadershipDevelopment": {
-        "title": "Desarrollo de Liderazgo",
-        "body": "Programas estructurados para formar líderes capaces de sostener el crecimiento de sus organizaciones."
-      },
-      "executiveCoaching": {
-        "title": "Coaching Ejecutivo",
-        "body": "Acompañamiento individual a directivos en decisiones de alto impacto y transiciones de rol."
-      },
-      "teamDevelopment": {
-        "title": "Desarrollo de Equipos",
-        "body": "Construcción de equipos alineados, con criterios claros de desempeño y confianza."
-      },
-      "organizationalTransformation": {
-        "title": "Transformación Organizacional",
-        "body": "Cambio cultural y operativo diseñado para sostenerse más allá del proyecto que lo inicia."
-      },
-      "strategicThinking": {
-        "title": "Pensamiento Estratégico",
-        "body": "Marcos de decisión para leer el mercado, priorizar y asignar recursos con criterio."
-      },
-      "personalGrowth": {
-        "title": "Crecimiento Personal",
-        "body": "El trabajo interno que sostiene la capacidad de liderar a otros de forma consistente."
-      }
+      "leadershipDevelopment": "Desarrollo de Liderazgo",
+      "executiveCoaching": "Coaching Ejecutivo",
+      "teamDevelopment": "Desarrollo de Equipos",
+      "strategicThinking": "Pensamiento Estratégico",
+      "organizationalTransformation": "Transformación Organizacional",
+      "personalGrowth": "Crecimiento Personal"
     },
-    "cta": "Leadership & Coaching"
+    "cta": "Hablemos de liderazgo"
   },
   "speaker": {
     "eyebrow": "03 — Speaker",
@@ -132,8 +111,9 @@
   "impact": {
     "eyebrow": "04 — Impacto social",
     "headline": "Liderazgo con propósito.",
+    "foundationName": "Sereniti Foundation",
     "lead": "Andrés es cofundador de Sereniti Foundation, una organización sin fines de lucro con sede en Estados Unidos dedicada a fortalecer el desarrollo de comunidades latinoamericanas.",
-    "body": "La fundación conecta donantes con organizaciones locales y concentra su trabajo en la educación de jóvenes, las alianzas estratégicas y los programas de bienestar, con un criterio de transparencia y sostenibilidad en cada proyecto. Es la continuidad natural de un compromiso con el servicio comunitario sostenido a lo largo de toda su carrera.",
+    "body": "La fundación conecta donantes con organizaciones locales y concentra su trabajo en la educación de jóvenes, las alianzas estratégicas y los programas de bienestar. Es la continuidad natural de un compromiso con el servicio comunitario sostenido a lo largo de toda su carrera.",
     "pillars": {
       "education": "Educación",
       "partnerships": "Alianzas estratégicas",
@@ -150,119 +130,79 @@
     "body": "Otorgado a Andrés Franco y Jennifer Heegaard en reconocimiento a su contribución a la comunidad hispana y a iniciativas de impacto social, educación y desarrollo comunitario."
   },
   "pulso": {
-    "eyebrow": "Media · Programa propio",
+    "eyebrow": "05 — Programa propio",
     "title": "El Pulso del Poder",
-    "subtitle": "Política, economía y sociedad desde una conversación abierta sobre las fuerzas que transforman nuestro tiempo.",
-    "body": "Un espacio de análisis y conversación producido por Andrés Franco, donde el debate público se aborda con la misma disciplina con la que se analiza una organización: datos, contexto y consecuencias.",
+    "subtitle": "Política, economía y sociedad desde una conversación abierta sobre las fuerzas que transforman nuestro tiempo, con la misma disciplina con la que se analiza una organización: datos, contexto y consecuencias.",
     "topicsLabel": "En el programa",
     "topics": {
       "politics": "Política",
       "economy": "Economía",
       "society": "Sociedad",
-      "leadership": "Liderazgo",
-      "international": "Asuntos internacionales"
+      "leadership": "Liderazgo"
     },
-    "cta": "Ver programa",
+    "cta": "Ver canal en YouTube",
     "playLabel": "Reproducir episodio",
-    "episodesLabel": "Episodios"
+    "episodesLabel": "Episodios seleccionados"
   },
-  "media": {
-    "eyebrow": "Insights & Media",
-    "headline": "Conversaciones, encuentros y publicaciones.",
-    "lead": "Un registro en curso de la actividad de Andrés: encuentros ejecutivos, programas de industria, contenidos y proyectos de impacto.",
-    "filters": {
-      "all": "Todo",
-      "event": "Encuentros",
-      "video": "Video",
-      "article": "Artículos",
-      "interview": "Entrevistas",
-      "impact": "Impacto"
-    },
-    "empty": "No hay contenidos en esta categoría por el momento.",
+  "events": {
+    "eyebrow": "06 — Selección",
+    "headline": "Eventos & Conversaciones",
+    "lead": "Una selección de encuentros y conversaciones recientes. No es una agenda: es una muestra del tipo de espacios en los que Andrés participa.",
     "view": "Ver",
+    "kinds": {
+      "event": "Encuentro",
+      "interview": "Entrevista"
+    },
     "items": {
-      "workhqBootcamp": {
-        "title": "WorkHQ Bootcamp — Experiencing Agentic Workflows",
-        "excerpt": "Programa intensivo de formación sobre flujos de trabajo agénticos y automatización empresarial con equipos y partners de la región.",
-        "meta": "América Latina"
-      },
       "roadshowLatam": {
         "title": "SS&C Blue Prism Roadshow",
-        "excerpt": "Encuentro ejecutivo con clientes y partners regionales sobre el futuro de la automatización, la inteligencia artificial y la innovación.",
-        "meta": "América Latina"
+        "excerpt": "Encuentro ejecutivo con clientes y partners regionales sobre el futuro de la automatización, la inteligencia artificial y la innovación."
       },
-      "executiveBreakfast": {
-        "title": "Encuentro ejecutivo con clientes y partners",
-        "excerpt": "Sesión de trabajo en formato reducido con líderes de negocio y tecnología sobre agendas de transformación operativa.",
-        "meta": "América Latina"
-      },
-      "pulsoDelPoder": {
-        "title": "El Pulso del Poder",
-        "excerpt": "Programa de análisis sobre política, economía y sociedad producido por Andrés Franco.",
-        "meta": "Programa"
+      "workhqBootcamp": {
+        "title": "WorkHQ Bootcamp — Experiencing Agentic Workflows",
+        "excerpt": "Programa intensivo de formación sobre flujos de trabajo agénticos y automatización empresarial con equipos y partners de la región."
       },
       "entrevistaMarian": {
         "title": "Entrevista con Marian de la Fuente",
-        "excerpt": "Conversación sobre liderazgo, tecnología y la agenda pública de América Latina.",
-        "meta": "Entrevista"
-      },
-      "serenitiImpact": {
-        "title": "Sereniti Foundation",
-        "excerpt": "Organización sin fines de lucro dedicada al desarrollo de comunidades latinoamericanas a través de la educación, las alianzas y el bienestar.",
-        "meta": "Cofundador"
-      },
-      "congressionalRecognition": {
-        "title": "Certificate of Special Congressional Recognition",
-        "excerpt": "Reconocimiento del Congreso de los Estados Unidos a la contribución a la comunidad hispana y a iniciativas de impacto social.",
-        "meta": "Estados Unidos"
+        "excerpt": "Conversación sobre liderazgo, tecnología y la agenda pública de América Latina."
       }
     }
   },
   "journey": {
-    "eyebrow": "Trayectoria",
+    "eyebrow": "07 — Trayectoria",
     "headline": "Una trayectoria construida a través de personas, mercados y transformación.",
-    "lead": "Cada etapa suma una dimensión distinta a la misma idea de liderazgo: la escala corporativa, el desarrollo de personas, la conversación pública y el compromiso con la comunidad.",
+    "lead": "Cada etapa suma una dimensión distinta a la misma idea de liderazgo: la escala corporativa, el desarrollo de personas y el compromiso con la comunidad.",
     "currentLabel": "Actualidad",
     "items": {
       "blueprism": {
         "title": "SS&C Blue Prism",
         "role": "Vice President & Head of Latin America",
-        "body": "Liderazgo de la estrategia y las operaciones para América Latina en automatización inteligente, inteligencia artificial y agentic AI, acompañando la transformación de grandes organizaciones."
+        "body": "Liderazgo de la estrategia y las operaciones para América Latina en automatización inteligente, inteligencia artificial y agentic AI."
       },
       "sereniti": {
         "title": "Sereniti Foundation",
         "role": "Cofundador",
-        "body": "Organización sin fines de lucro con sede en Estados Unidos dedicada al desarrollo de comunidades latinoamericanas a través de la educación, las alianzas estratégicas y el bienestar."
-      },
-      "congress": {
-        "title": "Certificate of Special Congressional Recognition",
-        "role": "Congreso de los Estados Unidos",
-        "body": "Reconocimiento otorgado junto a Jennifer Heegaard por la contribución a la comunidad hispana y a iniciativas de impacto social y educación."
-      },
-      "pulso": {
-        "title": "El Pulso del Poder",
-        "role": "Programa de análisis y conversación",
-        "body": "Espacio propio dedicado a la política, la economía y la sociedad, y a las fuerzas que definen el debate público contemporáneo."
+        "body": "Organización sin fines de lucro dedicada al desarrollo de comunidades latinoamericanas a través de la educación, las alianzas estratégicas y el bienestar."
       },
       "maxwell": {
         "title": "Metodologías de liderazgo John Maxwell",
         "role": "Coach certificado",
-        "body": "Formación y práctica continuada en desarrollo de líderes, coaching ejecutivo y desarrollo de equipos, aplicada en entornos corporativos y personales."
+        "body": "Formación y práctica continuada en desarrollo de líderes, coaching ejecutivo y desarrollo de equipos."
       },
       "cisco": {
         "title": "Cisco",
         "role": "Liderazgo en tecnología global",
-        "body": "Experiencia de liderazgo en una de las compañías de tecnología más relevantes del mundo, con foco en el desarrollo de mercados de América Latina."
+        "body": "Experiencia de liderazgo en una de las compañías de tecnología más relevantes del mundo, con foco en los mercados de América Latina."
       },
       "international": {
         "title": "Carrera internacional de negocios",
         "role": "Más de 30 años",
-        "body": "Desarrollo de estrategias de mercado, conducción de equipos, expansión de operaciones y construcción de negocios en toda América Latina."
+        "body": "Desarrollo de estrategias de mercado, conducción de equipos y expansión de operaciones en toda América Latina."
       }
     }
   },
   "contact": {
-    "eyebrow": "Contacto",
+    "eyebrow": "08 — Contacto",
     "headline": "Construyamos algo que genere impacto.",
     "lead": "Conferencias, programas de liderazgo, iniciativas de transformación digital o proyectos de impacto social. Cuéntame en qué estás trabajando.",
     "form": {
@@ -292,7 +232,7 @@
   "footer": {
     "role": "Vice President & Head of Latin America · SS&C Blue Prism",
     "navLabel": "Secciones",
-    "socialLabel": "Perfiles",
+    "socialLabel": "Perfiles y proyectos",
     "disclaimer": "Sitio personal de Andrés Franco. SS&C Blue Prism es la organización en la que ejerce su rol ejecutivo actual; este sitio no constituye una comunicación oficial de esa compañía ni de ninguna de las organizaciones mencionadas.",
     "rights": "Todos los derechos reservados."
   },

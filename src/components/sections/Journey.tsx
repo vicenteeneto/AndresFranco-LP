@@ -3,6 +3,12 @@ import SectionOpen from "../ui/SectionOpen";
 import { SECTIONS } from "@/content/sections";
 import { JOURNEY } from "@/content/journey";
 
+/**
+ * The career, in five milestones.
+ *
+ * Depth without the CV: one line of role, one short paragraph, and the
+ * heading holding its place in the margin while the years scroll past it.
+ */
 export default function Journey() {
   const t = useTranslations("journey");
 
@@ -14,7 +20,6 @@ export default function Journey() {
     >
       <div className="shell">
         <div className="grid grid-cols-12 gap-y-14 lg:gap-x-16">
-          {/* Heading holds its place while the career scrolls past it */}
           <div className="col-span-12 lg:col-span-4">
             <div className="lg:sticky lg:top-36">
               <SectionOpen label={t("eyebrow")} />
@@ -36,7 +41,6 @@ export default function Journey() {
             </div>
           </div>
 
-          {/* Milestones — read as a narrative, not a résumé */}
           <ol className="col-span-12 lg:col-span-7 lg:col-start-6">
             {JOURNEY.map((m, i) => (
               <li
@@ -50,9 +54,7 @@ export default function Journey() {
                 }
               >
                 <div className="col-span-12 sm:col-span-3">
-                  <span
-                    className={`meta ${m.current ? "text-blue" : ""}`}
-                  >
+                  <span className={`meta ${m.current ? "text-blue" : ""}`}>
                     {m.current ? t("currentLabel") : (m.period ?? "")}
                   </span>
                 </div>
@@ -64,7 +66,7 @@ export default function Journey() {
                   <p className="mt-2.5 text-[0.8125rem] font-medium tracking-[0.05em] text-blue-deep">
                     {t(`items.${m.id}.role`)}
                   </p>
-                  <p className="body-copy mt-5 max-w-[56ch] text-ink-mute">
+                  <p className="body-copy mt-5 max-w-[54ch] text-ink-mute">
                     {t(`items.${m.id}.body`)}
                   </p>
                 </div>

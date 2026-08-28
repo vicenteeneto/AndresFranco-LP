@@ -5,13 +5,24 @@ import { ArrowUpRight, PlayMark } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import { PULSO, PULSO_TOPICS } from "@/content/media";
 
+/**
+ * El Pulso del Poder.
+ *
+ * A selection, not a library: one episode plays, two sit beside it, and the
+ * channel button carries everything else. Nothing here refreshes on its own —
+ * the episodes change when someone changes them in content/media.ts.
+ *
+ * This is the one dark section on the page, and it is the political one. The
+ * contrast is what keeps it from bleeding into the executive material either
+ * side of it.
+ */
 export default function Pulso() {
   const t = useTranslations("pulso");
   const [featured, ...rest] = PULSO.episodes;
 
   return (
     <section
-      id={SECTIONS.pulso}
+      id={SECTIONS.media}
       className="on-dark section-y scroll-mt-24 bg-navy"
       aria-labelledby="pulso-heading"
     >
@@ -34,13 +45,6 @@ export default function Pulso() {
               style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
             >
               {t("subtitle")}
-            </p>
-            <p
-              className="body-copy mt-6 max-w-[42ch] text-white/55"
-              data-reveal
-              style={{ "--reveal-delay": "170ms" } as React.CSSProperties}
-            >
-              {t("body")}
             </p>
 
             <div className="mt-10" data-reveal>
@@ -108,8 +112,8 @@ export default function Pulso() {
             {rest.length > 0 && (
               <div className="mt-6">
                 <p className="meta mb-4">{t("episodesLabel")}</p>
-                <ul className="grid grid-cols-3 gap-3 sm:gap-4">
-                  {rest.slice(0, 3).map((ep) => (
+                <ul className="grid grid-cols-2 gap-4 sm:gap-5">
+                  {rest.slice(0, 2).map((ep) => (
                     <li key={ep.videoId}>
                       <LiteYouTube
                         videoId={ep.videoId}

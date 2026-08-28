@@ -1,5 +1,5 @@
 /**
- * Speaking topics and leadership pillars.
+ * Topics and areas of work.
  *
  * Only ids live here — labels are translated in messages/*.json.
  */
@@ -19,17 +19,16 @@ export const TRANSFORMATION_CAPABILITIES = [
   "intelligentAutomation",
   "agenticAi",
   "digitalTransformation",
-  "businessStrategy",
-  "enterpriseAutomation",
-  "operationalTransformation",
+  "enterpriseStrategy",
+  "latinAmerica",
 ] as const;
 
 export const LEADERSHIP_PILLARS = [
   "leadershipDevelopment",
   "executiveCoaching",
   "teamDevelopment",
-  "organizationalTransformation",
   "strategicThinking",
+  "organizationalTransformation",
   "personalGrowth",
 ] as const;
 

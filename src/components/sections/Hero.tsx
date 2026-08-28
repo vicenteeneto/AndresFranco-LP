@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ArrowRight, ArrowDown } from "../ui/icons";
+import { ArrowRight } from "../ui/icons";
 import { SECTIONS } from "@/content/sections";
 import { PHOTOS } from "@/content/images";
 
@@ -129,10 +129,6 @@ export default function Hero() {
                 {t(`descriptors.${d}`)}
               </span>
             ))}
-            <span className="ml-auto hidden items-center gap-3 text-blue xl:flex">
-              <span className="meta text-blue">{t("scroll")}</span>
-              <ArrowDown className="h-4 w-2 opacity-70" />
-            </span>
           </div>
         </div>
       </div>

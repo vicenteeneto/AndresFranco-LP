@@ -1,8 +1,9 @@
 /**
  * Section anchors.
  *
- * IDs stay identical across languages so a shared link always resolves,
- * whichever locale it was copied from.
+ * This is a single-page site: every anchor below lives on the same document,
+ * and nothing here ever becomes a route. IDs stay identical across languages
+ * so a shared link always resolves, whichever locale it was copied from.
  */
 export const SECTIONS = {
   hero: "inicio",
@@ -11,16 +12,21 @@ export const SECTIONS = {
   leadership: "liderazgo",
   speaker: "speaker",
   impact: "impacto",
-  recognition: "reconocimiento",
-  pulso: "pulso",
   media: "media",
+  events: "eventos",
   journey: "trayectoria",
   contact: "contacto",
 } as const;
 
-/** Order of the links shown in the header and footer. */
+/**
+ * The header menu.
+ *
+ * Six links, in page order. Two sections are deliberately absent: the
+ * wordmark already returns to the top, and the profile block sits directly
+ * under the hero — nobody navigates to something they cannot help but read.
+ * Contacto is the button beside the menu, not an item in it.
+ */
 export const NAV_ITEMS = [
-  { key: "profile", id: SECTIONS.profile },
   { key: "transformation", id: SECTIONS.transformation },
   { key: "leadership", id: SECTIONS.leadership },
   { key: "speaker", id: SECTIONS.speaker },
