@@ -82,12 +82,12 @@ export const PHOTOS = {
     height: 1024,
     position: "50% 44%",
   },
-  /** Andrés taking part in a Sereniti Foundation community project. */
+  /** Andrés and a Sereniti Foundation participant with a recognition plaque. */
   eventCommunity: {
-    src: "/images/event-community.jpg",
+    src: "/images/sereniti-recognition.jpg",
     width: 1320,
-    height: 879,
-    position: "50% 48%",
+    height: 753,
+    position: "50% 50%",
   },
 } as const satisfies Record<string, Photo>;
 
