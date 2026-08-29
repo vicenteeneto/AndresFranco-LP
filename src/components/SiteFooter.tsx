@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./ui/LanguageSwitcher";
 import { SECTIONS } from "@/content/sections";
-import { PERSON, SOCIAL_LINKS, EXTERNAL } from "@/content/site";
+import { SOCIAL_LINKS, EXTERNAL } from "@/content/site";
 
 /**
  * The footer stays deliberately thin: a name, the way out to the rest of the
@@ -74,7 +74,7 @@ export default function SiteFooter() {
             {t("disclaimer")}
           </p>
           <p className="shrink-0 text-[0.75rem] text-fg-3">
-            © {year} {PERSON.name}. {t("rights")}
+            © {year} KNGflow. {t("rights")}
           </p>
         </div>
       </div>
