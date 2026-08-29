@@ -1,19 +1,17 @@
 import { useTranslations } from "next-intl";
+import Photo from "../ui/Photo";
 import SectionOpen from "../ui/SectionOpen";
-import Curated from "../ui/Curated";
 import { SECTIONS } from "@/content/sections";
 
 /**
  * Who Andrés is — a condensed institutional introduction, not a biography.
  *
- * No photograph here on purpose. It is the first section after a hero that is
- * half portrait and a band of four large figures; another image would be the
- * third visual event in a row, and the point of this block is that the
- * argument carries itself.
+ * The formal portrait sits beside it. With the three disciplines now folded
+ * into rows further down, this is the one place in the upper half of the page
+ * where a photograph can hold its own space.
  */
 export default function Intro() {
   const t = useTranslations("intro");
-  const tc = useTranslations("common");
 
   return (
     <section
@@ -22,8 +20,8 @@ export default function Intro() {
       aria-labelledby="intro-heading"
     >
       <div className="shell">
-        <div className="grid grid-cols-12 gap-y-8 lg:gap-x-14">
-          <div className="col-span-12 lg:col-span-5">
+        <div className="grid grid-cols-12 items-center gap-y-12 lg:gap-x-14">
+          <div className="col-span-12 lg:col-span-6">
             <SectionOpen label={t("eyebrow")} />
             <h2
               id="intro-heading"
@@ -33,42 +31,35 @@ export default function Intro() {
             >
               {t("headline")}
             </h2>
+            <p
+              className="lead mt-8 max-w-[46ch]"
+              data-reveal
+              style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
+            >
+              {t("body1")}
+            </p>
+            <p
+              className="body-copy mt-5 hidden max-w-[48ch] text-fg-3 lg:block"
+              data-reveal
+              style={{ "--reveal-delay": "170ms" } as React.CSSProperties}
+            >
+              {t("body2")}
+            </p>
           </div>
 
-          {/*
-            On a phone the opening paragraph carries the section and the
-            second one waits behind a link. This is also where the hero's
-            supporting paragraph now lands on small screens, so the two
-            together would be three paragraphs before the first image.
-          */}
-          <Curated
-            keep={1}
-            moreLabel={tc("moreProfile")}
-            lessLabel={tc("lessProfile")}
-            className="col-span-12 lg:col-span-6 lg:col-start-7"
-          >
-            <div>
-              <p
-                className="lead"
-                data-reveal
-                style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
-              >
-                {t("body1")}
-              </p>
-              <p
-                className="body-copy mt-6 text-fg-3"
-                data-reveal
-                style={{ "--reveal-delay": "170ms" } as React.CSSProperties}
-              >
-                {t("body2")}
-              </p>
-            </div>
-          </Curated>
+          <div className="col-span-12 sm:col-span-8 lg:col-span-5 lg:col-start-8 lg:bleed-r">
+            <Photo
+              id="portraitFormal"
+              className="aspect-[4/5] w-full lg:aspect-[3/4]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 66vw, 42vw"
+              revealDelay={80}
+            />
+          </div>
         </div>
 
         {/* The line the whole page turns on, given its own space */}
         <blockquote
-          className="mt-16 border-l-2 border-gold pl-6 md:mt-24 md:pl-9"
+          className="mt-14 border-l-2 border-gold pl-6 md:mt-20 md:pl-9"
           data-reveal
         >
           <p className="display t-statement max-w-[24ch]">{t("statement")}</p>

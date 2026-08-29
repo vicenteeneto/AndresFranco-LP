@@ -128,7 +128,7 @@ export default function Contact() {
       <div className="shell">
         <div className="grid grid-cols-12 gap-y-12 lg:gap-x-14">
           <div className="col-span-12 lg:col-span-5">
-            <SectionOpen index="07" label={t("eyebrow")} />
+            <SectionOpen label={t("eyebrow")} />
             <h2
               id="contact-heading"
               className="display t-h2 mt-8 max-w-[12ch]"

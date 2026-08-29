@@ -179,9 +179,6 @@ export default function SiteHeader() {
                         transitionTimingFunction: "cubic-bezier(.16,1,.3,1)",
                       }}
                     >
-                      <span className="label-gold w-7 tabular-nums">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
                       <span className="display text-[1.6rem] uppercase">
                         {t(item.key)}
                       </span>

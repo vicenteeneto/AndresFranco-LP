@@ -20,7 +20,8 @@
     "languageLabel": "Select language",
     "backToTop": "Back to top",
     "profile": "Profile",
-    "cta": "Let's talk"
+    "cta": "Let's talk",
+    "practice": "Areas"
   },
   "hero": {
     "statement": "Leadership that transforms organisations, people and communities.",
@@ -78,8 +79,9 @@
       "latinAmerica": "Latin America"
     },
     "subtitle": "SS&C Blue Prism",
-    "captionLabel": "In the field",
-    "caption": "WorkHQ Bootcamp — training on agentic workflows with teams and partners across the region."
+    "caption": "WorkHQ Bootcamp — training on agentic workflows with teams and partners across the region.",
+    "summary": "Regional strategy in intelligent automation, artificial intelligence and agentic AI at SS&C Blue Prism.",
+    "title": "Digital Transformation"
   },
   "leadership": {
     "eyebrow": "Leadership and coaching",
@@ -95,7 +97,9 @@
       "organizationalTransformation": "Organisational Transformation",
       "personalGrowth": "Personal Growth"
     },
-    "cta": "Let's talk leadership"
+    "cta": "Let's talk leadership",
+    "summary": "Executive coaching and team development, with more than fifteen years in John Maxwell methodologies.",
+    "title": "Leadership & Coaching"
   },
   "speaker": {
     "eyebrow": "Speaker",
@@ -113,7 +117,8 @@
       "socialDevelopment": "Social Development"
     },
     "cta": "Invite Andrés",
-    "cardLabel": "Keynotes · Talks"
+    "summary": "Keynotes and panels at executive gatherings and industry forums across Latin America.",
+    "title": "Speaker & Keynotes"
   },
   "impact": {
     "eyebrow": "Social impact",
@@ -140,7 +145,6 @@
     "eyebrow": "Own programme",
     "title": "El Pulso del Poder",
     "subtitle": "Politics, economics and society through an open conversation about the forces shaping our time, held to the same discipline as the analysis of an organisation: data, context and consequences.",
-    "topicsLabel": "On the programme",
     "topics": {
       "politics": "Politics",
       "economy": "Economy",
@@ -148,13 +152,11 @@
       "leadership": "Leadership"
     },
     "cta": "Watch the YouTube channel",
-    "playLabel": "Play episode",
-    "episodesLabel": "Selected episodes"
+    "playLabel": "Play episode"
   },
   "events": {
     "eyebrow": "Selection",
     "headline": "Events & Conversations",
-    "lead": "A selection of recent gatherings and conversations. Not a calendar — a sample of the kind of rooms Andrés works in.",
     "view": "View",
     "kinds": {
       "event": "Gathering",
@@ -259,14 +261,9 @@
     "line1": "Leadership, technology and impact are not separate paths.",
     "line2": "They are parts of the same transformation."
   },
-  "common": {
-    "more": "See more",
-    "less": "See less",
-    "moreAreas": "See all areas of work",
-    "lessAreas": "See fewer areas",
-    "moreTopics": "See all topics",
-    "lessTopics": "See fewer topics",
-    "moreProfile": "Keep reading",
-    "lessProfile": "See less"
+  "practice": {
+    "eyebrow": "Areas of work",
+    "headline": "Three fronts, one idea of leadership.",
+    "lead": "The digital transformation of large organisations, the development of leaders, and the public conversation. Open each front to see the work in detail."
   }
 }

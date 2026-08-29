@@ -1,92 +1,70 @@
 import { useTranslations } from "next-intl";
 import SectionOpen from "../ui/SectionOpen";
-import Curated from "../ui/Curated";
+import Disclosure from "../ui/Disclosure";
 import { SECTIONS } from "@/content/sections";
 import { JOURNEY } from "@/content/journey";
 
 /**
- * The career, in five milestones.
+ * The career, as five rows that open.
  *
- * A linear rail, not cards: period on the left, organisation and role on the
- * right, one hairline between each. Depth of career shown without
- * reproducing a CV — and without five boxes competing with the cards that
- * come later in the page.
+ * Collapsed, the whole trajectory reads in one glance — the organisations and
+ * the roles, which is what anyone scanning a career actually wants. The
+ * paragraph explaining each one is there for whoever asks for it.
  */
 export default function Journey() {
   const t = useTranslations("journey");
-  const tc = useTranslations("common");
 
   return (
     <section
       id={SECTIONS.journey}
-      className="section-y scroll-mt-20 border-t border-line"
+      className="section-y scroll-mt-20 border-t border-line bg-bg-2"
       aria-labelledby="journey-heading"
     >
       <div className="shell">
-        <div className="grid grid-cols-12 gap-y-10 lg:gap-x-14">
-          <div className="col-span-12 lg:col-span-4">
-            <div className="lg:sticky lg:top-28">
-              <SectionOpen index="03" label={t("eyebrow")} />
-              <h2
-                id="journey-heading"
-                className="display t-h3 mt-8 max-w-[18ch]"
-                data-reveal
-                style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
-              >
-                {t("headline")}
-              </h2>
-              <p
-                className="body-copy mt-7 hidden max-w-[36ch] text-fg-3 lg:block"
-                data-reveal
-                style={{ "--reveal-delay": "110ms" } as React.CSSProperties}
-              >
-                {t("lead")}
-              </p>
-            </div>
+        <div className="grid grid-cols-12 items-end gap-y-8 lg:gap-x-14">
+          <div className="col-span-12 lg:col-span-6">
+            <SectionOpen label={t("eyebrow")} />
+            <h2
+              id="journey-heading"
+              className="display t-h3 mt-8 max-w-[22ch]"
+              data-reveal
+              style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
+            >
+              {t("headline")}
+            </h2>
           </div>
+          <div className="col-span-12 lg:col-span-5 lg:col-start-8">
+            <p className="body-copy text-fg-3" data-reveal>
+              {t("lead")}
+            </p>
+          </div>
+        </div>
 
-          <Curated
-            keep={4}
-            moreLabel={tc("more")}
-            lessLabel={tc("less")}
-            className="col-span-12 lg:col-span-7 lg:col-start-6"
-          >
-            <ol>
-              {JOURNEY.map((m, i) => (
-                <li
-                  key={m.id}
-                  className="border-t border-line py-7 last:border-b md:py-9"
-                  data-reveal
-                  style={
-                    {
-                      "--reveal-delay": `${(i % 3) * 60}ms`,
-                    } as React.CSSProperties
-                  }
-                >
-                  {/*
-                  The period sits above the milestone rather than in a column
-                  of its own. Only the current role carries a label — four
-                  empty cells down the left of a rail read as a mistake, not
-                  as a timeline.
-                */}
-                  {(m.current || m.period) && (
-                    <p className={`meta mb-4 ${m.current ? "text-gold" : ""}`}>
-                      {m.current ? t("currentLabel") : m.period}
-                    </p>
-                  )}
-                  <h3 className="display text-[1.2rem] leading-[1.24] md:text-[1.45rem]">
-                    {t(`items.${m.id}.title`)}
-                  </h3>
-                  <p className="mt-2 text-[0.75rem] font-semibold tracking-[0.12em] text-gold uppercase">
+        <div className="mt-12 md:mt-16">
+          {JOURNEY.map((m) => (
+            <Disclosure
+              key={m.id}
+              id={`marco-${m.id}`}
+              title={t(`items.${m.id}.title`)}
+              summary={t(`items.${m.id}.role`)}
+            >
+              <div className="grid grid-cols-12 gap-y-3 lg:gap-x-14">
+                <div className="col-span-12 lg:col-span-3">
+                  <p className={`meta ${m.current ? "text-gold" : ""}`}>
+                    {m.current ? t("currentLabel") : (m.period ?? "")}
+                  </p>
+                  <p className="mt-3 text-[0.8125rem] font-semibold tracking-[0.1em] text-fg-2 uppercase lg:hidden">
                     {t(`items.${m.id}.role`)}
                   </p>
-                  <p className="body-copy mt-4 hidden max-w-[56ch] text-fg-3 lg:block">
+                </div>
+                <div className="col-span-12 lg:col-span-8 lg:col-start-5">
+                  <p className="body-copy max-w-[60ch]">
                     {t(`items.${m.id}.body`)}
                   </p>
-                </li>
-              ))}
-            </ol>
-          </Curated>
+                </div>
+              </div>
+            </Disclosure>
+          ))}
         </div>
       </div>
     </section>

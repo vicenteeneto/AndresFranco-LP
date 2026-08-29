@@ -20,7 +20,8 @@
     "languageLabel": "Selecionar idioma",
     "backToTop": "Voltar ao topo",
     "profile": "Perfil",
-    "cta": "Vamos falar"
+    "cta": "Vamos falar",
+    "practice": "Áreas"
   },
   "hero": {
     "statement": "Liderança que transforma organizações, pessoas e comunidades.",
@@ -78,8 +79,9 @@
       "latinAmerica": "América Latina"
     },
     "subtitle": "SS&C Blue Prism",
-    "captionLabel": "Em campo",
-    "caption": "WorkHQ Bootcamp — formação sobre fluxos de trabalho agênticos com equipes e parceiros da região."
+    "caption": "WorkHQ Bootcamp — formação sobre fluxos de trabalho agênticos com equipes e parceiros da região.",
+    "summary": "Estratégia regional em automação inteligente, inteligência artificial e agentic AI na SS&C Blue Prism.",
+    "title": "Transformação Digital"
   },
   "leadership": {
     "eyebrow": "Liderança e coaching",
@@ -95,7 +97,9 @@
       "organizationalTransformation": "Transformação Organizacional",
       "personalGrowth": "Crescimento Pessoal"
     },
-    "cta": "Vamos falar de liderança"
+    "cta": "Vamos falar de liderança",
+    "summary": "Coaching executivo e desenvolvimento de equipes, com mais de quinze anos nas metodologias John Maxwell.",
+    "title": "Liderança & Coaching"
   },
   "speaker": {
     "eyebrow": "Speaker",
@@ -113,7 +117,8 @@
       "socialDevelopment": "Desenvolvimento Social"
     },
     "cta": "Convidar Andrés",
-    "cardLabel": "Palestras · Talks"
+    "summary": "Palestras e painéis em encontros executivos e fóruns de indústria em toda a América Latina.",
+    "title": "Speaker & Palestras"
   },
   "impact": {
     "eyebrow": "Impacto social",
@@ -140,7 +145,6 @@
     "eyebrow": "Programa próprio",
     "title": "El Pulso del Poder",
     "subtitle": "Política, economia e sociedade a partir de uma conversa aberta sobre as forças que transformam o nosso tempo, com a mesma disciplina com que se analisa uma organização: dados, contexto e consequências.",
-    "topicsLabel": "No programa",
     "topics": {
       "politics": "Política",
       "economy": "Economia",
@@ -148,13 +152,11 @@
       "leadership": "Liderança"
     },
     "cta": "Ver canal no YouTube",
-    "playLabel": "Reproduzir episódio",
-    "episodesLabel": "Episódios selecionados"
+    "playLabel": "Reproduzir episódio"
   },
   "events": {
     "eyebrow": "Seleção",
     "headline": "Eventos & Conversas",
-    "lead": "Uma seleção de encontros e conversas recentes. Não é uma agenda: é uma amostra do tipo de espaço em que Andrés participa.",
     "view": "Ver",
     "kinds": {
       "event": "Encontro",
@@ -259,14 +261,9 @@
     "line1": "Liderança, tecnologia e impacto não são caminhos separados.",
     "line2": "São parte de uma mesma transformação."
   },
-  "common": {
-    "more": "Ver mais",
-    "less": "Ver menos",
-    "moreAreas": "Ver áreas de atuação",
-    "lessAreas": "Ver menos áreas",
-    "moreTopics": "Ver todos os temas",
-    "lessTopics": "Ver menos temas",
-    "moreProfile": "Continuar lendo",
-    "lessProfile": "Ver menos"
+  "practice": {
+    "eyebrow": "Áreas de atuação",
+    "headline": "Três frentes, uma mesma ideia de liderança.",
+    "lead": "A transformação digital de grandes organizações, o desenvolvimento de líderes e a conversa pública. Abra cada frente para ver o trabalho em detalhe."
   }
 }
