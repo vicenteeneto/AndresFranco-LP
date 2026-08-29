@@ -78,11 +78,24 @@ export default function SiteHeader() {
               scrolled ? "h-[62px]" : "h-[74px] md:h-[82px]"
             }`}
           >
-            {/* Wordmark */}
+            {/*
+              Wordmark — absent until the page moves.
+
+              At the top of the page the name is already set at the largest
+              size on the site, directly below; printing it again in the corner
+              is the same word twice on one screen. It fades in the moment the
+              hero starts leaving, which is exactly when it becomes useful.
+            */}
             <a
               href={`#${SECTIONS.hero}`}
               onClick={close}
-              className="shrink-0 font-display text-[0.8125rem] font-bold tracking-[0.2em] whitespace-nowrap text-fg uppercase transition-colors duration-300 hover:text-gold-hover"
+              aria-hidden={!scrolled && !open}
+              tabIndex={!scrolled && !open ? -1 : undefined}
+              className={`shrink-0 font-display text-[0.8125rem] font-bold tracking-[0.2em] whitespace-nowrap text-fg uppercase transition-[opacity,color] duration-400 hover:text-gold-hover ${
+                scrolled || open
+                  ? "opacity-100"
+                  : "pointer-events-none opacity-0"
+              }`}
             >
               Andrés<span className="text-gold"> Franco</span>
             </a>
@@ -119,7 +132,7 @@ export default function SiteHeader() {
               <LanguageSwitcher className="hidden sm:flex" />
               <a
                 href={`#${SECTIONS.contact}`}
-                className="hidden bg-gold px-5 py-2.5 text-[0.6875rem] font-semibold tracking-[0.12em] whitespace-nowrap text-white uppercase transition-colors duration-300 hover:bg-gold-hover md:inline-flex"
+                className="hidden bg-gold px-5 py-2.5 text-[0.6875rem] font-bold tracking-[0.12em] whitespace-nowrap text-bg uppercase transition-colors duration-300 hover:bg-gold-hover md:inline-flex"
               >
                 {t("cta")}
               </a>

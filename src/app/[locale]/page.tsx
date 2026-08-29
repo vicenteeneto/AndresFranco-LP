@@ -5,20 +5,17 @@ import { routing } from "@/i18n/routing";
 
 import Hero from "@/components/sections/Hero";
 import Authority from "@/components/sections/Authority";
-import Intro from "@/components/sections/Intro";
-import Practice from "@/components/sections/Practice";
-import Journey from "@/components/sections/Journey";
-import Impact from "@/components/sections/Impact";
-import Media from "@/components/sections/Media";
+import Band from "@/components/sections/Band";
+import Explore from "@/components/sections/Explore";
 import Statement from "@/components/sections/Statement";
 import Contact from "@/components/sections/Contact";
 
 /**
- * The whole site, in one page — and a short one.
+ * The whole site, in one short page.
  *
- * Seven blocks after the hero: the figures, who he is, the three disciplines
- * as rows that open, the career as rows that open, the impact, where to hear
- * him, one sentence of pause, and the conversation.
+ * Four things before the conversation: the name, the figures behind it, one
+ * photograph at full width, and the list that holds everything else. The seven
+ * sections that used to run down the page are the seven rows of that list.
  */
 export default async function HomePage({
   params,
@@ -33,11 +30,8 @@ export default async function HomePage({
     <>
       <Hero />
       <Authority />
-      <Intro />
-      <Practice />
-      <Journey />
-      <Impact />
-      <Media />
+      <Band />
+      <Explore />
       <Statement />
       <Contact />
     </>

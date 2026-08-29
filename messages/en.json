@@ -21,7 +21,8 @@
     "backToTop": "Back to top",
     "profile": "Profile",
     "cta": "Let's talk",
-    "practice": "Areas"
+    "practice": "Areas",
+    "explore": "Explore"
   },
   "hero": {
     "statement": "Leadership that transforms organisations, people and communities.",
@@ -39,7 +40,6 @@
     "roleOrg": "SS&C Blue Prism"
   },
   "intro": {
-    "eyebrow": "Profile",
     "headline": "More than 30 years building transformation.",
     "body1": "An international career built at the intersection of technology, business strategy and human development. From scaling regional operations to developing leaders, the through-line has always been the same: organisations transform when the people who make them possible transform.",
     "body2": "That work now runs on four fronts — the digital transformation of large enterprises, the development of leaders, the public conversation about technology and society, and social impact across Latin America — all answering to a single idea of leadership.",
@@ -66,7 +66,6 @@
   },
   "transformation": {
     "eyebrow": "Executive leadership",
-    "headline": "Digital Transformation",
     "lead": "As Vice President and Head of Latin America at SS&C Blue Prism, Andrés leads the regional strategy in intelligent automation, artificial intelligence and agentic AI, working alongside large organisations as they transform their operations.",
     "body": "His work connects the technology agenda to the business agenda: identifying where automation creates real value, building the teams that deliver it, and sustaining the change inside each organisation's culture.",
     "capabilitiesLabel": "Areas of work",
@@ -79,12 +78,9 @@
       "latinAmerica": "Latin America"
     },
     "subtitle": "SS&C Blue Prism",
-    "caption": "WorkHQ Bootcamp — training on agentic workflows with teams and partners across the region.",
-    "summary": "Regional strategy in intelligent automation, artificial intelligence and agentic AI at SS&C Blue Prism.",
-    "title": "Digital Transformation"
+    "caption": "WorkHQ Bootcamp — training on agentic workflows with teams and partners across the region."
   },
   "leadership": {
-    "eyebrow": "Leadership and coaching",
     "headline": "Developing leaders who develop organisations.",
     "lead": "With more than fifteen years as a certified coach in John Maxwell leadership methodologies, Andrés works with executives and teams on development processes that combine strategic rigour with personal growth.",
     "body": "The approach is that of a serving executive, not an outside observer: the same frameworks he applies while running regional operations are the ones he uses with directors, commercial teams and organisations in transformation.",
@@ -97,12 +93,9 @@
       "organizationalTransformation": "Organisational Transformation",
       "personalGrowth": "Personal Growth"
     },
-    "cta": "Let's talk leadership",
-    "summary": "Executive coaching and team development, with more than fifteen years in John Maxwell methodologies.",
-    "title": "Leadership & Coaching"
+    "cta": "Let's talk leadership"
   },
   "speaker": {
-    "eyebrow": "Speaker",
     "headline": "Ideas that move people and organisations.",
     "lead": "Andrés speaks and sits on panels at executive gatherings, industry forums and corporate programmes across Latin America, in front of audiences that range from technical teams to boards.",
     "body": "His talks translate complex subjects — artificial intelligence, automation, economics, leadership — into concrete decisions for the people who have to make them.",
@@ -116,12 +109,9 @@
       "politics": "Politics",
       "socialDevelopment": "Social Development"
     },
-    "cta": "Invite Andrés",
-    "summary": "Keynotes and panels at executive gatherings and industry forums across Latin America.",
-    "title": "Speaker & Keynotes"
+    "cta": "Invite Andrés"
   },
   "impact": {
-    "eyebrow": "Social impact",
     "headline": "Leadership with purpose.",
     "foundationName": "Sereniti Foundation",
     "lead": "Andrés is a co-founder of Sereniti Foundation, a United States-based non-profit dedicated to strengthening the development of Latin American communities.",
@@ -135,15 +125,12 @@
     "cta": "Visit Sereniti Foundation"
   },
   "recognition": {
-    "eyebrow": "Recognition",
     "title": "Certificate of Special Congressional Recognition",
     "organization": "United States Congress",
     "year": "2023",
     "body": "Awarded to Andrés Franco and Jennifer Heegaard in recognition of their contribution to the Hispanic community and to initiatives in social impact, education and community development."
   },
   "pulso": {
-    "eyebrow": "Own programme",
-    "title": "El Pulso del Poder",
     "subtitle": "Politics, economics and society through an open conversation about the forces shaping our time, held to the same discipline as the analysis of an organisation: data, context and consequences.",
     "topics": {
       "politics": "Politics",
@@ -155,7 +142,6 @@
     "playLabel": "Play episode"
   },
   "events": {
-    "eyebrow": "Selection",
     "headline": "Events & Conversations",
     "view": "View",
     "kinds": {
@@ -181,8 +167,6 @@
     }
   },
   "journey": {
-    "eyebrow": "Journey",
-    "headline": "A career built through people, markets and transformation.",
     "lead": "Each stage adds a different dimension to the same idea of leadership: corporate scale, the development of people, and a commitment to community.",
     "currentLabel": "Current",
     "items": {
@@ -261,9 +245,39 @@
     "line1": "Leadership, technology and impact are not separate paths.",
     "line2": "They are parts of the same transformation."
   },
-  "practice": {
-    "eyebrow": "Areas of work",
-    "headline": "Three fronts, one idea of leadership.",
-    "lead": "The digital transformation of large organisations, the development of leaders, and the public conversation. Open each front to see the work in detail."
+  "explore": {
+    "eyebrow": "Explore",
+    "headline": "All the work, in one list.",
+    "lead": "Seven fronts. Open the one you came for and it unfolds right here.",
+    "rows": {
+      "profile": {
+        "title": "Profile",
+        "subtitle": "More than 30 years building transformation"
+      },
+      "transformation": {
+        "title": "Digital Transformation",
+        "subtitle": "SS&C Blue Prism · AI and intelligent automation"
+      },
+      "leadership": {
+        "title": "Leadership & Coaching",
+        "subtitle": "Developing leaders, teams and organisations"
+      },
+      "speaker": {
+        "title": "Speaker",
+        "subtitle": "Keynotes and panels across Latin America"
+      },
+      "journey": {
+        "title": "Journey",
+        "subtitle": "Cisco · John Maxwell · Sereniti · SS&C Blue Prism"
+      },
+      "impact": {
+        "title": "Social Impact",
+        "subtitle": "Sereniti Foundation · Congressional recognition"
+      },
+      "media": {
+        "title": "El Pulso del Poder",
+        "subtitle": "Politics, economics and society · Events"
+      }
+    }
   }
 }

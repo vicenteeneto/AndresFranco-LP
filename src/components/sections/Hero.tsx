@@ -39,7 +39,7 @@ export default function Hero() {
     >
       {/* Photograph */}
       <div
-        className="absolute top-0 right-0 bottom-[44%] left-[52%] sm:bottom-[46%] lg:inset-y-0 lg:left-[46%]"
+        className="absolute top-[calc(74px+7svh)] right-0 bottom-[46%] left-[52%] sm:bottom-[48%] lg:inset-y-0 lg:left-[46%]"
         data-reveal="image"
       >
         <Image
@@ -60,7 +60,7 @@ export default function Hero() {
       */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bg via-bg/70 to-transparent"
+        className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-bg via-bg/60 to-transparent"
       />
 
       {/*
@@ -81,7 +81,7 @@ export default function Hero() {
         bottom is what guarantees the two can never collide on a short laptop
         screen.
       */}
-      <div className="relative flex flex-1 items-center">
+      <div className="relative flex flex-1 items-start pt-[7svh] lg:items-center lg:pt-0">
         <div className="shell w-full">
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-7">

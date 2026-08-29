@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Chevron } from "./icons";
 
 /**
- * A row that opens.
+ * One row of the explore list.
  *
- * The page is long because every discipline used to be its own full section.
- * Collapsing them into rows lets a visitor see the whole shape of the work in
- * one screen and open only what they came for.
+ * Closed it is a card: a marked tile, a title, one line saying what is inside,
+ * and a plus. Open it grows downwards into whatever the panel holds — text,
+ * lists, a photograph.
  *
  * Three details make it behave like part of the page rather than a widget:
  *
@@ -20,17 +19,19 @@ import { Chevron } from "./icons";
  * - Closed content is `inert`, so it leaves the tab order and the accessibility
  *   tree instead of sitting invisibly in both.
  */
-export default function Disclosure({
+export default function ExploreRow({
   id,
   title,
-  summary,
+  subtitle,
+  icon,
   defaultOpen = false,
   children,
 }: {
   /** Doubles as the anchor: `#id` opens this row. */
   id: string;
   title: string;
-  summary: string;
+  subtitle: string;
+  icon: React.ReactNode;
   defaultOpen?: boolean;
   children: React.ReactNode;
 }) {
@@ -47,28 +48,53 @@ export default function Disclosure({
   }, [id]);
 
   return (
-    <div id={id} className="scroll-mt-24 border-t border-line last:border-b">
+    <div
+      id={id}
+      className={`card scroll-mt-24 transition-colors duration-300 ${
+        open ? "border-line-2" : ""
+      }`}
+    >
       <h3>
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls={panelId}
-          className="group flex w-full items-baseline gap-5 py-7 text-left md:gap-10 md:py-9"
+          className="group flex w-full items-center gap-4 p-4 text-left md:gap-5 md:p-5"
         >
-          <span className="display min-w-0 flex-1 text-[1.35rem] leading-[1.16] transition-colors duration-300 group-hover:text-gold-hover md:text-[1.75rem] lg:text-[2rem]">
-            {title}
-          </span>
-          <span className="hidden max-w-[34ch] flex-1 text-[0.9375rem] leading-[1.6] text-fg-3 lg:block">
-            {summary}
-          </span>
           <span
             aria-hidden="true"
-            className="flex h-9 w-9 shrink-0 items-center justify-center self-center border border-line-2 text-gold transition-colors duration-300 group-hover:border-gold"
+            className={`flex h-11 w-11 shrink-0 items-center justify-center border transition-colors duration-300 md:h-12 md:w-12 ${
+              open
+                ? "border-gold bg-gold-dim text-gold-hover"
+                : "border-line-2 text-gold group-hover:border-gold"
+            }`}
           >
-            <Chevron
-              className={`h-[7px] w-[11px] transition-transform duration-400 ${
-                open ? "rotate-180" : ""
+            {icon}
+          </span>
+
+          <span className="min-w-0 flex-1">
+            <span className="display block truncate text-[1.0625rem] leading-[1.3] transition-colors duration-300 group-hover:text-gold-hover md:text-[1.15rem]">
+              {title}
+            </span>
+            <span className="mt-1 block line-clamp-2 text-[0.8125rem] leading-[1.45] text-fg-3 lg:truncate">
+              {subtitle}
+            </span>
+          </span>
+
+          {/* A plus that becomes a minus. One glyph, one rotation. */}
+          <span
+            aria-hidden="true"
+            className={`relative flex h-9 w-9 shrink-0 items-center justify-center border transition-colors duration-300 ${
+              open
+                ? "border-gold bg-gold text-bg"
+                : "border-line-2 text-gold group-hover:border-gold"
+            }`}
+          >
+            <span className="absolute h-px w-[13px] bg-current" />
+            <span
+              className={`absolute h-px w-[13px] bg-current transition-transform duration-400 ${
+                open ? "rotate-0" : "rotate-90"
               }`}
             />
           </span>
@@ -86,7 +112,7 @@ export default function Disclosure({
       >
         <div className="overflow-hidden">
           <div
-            className={`pb-10 transition-opacity duration-500 md:pb-14 ${
+            className={`border-t border-line px-4 pt-7 pb-8 transition-opacity duration-500 md:px-5 md:pt-9 md:pb-10 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >
