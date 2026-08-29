@@ -175,12 +175,13 @@ export default function Explore() {
                   ))}
                 </ul>
                 <a
-                  href={`#${SECTIONS.contact}`}
-                  data-inquiry="coaching"
+                  href={EXTERNAL.maxwell}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-gold mt-8"
                 >
                   {tL("cta")}
-                  <ArrowRight />
+                  <ArrowUpRight />
                 </a>
               </div>
             </div>

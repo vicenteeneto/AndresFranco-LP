@@ -10,11 +10,12 @@ export const SITE_URL = "https://andres-franco-lp.vercel.app";
 
 export const PERSON = {
   name: "Andrés Franco",
-  /** ASCII variant, used in structured data for search coverage. */
-  alternateName: "Andres Franco",
+  /** Full and ASCII variants, used in structured data for search coverage. */
+  alternateName: ["Andrés I. Franco", "Andres I. Franco", "Andres Franco"],
   jobTitle: "Vice President & Head of Latin America",
-  organization: "SS&C Blue Prism",
+  organization: "SS&C Technologies / Blue Prism",
   organizationUrl: "https://www.blueprism.com/",
+  organizationTicker: "NASDAQ: SSNC",
 } as const;
 
 /**
@@ -22,7 +23,7 @@ export const PERSON = {
  * An entry with an empty `href` is simply not rendered — no broken links.
  */
 export type SocialLink = {
-  id: "linkedin" | "instagram" | "youtube";
+  id: "linkedin" | "instagram" | "facebook" | "youtube";
   label: string;
   href: string;
 };
@@ -39,6 +40,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://www.instagram.com/flakofranko",
   },
   {
+    id: "facebook",
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1DaZBeTTVa/?mibextid=wwXIfr",
+  },
+  {
     id: "youtube",
     label: "YouTube",
     href: "https://www.youtube.com/@ELPULSODELPODERTV",
@@ -47,6 +53,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const EXTERNAL = {
   sereniti: "https://sereniti.org/",
+  maxwell: "https://www.johncmaxwellgroup.com/andresfranco",
 } as const;
 
 /**

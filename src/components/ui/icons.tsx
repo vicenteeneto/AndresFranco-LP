@@ -78,7 +78,7 @@ export function SocialIcon({
   id,
   className = "",
 }: {
-  id: "linkedin" | "instagram" | "youtube";
+  id: "linkedin" | "instagram" | "facebook" | "youtube";
   className?: string;
 }) {
   const paths: Record<typeof id, React.ReactNode> = {
@@ -106,6 +106,12 @@ export function SocialIcon({
         />
         <circle cx="17.2" cy="6.9" r="1.15" fill="currentColor" />
       </>
+    ),
+    facebook: (
+      <path
+        d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.87.25-1.46 1.55-1.46H17V4a22.4 22.4 0 0 0-2.4-.13c-2.38 0-4 1.45-4 4.12V10H8v3h2.6v8h3.2Z"
+        fill="currentColor"
+      />
     ),
     youtube: (
       <>

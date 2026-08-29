@@ -60,16 +60,13 @@ export const PHOTOS = {
     height: 1254,
     position: "52% 50%",
   },
-  /**
-   * The large room. Speaker — a 21/9 crop on desktop takes a third of the
-   * height, so the focal point sits low enough to keep every face in frame.
-   */
+  /** Andrés at a WorkHQ presentation. Speaker, cropped to 16/9. */
   eventAudience: {
     src: "/images/event-audience.jpg",
-    width: 1536,
-    height: 1024,
-    position: "50% 54%",
-    positionMobile: "50% 46%",
+    width: 1600,
+    height: 1200,
+    position: "50% 42%",
+    positionMobile: "50% 42%",
   },
   /** WorkHQ Bootcamp. Digital Transformation, wide off the left edge. */
   eventBootcamp: {
@@ -85,18 +82,12 @@ export const PHOTOS = {
     height: 1024,
     position: "50% 44%",
   },
-  /**
-   * The lunch table. Social impact — the warmest image on the site.
-   *
-   * The file is already trimmed at the foot: the original carried a fifth of
-   * empty table below the group, which in a column-width frame left the faces
-   * as a thin band across the top.
-   */
+  /** Andrés taking part in a Sereniti Foundation community project. */
   eventCommunity: {
     src: "/images/event-community.jpg",
-    width: 1704,
-    height: 782,
-    position: "50% 50%",
+    width: 1320,
+    height: 879,
+    position: "50% 48%",
   },
 } as const satisfies Record<string, Photo>;
 

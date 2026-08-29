@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Andrés Franco — Liderança, transformação digital e impacto",
-    "titleTemplate": "Andrés Franco",
-    "description": "Executivo internacional e líder em transformação digital, inteligência artificial e automação inteligente. Vice President & Head of Latin America na SS&C Blue Prism, coach de liderança, palestrante e cofundador da Sereniti Foundation.",
-    "ogAlt": "Andrés Franco — Liderança que transforma organizações, pessoas e comunidades",
+    "title": "Andrés I. Franco — Liderança, transformação digital e impacto",
+    "titleTemplate": "Andrés I. Franco",
+    "description": "Executivo internacional e líder em transformação digital, inteligência artificial e automação inteligente. Vice President & Head of Latin America na SS&C Technologies / Blue Prism, coach de liderança, palestrante e cofundador da Sereniti Foundation.",
+    "ogAlt": "Andrés I. Franco — Liderança que transforma organizações, pessoas e comunidades",
     "skipToContent": "Ir para o conteúdo principal"
   },
   "nav": {
@@ -26,7 +26,7 @@
   },
   "hero": {
     "statement": "Liderança que transforma organizações, pessoas e comunidades.",
-    "support": "Executivo internacional, líder em transformação digital, coach e palestrante com mais de três décadas construindo negócios, desenvolvendo líderes e gerando impacto na América Latina.",
+    "support": "Executivo internacional, líder em transformação digital, coach e palestrante, com mais de três décadas construindo negócios em múltiplos continentes, desenvolvendo líderes e gerando impacto atualmente na América Latina.",
     "ctaPrimary": "Conheça minha trajetória",
     "ctaSecondary": "Contato",
     "descriptors": {
@@ -37,7 +37,7 @@
     },
     "kicker": "Executivo internacional · América Latina",
     "roleTitle": "Vice President & Head of Latin America",
-    "roleOrg": "SS&C Blue Prism"
+    "roleOrg": "SS&C Technologies / Blue Prism"
   },
   "intro": {
     "headline": "Mais de 30 anos construindo transformação.",
@@ -66,7 +66,7 @@
   },
   "transformation": {
     "eyebrow": "Liderança executiva",
-    "lead": "Como Vice President e Head da América Latina na SS&C Blue Prism, Andrés lidera a estratégia regional em automação inteligente, inteligência artificial e agentic AI, acompanhando grandes organizações na transformação de suas operações.",
+    "lead": "Como Vice President e Head da América Latina na SS&C Technologies / Blue Prism, Andrés lidera a estratégia regional em automação inteligente, inteligência artificial e agentic AI, acompanhando grandes organizações na transformação de suas operações.",
     "body": "Seu trabalho conecta a agenda tecnológica à agenda de negócios: identificar onde a automação cria valor real, formar as equipes que a executam e sustentar a mudança dentro da cultura de cada organização.",
     "capabilitiesLabel": "Áreas de atuação",
     "capabilities": {
@@ -77,7 +77,7 @@
       "enterpriseStrategy": "Estratégia Corporativa",
       "latinAmerica": "América Latina"
     },
-    "subtitle": "SS&C Blue Prism",
+    "subtitle": "SS&C Technologies / Blue Prism · NASDAQ: SSNC",
     "caption": "WorkHQ Bootcamp — formação sobre fluxos de trabalho agênticos com equipes e parceiros da região."
   },
   "leadership": {
@@ -93,7 +93,7 @@
       "organizationalTransformation": "Transformação Organizacional",
       "personalGrowth": "Crescimento Pessoal"
     },
-    "cta": "Vamos falar de liderança"
+    "cta": "John Maxwell Leadership"
   },
   "speaker": {
     "headline": "Ideias que mobilizam pessoas e organizações.",
@@ -171,7 +171,7 @@
     "currentLabel": "Atualmente",
     "items": {
       "blueprism": {
-        "title": "SS&C Blue Prism",
+        "title": "SS&C Technologies / Blue Prism",
         "role": "Vice President & Head of Latin America",
         "body": "Liderança da estratégia e das operações para a América Latina em automação inteligente, inteligência artificial e agentic AI."
       },
@@ -194,6 +194,11 @@
         "title": "Carreira internacional de negócios",
         "role": "Mais de 30 anos",
         "body": "Desenvolvimento de estratégias de mercado, condução de equipes e expansão de operações em toda a América Latina."
+      },
+      "military": {
+        "title": "Serviço militar · Colômbia",
+        "role": "Serviço condecorado",
+        "body": "Cumpriu o serviço militar na Colômbia e recebeu uma condecoração durante esse período."
       }
     }
   },
@@ -226,20 +231,20 @@
     "followLabel": "Acompanhe"
   },
   "footer": {
-    "role": "Vice President & Head of Latin America · SS&C Blue Prism",
+    "role": "Vice President & Head of Latin America · SS&C Technologies / Blue Prism",
     "navLabel": "Seções",
     "socialLabel": "Perfis e projetos",
-    "disclaimer": "Site pessoal de Andrés Franco. A SS&C Blue Prism é a organização na qual ele exerce seu cargo executivo atual; este site não constitui comunicação oficial dessa companhia nem de nenhuma das organizações mencionadas.",
+    "disclaimer": "Site pessoal de Andrés Franco. A SS&C Technologies / Blue Prism é a organização na qual ele exerce seu cargo executivo atual; este site não constitui comunicação oficial dessa companhia nem de nenhuma das organizações mencionadas.",
     "rights": "Todos os direitos reservados."
   },
   "images": {
-    "heroPortrait": "Retrato profissional de Andrés Franco",
-    "portraitBw": "Retrato editorial em preto e branco de Andrés Franco",
-    "portraitFormal": "Retrato corporativo de Andrés Franco",
-    "eventAudience": "Andrés Franco junto aos participantes de um encontro profissional",
+    "heroPortrait": "Retrato profissional de Andrés I. Franco",
+    "portraitBw": "Retrato editorial em preto e branco de Andrés I. Franco",
+    "portraitFormal": "Retrato corporativo de Andrés I. Franco",
+    "eventAudience": "Andrés I. Franco em uma apresentação do WorkHQ",
     "eventBootcamp": "Participantes do WorkHQ Bootcamp sobre fluxos de trabalho agênticos",
     "eventRoadshow": "Encontro executivo com clientes e parceiros na América Latina",
-    "eventCommunity": "Encontro da comunidade profissional em um ambiente descontraído"
+    "eventCommunity": "Andrés I. Franco participando de uma ação comunitária da Sereniti Foundation"
   },
   "statement": {
     "line1": "Liderança, tecnologia e impacto não são caminhos separados.",
@@ -256,7 +261,7 @@
       },
       "transformation": {
         "title": "Transformação Digital",
-        "subtitle": "SS&C Blue Prism · IA e automação inteligente"
+        "subtitle": "SS&C Technologies / Blue Prism · IA e automação inteligente"
       },
       "leadership": {
         "title": "Liderança & Coaching",
@@ -268,7 +273,7 @@
       },
       "journey": {
         "title": "Trajetória",
-        "subtitle": "Cisco · John Maxwell · Sereniti · SS&C Blue Prism"
+        "subtitle": "Cisco · John Maxwell · Sereniti · Blue Prism"
       },
       "impact": {
         "title": "Impacto Social",

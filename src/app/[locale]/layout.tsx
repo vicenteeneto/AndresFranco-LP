@@ -50,6 +50,8 @@ export async function generateMetadata(props: {
     keywords: [
       "Andrés Franco",
       "Andres Franco",
+      "Andrés I. Franco",
+      "Andres I. Franco",
       "Transformación Digital",
       "Digital Transformation",
       "Inteligencia Artificial",
@@ -62,7 +64,9 @@ export async function generateMetadata(props: {
       "Keynote Speaker",
       "América Latina",
       "Latin America",
-      "SS&C Blue Prism",
+      "SS&C Technologies",
+      "Blue Prism",
+      "NASDAQ SSNC",
       "Sereniti Foundation",
     ],
     alternates: {
@@ -128,6 +132,7 @@ export default async function LocaleLayout({
       "@type": "Organization",
       name: PERSON.organization,
       url: PERSON.organizationUrl,
+      tickerSymbol: PERSON.organizationTicker,
     },
     knowsAbout: [
       "Digital Transformation",

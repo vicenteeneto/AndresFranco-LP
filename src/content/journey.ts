@@ -1,7 +1,7 @@
 /**
  * Career milestones.
  *
- * Five entries, most recent first — the depth of a career shown without
+ * Six entries, most recent first — the depth of a career shown without
  * reproducing a CV. Text (title, role, body) is translated and lives in
  * messages/*.json under `journey.items.<id>`.
  *
@@ -23,4 +23,5 @@ export const JOURNEY: Milestone[] = [
   { id: "maxwell" },
   { id: "cisco" },
   { id: "international" },
+  { id: "military" },
 ];
