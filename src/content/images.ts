@@ -93,9 +93,9 @@ export const PHOTOS = {
 
 export type PhotoId = keyof typeof PHOTOS;
 
-/** Social sharing image (generated at /public/images/og.jpg). */
+/** Versioned social sharing image matching the current executive-dark design. */
 export const OG_IMAGE = {
-  src: "/images/og.jpg",
+  src: "/images/og-executive-2026.jpg",
   width: 1200,
   height: 630,
 };
