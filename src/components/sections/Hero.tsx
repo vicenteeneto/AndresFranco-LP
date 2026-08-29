@@ -107,14 +107,18 @@ export default function Hero() {
               </h1>
 
               <div
-                className="mt-6 flex max-w-[54%] flex-col gap-1 border-l border-gold pl-4 sm:max-w-[52%] md:pl-5 lg:mt-9 lg:max-w-none"
+                className="mt-6 flex max-w-[64%] flex-col gap-1 border-l border-gold pl-4 sm:max-w-[56%] md:pl-5 lg:mt-9 lg:max-w-none"
                 data-reveal
                 style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
               >
-                <p className="text-[0.75rem] leading-[1.35] font-semibold tracking-[0.09em] text-fg uppercase md:text-[0.8125rem] md:tracking-[0.1em]">
+                <p className="flex items-start gap-2.5 text-[0.75rem] leading-[1.35] font-semibold tracking-[0.09em] text-fg uppercase md:text-[0.8125rem] md:tracking-[0.1em]">
+                  <span
+                    aria-hidden="true"
+                    className="mt-[0.42em] h-[6px] w-[6px] shrink-0 rounded-full bg-gold"
+                  />
                   {t("roleTitle")}
                 </p>
-                <p className="meta">{t("roleOrg")}</p>
+                <p className="meta pl-[1.05rem]">{t("roleOrg")}</p>
               </div>
 
               {/* Below here the photograph has ended and the copy gets the
@@ -128,31 +132,45 @@ export default function Hero() {
               </p>
 
               <p
-                className="body-copy mt-6 hidden max-w-[52ch] lg:block"
+                className="body-copy mt-6 max-w-[52ch]"
                 data-reveal
                 style={{ "--reveal-delay": "250ms" } as React.CSSProperties}
               >
                 {t("support")}
               </p>
 
+              {/*
+                One primary action across the full width, then the two
+                secondary ones side by side beneath it. On a phone that fills
+                the fold with the three ways in rather than leaving a gap above
+                the rail; from lg up the three simply sit in a row.
+              */}
               <div
-                className="mt-8 flex flex-col gap-3 lg:mt-9 lg:flex-row lg:flex-wrap lg:items-center lg:gap-4"
+                className="mt-8 grid grid-cols-2 gap-3 lg:mt-9 lg:flex lg:flex-wrap lg:items-center lg:gap-4"
                 data-reveal
                 style={{ "--reveal-delay": "300ms" } as React.CSSProperties}
               >
                 <a
                   href={`#${SECTIONS.journey}`}
-                  className="btn-gold self-start"
+                  className="btn-gold col-span-2 lg:col-span-1"
                 >
                   {t("ctaPrimary")}
                   <ArrowRight />
                 </a>
-                <a
-                  href={`#${SECTIONS.contact}`}
-                  className="btn-ghost hidden lg:inline-flex"
-                >
+                <a href={`#${SECTIONS.contact}`} className="btn-ghost">
                   {t("ctaSecondary")}
                 </a>
+                {linkedin && (
+                  <a
+                    href={linkedin.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-ghost lg:hidden"
+                  >
+                    LinkedIn
+                    <ArrowUpRight />
+                  </a>
+                )}
                 {linkedin && (
                   <a
                     href={linkedin.href}
@@ -178,8 +196,8 @@ export default function Hero() {
               key={d}
               className={[
                 "meta",
-                // Two descriptors on a phone, four from sm up: the rail is a
-                // texture, and four of them wrap into a paragraph at 390px.
+                // Two on a phone, four from sm up: more than two wrap the rail
+                // onto a second line, and it is texture, not a list.
                 i > 1 ? "hidden sm:inline" : "",
               ].join(" ")}
               data-reveal
